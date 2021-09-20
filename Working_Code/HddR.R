@@ -9,3 +9,4 @@ mydata = t(mydata)
 prms1 <- hddc(mydata, K=20, itermax=10000)
 df <- do.call("rbind", lapply(prms1$class, as.data.frame)) 
 write.csv(df, file = "Results/HDDC.csv")
+
