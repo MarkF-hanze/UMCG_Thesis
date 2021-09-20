@@ -1,0 +1,11 @@
+setwd("/home/g0017139/UMCG_Thesis/Working_Code/")
+#install.packages("MASS",  "/data/g0017139/.envs/r_env/lib/R/library/", repos = "http://cran.us.r-project.org")
+# install.packages("HDclassif", repos = "http://cran.us.r-project.org")
+# getwd() 
+
+library(HDclassif)
+mydata = read.csv("/data/g0017139/Set1/CCLE__Affy_hgu133plus2_QCed_mRNA_NoDuplicates_CleanedIdentifiers_RMA-sketch_genelevel_using_jetscore.txt", sep = ' ')
+mydata = t(mydata)
+prms1 <- hddc(mydata, K=20, itermax=10000)
+df <- do.call("rbind", lapply(prms1$class, as.data.frame)) 
+write.csv(df, file = "Results/HDDC.csv")

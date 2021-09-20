@@ -1,0 +1,48 @@
+Loading required package: MASS
+
+
+###############################################################################
+Peregrine Cluster
+Job 21479294 for user 'g0017139'
+Finished at: Mon Sep 20 09:30:27 CEST 2021
+
+Job details:
+============
+
+Job ID              : 21479294
+Name                : R_Script
+User                : g0017139
+Partition           : regular
+Nodes               : pg-node202
+Number of Nodes     : 1
+Cores               : 1
+Number of Tasks     : 1
+State               : COMPLETED
+Submit              : 2021-09-20T09:26:00
+Start               : 2021-09-20T09:26:41
+End                 : 2021-09-20T09:30:27
+Reserved walltime   : 05:00:00
+Used walltime       : 00:03:46
+Used CPU time       : 00:03:42 (efficiency: 98.32%)
+% User (Computation): 91.26%
+% System (I/O)      :  8.74%
+Mem reserved        : 24G/node
+Max Mem (Node/step) : 5.09G (pg-node202, per node)
+Full Max Mem usage  : 5.09G
+Total Disk Read     : 62.42M
+Total Disk Write    : 58.51K
+Hints and tips      :
+ 1) You requested much more memory than your program used.
+    Please reduce the requested amount of memory.
+ *) For more information on these issues see:
+    https://wiki.hpc.rug.nl/peregrine/additional_information/job_hints
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################

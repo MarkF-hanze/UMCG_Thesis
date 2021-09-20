@@ -1,0 +1,44 @@
+/var/spool/slurmd/job21478786/slurm_script: line 8:  4194 Killed                  /home/g0017139/UMCG_Thesis/Working_Code/bin/cppmafia /home/g0017139/UMCG_Thesis/Working_Code/Results/gene_expression.dat -n 100 -M 10
+slurmstepd: error: Detected 1 oom-kill event(s) in StepId=21478786.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.
+
+
+###############################################################################
+Peregrine Cluster
+Job 21478786 for user 'g0017139'
+Finished at: Sun Sep 19 16:07:33 CEST 2021
+
+Job details:
+============
+
+Job ID              : 21478786
+Name                : MAFIA
+User                : g0017139
+Partition           : regular
+Nodes               : pg-node025
+Number of Nodes     : 1
+Cores               : 1
+Number of Tasks     : 1
+State               : OUT_OF_MEMORY
+Submit              : 2021-09-19T15:12:11
+Start               : 2021-09-19T15:59:10
+End                 : 2021-09-19T16:07:32
+Reserved walltime   : 10:00:00
+Used walltime       : 00:08:22
+Used CPU time       : 00:07:50 (efficiency: 93.80%)
+% User (Computation): 84.64%
+% System (I/O)      : 15.36%
+Mem reserved        : 124G/node
+Max Mem (Node/step) : 116.08G (pg-node025, per node)
+Full Max Mem usage  : 116.08G
+Total Disk Read     : 51.50K
+Total Disk Write    : 234.00 
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################
