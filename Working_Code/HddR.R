@@ -4,9 +4,11 @@ setwd("/home/g0017139/UMCG_Thesis/Working_Code/")
 # getwd() 
 
 library(HDclassif)
-mydata = read.csv("/data/g0017139/Set1/CCLE__Affy_hgu133plus2_QCed_mRNA_NoDuplicates_CleanedIdentifiers_RMA-sketch_genelevel_using_jetscore.txt", sep = ' ')
-mydata = t(mydata)
-prms1 <- hddc(mydata, K=20, itermax=10000)
-df <- do.call("rbind", lapply(prms1$class, as.data.frame)) 
-write.csv(df, file = "Results/HDDC.csv")
+mydata = read.csv("/home/g0017139/UMCG_Thesis/Working_Code/Results/gene_expression_norm.dat", sep = ' ', header = FALSE, )
+prms <- hddc(mydata, K = 2:15, model = "ALL", itermax = 10000, mc.cores = 4, threshold = c(0.1,0.2,0.5,0.7))
+
+df = do.call(rbind, prms$allCriteria)
+write.csv(df, "Results/HDDCGrid.csv")
+df <- do.call("rbind", lapply(prms$class, as.data.frame)) 
+write.csv(df, file = "Results/HDDCClusters.csv")
 
