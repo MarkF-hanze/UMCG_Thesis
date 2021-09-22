@@ -1,0 +1,13 @@
+#!/bin/bash
+#SBATCH --time=1:00:00
+#SBATCH --job-name=K_means
+#SBATCH --output=K_means.out
+#SBATCH --mem=4GB
+#SBATCH --ntasks=1
+#SBATCH --partition=regular
+
+module load Anaconda3/2020.11
+eval "$(conda shell.bash hook)"
+conda activate /data/g0017139/.envs/ClusterEnv
+
+python3 k_means.py
