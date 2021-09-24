@@ -7,8 +7,8 @@ normalized = pd.read_csv(
     sep=None, engine='python', header=None,
 )
 
-from ..TSKFS.fuzzy_cluster import ESSC
-parameters = {'n_cluster': np.arange(2,20, 1),
+from TSKFS.fuzzy_cluster import ESSC
+parameters = {'n_cluster': np.arange(2,15, 1),
               'eta': [0, 0.1, 0.2, 0.3, 0.5, 0.7 , 0.9],
               'gamma': [1, 2, 5, 10, 50, 100, 1000]
              }
