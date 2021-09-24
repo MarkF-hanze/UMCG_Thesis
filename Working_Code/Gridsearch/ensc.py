@@ -12,12 +12,12 @@ normalized = pd.read_csv(
 from subspaceClustering.cluster.selfrepresentation import ElasticNetSubspaceClustering
 ensc = ElasticNetSubspaceClustering()
 parameters = {'n_clusters': np.arange(2, 15, 1),
-              'affinity ': ['symmetrize', 'nearest_neighbors'],
-              'tau': np.linspace(0, 1, 4),
+#              'affinity ': ['symmetrize', 'nearest_neighbors'],
+              'tau': np.linspace(0.1, 1, 4),
               'gamma': [5, 50, 100, 500]
              }
 
 ensc = ElasticNetSubspaceClustering(algorithm ='spams', n_jobs=-1)
 df = pd.DataFrame(gridsearch(ensc, normalized, parameters))
-with open('ensc.pkl', 'wb') as f:
+with open('ensc2.pkl', 'wb') as f:
     pickle.dump(df, f, pickle.HIGHEST_PROTOCOL)
