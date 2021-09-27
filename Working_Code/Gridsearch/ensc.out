@@ -1,87 +1,0 @@
-  0%|          | 0/624 [00:00<?, ?it/s]/home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/subspaceClustering/cluster/selfrepresentation.py:279: RuntimeWarning: divide by zero encountered in double_scalars
-  alpha0 = np.amax(coh) / tau  # value for which the solution is zero
-/home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/subspaceClustering/cluster/selfrepresentation.py:155: RuntimeWarning: invalid value encountered in double_scalars
-  lambda1=tau*alpha, lambda2=(1.0-tau)*alpha)
-/home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/subspaceClustering/cluster/selfrepresentation.py:162: RuntimeWarning: invalid value encountered in double_scalars
-  obj = tau * np.sum(np.abs(cs[0])) + (1.0 - tau)/2.0 * np.sum(np.power(cs[0], 2.0)) + alpha/2.0 * np.sum(np.power(delta, 2.0))
-  0%|          | 1/624 [05:18<55:10:00, 318.78s/it]/home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/subspaceClustering/cluster/selfrepresentation.py:279: RuntimeWarning: divide by zero encountered in double_scalars
-  alpha0 = np.amax(coh) / tau  # value for which the solution is zero
-/home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/subspaceClustering/cluster/selfrepresentation.py:155: RuntimeWarning: invalid value encountered in double_scalars
-  lambda1=tau*alpha, lambda2=(1.0-tau)*alpha)
-/home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/subspaceClustering/cluster/selfrepresentation.py:162: RuntimeWarning: invalid value encountered in double_scalars
-  obj = tau * np.sum(np.abs(cs[0])) + (1.0 - tau)/2.0 * np.sum(np.power(cs[0], 2.0)) + alpha/2.0 * np.sum(np.power(delta, 2.0))
-  0%|          | 2/624 [10:33<54:42:43, 316.66s/it]/home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/subspaceClustering/cluster/selfrepresentation.py:279: RuntimeWarning: divide by zero encountered in double_scalars
-  alpha0 = np.amax(coh) / tau  # value for which the solution is zero
-/home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/subspaceClustering/cluster/selfrepresentation.py:155: RuntimeWarning: invalid value encountered in double_scalars
-  lambda1=tau*alpha, lambda2=(1.0-tau)*alpha)
-/home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/subspaceClustering/cluster/selfrepresentation.py:162: RuntimeWarning: invalid value encountered in double_scalars
-  obj = tau * np.sum(np.abs(cs[0])) + (1.0 - tau)/2.0 * np.sum(np.power(cs[0], 2.0)) + alpha/2.0 * np.sum(np.power(delta, 2.0))
-  0%|          | 3/624 [15:50<54:34:37, 316.39s/it]/home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/subspaceClustering/cluster/selfrepresentation.py:279: RuntimeWarning: divide by zero encountered in double_scalars
-  alpha0 = np.amax(coh) / tau  # value for which the solution is zero
-/home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/subspaceClustering/cluster/selfrepresentation.py:155: RuntimeWarning: invalid value encountered in double_scalars
-  lambda1=tau*alpha, lambda2=(1.0-tau)*alpha)
-/home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/subspaceClustering/cluster/selfrepresentation.py:162: RuntimeWarning: invalid value encountered in double_scalars
-  obj = tau * np.sum(np.abs(cs[0])) + (1.0 - tau)/2.0 * np.sum(np.power(cs[0], 2.0)) + alpha/2.0 * np.sum(np.power(delta, 2.0))
-  1%|          | 4/624 [20:59<54:02:48, 313.82s/it]/home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/subspaceClustering/cluster/selfrepresentation.py:279: RuntimeWarning: divide by zero encountered in double_scalars
-  alpha0 = np.amax(coh) / tau  # value for which the solution is zero
-/home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/subspaceClustering/cluster/selfrepresentation.py:155: RuntimeWarning: invalid value encountered in double_scalars
-  lambda1=tau*alpha, lambda2=(1.0-tau)*alpha)
-/home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/subspaceClustering/cluster/selfrepresentation.py:162: RuntimeWarning: invalid value encountered in double_scalars
-  obj = tau * np.sum(np.abs(cs[0])) + (1.0 - tau)/2.0 * np.sum(np.power(cs[0], 2.0)) + alpha/2.0 * np.sum(np.power(delta, 2.0))
-  1%|          | 5/624 [26:14<54:02:05, 314.26s/it]/home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/subspaceClustering/cluster/selfrepresentation.py:279: RuntimeWarning: divide by zero encountered in double_scalars
-  alpha0 = np.amax(coh) / tau  # value for which the solution is zero
-/home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/subspaceClustering/cluster/selfrepresentation.py:155: RuntimeWarning: invalid value encountered in double_scalars
-  lambda1=tau*alpha, lambda2=(1.0-tau)*alpha)
-/home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/subspaceClustering/cluster/selfrepresentation.py:162: RuntimeWarning: invalid value encountered in double_scalars
-  obj = tau * np.sum(np.abs(cs[0])) + (1.0 - tau)/2.0 * np.sum(np.power(cs[0], 2.0)) + alpha/2.0 * np.sum(np.power(delta, 2.0))
-  1%|          | 6/624 [31:28<53:53:12, 313.90s/it]  1%|          | 7/624 [32:28<39:35:35, 231.01s/it]  1%|▏         | 8/624 [33:52<31:32:15, 184.31s/it]  1%|▏         | 9/624 [37:38<33:42:35, 197.33s/it]  2%|▏         | 10/624 [7:41:21<1361:51:39, 7984.85s/it]  2%|▏         | 11/624 [24:09:50<4034:21:58, 23692.85s/it]slurmstepd: error: *** JOB 21491766 ON pg-node032 CANCELLED AT 2021-09-24T23:29:54 DUE TO TIME LIMIT ***
-
-
-###############################################################################
-Peregrine Cluster
-Job 21491766 for user 'g0017139'
-Finished at: Fri Sep 24 23:29:56 CEST 2021
-
-Job details:
-============
-
-Job ID              : 21491766
-Name                : ensc
-User                : g0017139
-Partition           : regular
-Nodes               : pg-node032
-Number of Nodes     : 1
-Cores               : 4
-Number of Tasks     : 1
-State               : CANCELLED,TIMEOUT
-Submit              : 2021-09-22T21:29:25
-Start               : 2021-09-22T21:29:28
-End                 : 2021-09-24T23:29:55
-Reserved walltime   : 2-02:00:00
-Used walltime       : 2-02:00:27
-Used CPU time       : 2-07:31:28 (efficiency: 27.76%)
-% User (Computation): 93.92%
-% System (I/O)      :  6.08%
-Mem reserved        : 24G/node
-Max Mem (Node/step) : 2.10G (pg-node032, per node)
-Full Max Mem usage  : 2.10G
-Total Disk Read     : 6.56M
-Total Disk Write    : 10.72K
-Hints and tips      :
- 1) The program efficiency is low. Your program is not using the assigned cores
-    effectively. Please check if you are using all the cores you requested.
-    You may also need to check the file in- and output pattern of your program.
- 2) You requested much more memory than your program used.
-    Please reduce the requested amount of memory.
- *) For more information on these issues see:
-    https://wiki.hpc.rug.nl/peregrine/additional_information/job_hints
-
-
-Acknowledgements:
-=================
-
-Please see this page for information about acknowledging Peregrine in your publications:
-
-https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
-
-################################################################################

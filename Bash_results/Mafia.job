@@ -1,0 +1,8 @@
+#!/bin/bash
+#SBATCH --time=10:00:00
+#SBATCH --job-name=MAFIA
+#SBATCH --output=MAFIA_PCA.out
+#SBATCH --mem=124GB
+#SBATCH --partition=vulture
+
+/home/g0017139/UMCG_Thesis/Working_Code/bin/cppmafia /home/g0017139/UMCG_Thesis/Working_Code/Results/gene_expression_PCA.dat

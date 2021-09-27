@@ -1,0 +1,304 @@
+#+TITLE: README for the HDDA python toolbox
+#+AUTHOR: Mathieu Fauvel
+#+EMAIL: mathieu.fauvel@ensat.fr
+#+EXCLUDE_TAGS: noexport
+#+OPTIONS: toc:nil
+
+* Objectives
+The package provides a python implementation of the High Dimensional
+Discriminant analysis/clustering models, see publications:
+- [[http://hal.archives-ouvertes.fr/hal-00394327]]
+- [[http://hal.archives-ouvertes.fr/hal-00022183/]]
+
+  
+The original =R= package available on the CRAN:
+[[http://cran.r-project.org/web/packages/HDclassif/index.html]]
+
+Some of the models are actually implemented, those who usually provide
+the best results in terms of classification accuracy.
+
+* Install and requirements
+
+Just  download  the package.  It  has  been  tested on  linux,  Debian
+Stretch.  [[http://www.scipy.org/][Scipy]] and  [[http://scikit-learn.org/stable/][Scikit]] should  be  installed. Also,  for a  faster
+processing, a good linear algebra library is preferable. [[http://openblas.net/][Openblas]] is a
+good option.
+
+#+BEGIN_SRC python :session softwares :exports both :results output raw
+import platform
+platform.python_version()
+#+END_SRC
+
+#+RESULTS:
+
+'2.7.13'
+
+#+BEGIN_SRC python :session softwares :exports both :results output raw
+import scipy as sp
+sp.__version__
+#+END_SRC
+
+#+RESULTS:
+
+'1.0.0'
+
+#+BEGIN_SRC python :session softwares :exports both :results output raw
+import sklearn
+sklearn.__version__
+#+END_SRC
+
+#+RESULTS:
+
+'0.19.1'
+
+* Usage
+** Crabs data set
+:PROPERTIES:
+:tangle:   script_crabs.py
+:noweb:    yes
+:exports:  code
+:session:  hdda
+:results:  output
+:END:
+
+We provide an introductory example taken from Charles Bouveyron
+thesis, on the /crabs/ data set. We also compare with the standard GMM
+with EM provided by scikit.
+
+First, load packages and define some variables:
+#+BEGIN_SRC python :tangle script_crabs.py :noweb yes :exports code :session hdda_crabs 
+import hdda
+import matplotlib.pyplot as plt
+import scipy as sp
+from sklearn.decomposition import PCA
+from sklearn import mixture
+
+# Parameters for HDDA
+MODEL = 'M2'
+C = 4 # For the example with do not fit the number of classes
+th = 0.05 # The threshold for the Cattel test
+#+END_SRC
+
+#+RESULTS:
+
+Load the data
+
+#+BEGIN_SRC python :tangle script_crabs.py :noweb yes :exports code :session hdda_crabs 
+data = sp.load('crabs.npz')
+X = data['x']
+Y = data['y']
+#+END_SRC
+
+#+RESULTS:
+
+For illustration, we can plot the projection on the two first PC axis.
+
+#+BEGIN_SRC python :tangle script_crabs.py :noweb yes :exports code :session hdda_crabs
+plt.figure()
+pca = PCA(n_components=2)
+Xp = pca.fit_transform(X)
+plt.scatter(Xp[:,0],Xp[:,1],c=Y,s=40)
+plt.savefig('2D_true_labels.png')
+#+END_SRC
+
+#+RESULTS:
+: <matplotlib.collections.PathCollection object at 0x7f4858332450>
+
+[[file:2D_true_labels.png]]
+
+We could select the best model using BIC or ICL:
+
+#+BEGIN_SRC python :tangle script_crabs.py :noweb yes :exports code :session hdda_crabs
+bic, icl = [], []
+for model_ in ['M1', 'M2', 'M3', 'M4', 'M5']:
+    model = hdda.HDDC(C=C,th=th,model=model_)
+    model.fit(X)
+    bic.append(model.bic)
+    icl.append(model.icl)
+
+plt.figure()
+plt.plot(bic)
+plt.plot(icl)
+plt.legend(("BIC", "ICL"))
+plt.xticks(sp.arange(5), ('M1', 'M2', 'M3', 'M4', 'M5'))
+plt.grid()
+plt.savefig('bic_icl_crabs.png')
+#+END_SRC
+
+#+RESULTS:
+| (<matplotlib.axis.XTick object at 0x7f48599be1d0> <matplotlib.axis.XTick object at 0x7f4858761f50> <matplotlib.axis.XTick object at 0x7f484befde90> <matplotlib.axis.XTick object at 0x7f484bf0a4d0> <matplotlib.axis.XTick object at 0x7f484bf0abd0>) | <a | list | of | 5 | Text | xticklabel | objects> |
+
+[[file:bic_icl_crabs.png]]
+
+#+BEGIN_SRC python :tangle script_crabs.py :noweb yes :exports code :session hdda_crabs
+model = hdda.HDDC(C=C,th=th,model=MODEL)
+model.fit(X)
+model.bic
+yp=model.predict(X)
+
+plt.figure()
+plt.scatter(Xp[:,0],Xp[:,1],c=yp,s=40)
+plt.savefig("2D_hdda.png")
+#+END_SRC
+
+#+RESULTS:
+: <matplotlib.collections.PathCollection object at 0x7f484bb077d0>
+
+[[file:2D_hdda.png]]
+
+The same learning is done with the GMM from scikit, and we plot the results
+
+#+BEGIN_SRC python :tangle script_crabs.py :noweb yes :exports code :session hdda_crabs
+clf = mixture.GaussianMixture(n_components=4, covariance_type='full')
+clf.fit(X)
+yp=clf.predict(X)
+
+plt.figure()
+plt.scatter(Xp[:,0],Xp[:,1],c=yp,s=40)
+plt.savefig('2D_gmm.png')
+#+END_SRC
+
+#+RESULTS:
+: <matplotlib.collections.PathCollection object at 0x7f484b70e750>
+
+[[file:2D_gmm.png]]
+
+The complete file is available in [[file:script_crabs.py]].
+** Grassland                                                      :noexport:
+:PROPERTIES:
+:tangle:   script_grasslands.py
+:noweb:    yes
+:exports:  code
+:session:  grassland
+:results:  output
+:END:
+In this example, we show how  HDDC clusterizes pixels from a satellite
+image  time series.   Again, we  need  to load  data and  set up  some
+parameters.  Then  we use  the  =fit_all=  function  to learn  the  best
+model. This  is an example  of the work  of [[mailto:mailys.lopes@toulouse.inra.fr][Maïlys Lopes]]  on grassland
+monitoring from satellite image time series.
+
+#+BEGIN_SRC python
+import hdda
+import scipy as sp
+import matplotlib.pyplot as plt
+from sklearn import mixture
+import time as time
+
+# Load data
+data = sp.load('prairie5.npy')
+x = data
+n,d=x.shape
+print "Number of samples: {}\n Number of variables: {}".format(n,d)
+# Parameters
+MODEL = ['M1','M2','M3','M4','M5','M6','M7','M8']
+th = [0.05,0.1,0.2]
+C = sp.arange(1,5)
+
+# Model Selection
+model = hdda.HDGMM()
+tic = time.clock()
+model.fit_all(x,MODEL=MODEL,C=C,th=th,VERBOSE=True)
+toc = time.clock()
+print "Processing time: {}".format(toc-tic)
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+
+Number of samples: 159
+Number of variables: 68
+Models C 	 th 	 BIC
+M1 	 4 	 0.05 	 -58257.1815661
+M2 	 2 	 0.05 	 -59527.6014904
+M3 	 3 	 0.05 	 -58486.9513614
+M4 	 2 	 0.05 	 -59696.1778619
+M5 	 4 	 0.05 	 -58486.7455612
+M6 	 2 	 0.05 	 -59700.561086
+M7 	 3 	 0.05 	 -58723.13686
+M8 	 2 	 0.05 	 -59901.163825
+
+Best model is M1
+Processing time: 7.259858
+#+end_example
+
+#+BEGIN_SRC python :exports code
+# Plot data
+bands= ['B','G','R','NIR']
+
+for i,b in enumerate(bands):
+    plt.figure()
+    # Plot the samples
+    for j in xrange(n):
+        plt.plot(data[j,(i*17):((i+1)*17)],'k',lw=0.5)
+    # Plot the means
+    for j in xrange(len(model.mean)):
+        plt.plot(model.mean[j][(i*17):((i+1)*17)],lw=3)
+    plt.savefig('grassland_{}.png'.format(b))
+#+END_SRC
+
+#+RESULTS:
+
+#+BEGIN_SRC sh :noweb yes :exports code :tangle no
+for b in {B,G,R,NIR}
+do
+    echo [[file:grassland_$b.png]]
+done
+#+END_SRC
+
+
+[[file:grassland_B.png]]
+[[file:grassland_G.png]]
+[[file:grassland_R.png]]
+[[file:grassland_NIR.png]]
+
+
+Let's do  the clustering  with the conventional  GMM from  =Scikit=. The
+best model is selected according to the BIC (taken from [[http://scikit-learn.org/stable/auto_examples/mixture/plot_gmm_selection.html][scikit]]).
+
+#+BEGIN_SRC python
+bicGmm = []
+lowest_bic  = sp.infty
+for c in C:
+    gmm = mixture.GMM(n_components=c, covariance_type='full')
+    gmm.fit(x)
+    bicGmm.append(gmm.bic(x))
+    if bicGmm[-1] < lowest_bic:
+        lowest_bic = bicGmm[-1]
+        best_gmm = gmm
+
+print bicGmm
+
+# Plot data
+bands= ['B','G','R','NIR']
+
+for i,b in enumerate(bands):
+    plt.figure()
+    # Plot the samples
+    for j in xrange(n):
+        plt.plot(data[j,(i*17):((i+1)*17)],'k',lw=0.5)
+    # Plot the means
+    for j in xrange(best_gmm.means_.shape[0]):
+        plt.plot(best_gmm.means_[j][(i*17):((i+1)*17)],lw=3)
+    plt.savefig('grassland_gmm_{}.png'.format(b))        
+#+END_SRC
+
+#+RESULTS:
+: [45879.790950867653, 51307.882479185893, 54318.95901862967, 55192.388129492014]
+
+
+
+#+BEGIN_SRC sh :noweb yes :exports code :tangle no
+for b in {B,G,R,NIR}
+do
+    echo [[file:grassland_gmm_$b.png]]
+done
+#+END_SRC
+
+#+RESULTS:
+ 
+[[file:grassland_gmm_B.png]]
+[[file:grassland_gmm_G.png]]
+[[file:grassland_gmm_R.png]]
+[[file:grassland_gmm_NIR.png]]
+
