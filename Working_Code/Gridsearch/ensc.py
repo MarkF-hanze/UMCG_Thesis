@@ -10,7 +10,6 @@ normalized = pd.read_csv(
 )
 
 from subspaceClustering.cluster.selfrepresentation import ElasticNetSubspaceClustering
-ensc = ElasticNetSubspaceClustering()
 parameters = {'n_clusters': np.arange(2, 15, 1),
 #              'affinity ': ['symmetrize', 'nearest_neighbors'],
               'tau': np.linspace(0.1, 1, 4),
