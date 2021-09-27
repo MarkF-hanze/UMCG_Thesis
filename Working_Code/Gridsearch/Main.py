@@ -52,7 +52,7 @@ class BaseAlg():
         self.algorithm.set_params(**parameter)
 
     # parameter should be a dictionary
-    def set_param(self, parameter):
+    def set_params(self, parameter):
         self.check_params(parameter)
         self.helper_set(parameter)
 
@@ -67,7 +67,7 @@ class Kmeans(BaseAlg):
         self.classes_ = None
 
 
-class ESSC(BaseAlg):
+class ESSCGrid(BaseAlg):
     def __init__(self):
         self.parameters = {'n_cluster': np.arange(2, 15, 1),
                            'eta': [0, 0.1, 0.2, 0.3, 0.5, 0.7, 0.9],
@@ -112,7 +112,7 @@ class UHDBSCAN(BaseAlg):
                            'Clustering__cluster_selection_method': ['eom', 'leaf']
                            }
         for name in self.parameters:
-            if isinstance(self.parameters[name], np.array):
+            if isinstance(self.parameters[name], type(np.array)):
                 self.parameters[name] = self.parameters[name].tolist()
         self.algorithm = Pipeline([('DimReduction',
                                     umap.UMAP()),
@@ -142,23 +142,23 @@ class Gridsearch():
         self.X = X
 
     def start(self):
-        combinations = self.product_dict(**self.parameters)
-        for parameter in tqdm(combinations, total=len(list(combinations))):
+        combinations = list(self.product_dict(**self.parameters))
+        for parameter in tqdm(combinations):
             # Fit alg
-            self.algorithm.set_params(**parameter)
+            self.algorithm.set_params(parameter)
             fit_time = self.algorithm.fit(self.X)
             current_scores = self.get_score(self.algorithm.get_classes())
             current_scores['Fit_Time'] = fit_time
             current_scores.update(parameter)
             self.scores.append(current_scores)
-        with open(f'{self.name}.pkl', 'wb') as f:
+        with open(f'/home/g0017139/UMCG_Thesis/Working_Code/Results/{self.name}{time.time()}.pkl', 'wb') as f:
             pickle.dump(pd.DataFrame(self.scores), f, pickle.HIGHEST_PROTOCOL)
 
     def get_alg(self, name):
         if name == 'kmeans':
             class_alg = Kmeans()
         elif name == 'essc':
-            class_alg = ESSC()
+            class_alg = ESSCGrid()
         elif name == 'ensc':
             class_alg = ENSC()
         elif name == 'dbscan':
@@ -190,7 +190,6 @@ class Gridsearch():
         vals = kwargs.values()
         for instance in itertools.product(*vals):
             yield dict(zip(keys, instance))
-
 
 if __name__ == "__main__":
     argv = sys.argv[1:]
