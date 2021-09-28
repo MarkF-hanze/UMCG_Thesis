@@ -1,1 +1,44 @@
 Loading required package: MASS
+slurmstepd: error: *** JOB 21495663 ON pg-node196 CANCELLED AT 2021-09-28T00:54:20 ***
+
+
+###############################################################################
+Peregrine Cluster
+Job 21495663 for user 'g0017139'
+Finished at: Tue Sep 28 00:54:22 CEST 2021
+
+Job details:
+============
+
+Job ID              : 21495663
+Name                : R_Script_Long
+User                : g0017139
+Partition           : regular
+Nodes               : pg-node196
+Number of Nodes     : 1
+Cores               : 1
+Number of Tasks     : 1
+State               : CANCELLED,CANCELLED by 40017139
+Submit              : 2021-09-23T22:41:08
+Start               : 2021-09-23T22:41:13
+End                 : 2021-09-28T00:54:21
+Reserved walltime   : 4-04:00:00
+Used walltime       : 4-02:13:08
+Used CPU time       : 4-02:10:00 (efficiency: 99.95%)
+% User (Computation): 82.49%
+% System (I/O)      : 17.51%
+Mem reserved        : 24G/node
+Max Mem (Node/step) : 18.25G (pg-node196, per node)
+Full Max Mem usage  : 18.25G
+Total Disk Read     : 62.42M
+Total Disk Write    : 58.51K
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################

@@ -1,13 +1,14 @@
 #!/bin/bash
-#SBATCH --time=1:00:00
-#SBATCH --job-name=K_means
-#SBATCH --output=K_means.out
-#SBATCH --mem=4GB
-#SBATCH --ntasks=1
-#SBATCH --partition=regular
+#SBATCH --time=12:00:00
+#SBATCH --job-name=essc
+#SBATCH --output=Set2essc.out
+#SBATCH --mem=124GB
+#SBATCH --ntasks=24
+#SBATCH --nodes=1
+#SBATCH --partition=vulture
 
 module load Anaconda3/2020.11
 eval "$(conda shell.bash hook)"
 conda activate /data/g0017139/.envs/ClusterEnv
 
-python3 k_means.py
+python3 /home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/Main.py -f /data/g0017139/GPL570_norm.dat -a essc -s Set2

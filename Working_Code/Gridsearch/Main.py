@@ -1,5 +1,7 @@
 import sys, getopt
 import pickle
+import os
+import subprocess
 import pandas as pd
 import numpy as np
 from sklearn.cluster import MiniBatchKMeans
@@ -15,6 +17,8 @@ import itertools
 import time
 import numpy as np
 
+from multiprocessing import Pool
+from tqdm.contrib.concurrent import process_map
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import silhouette_score, calinski_harabasz_score, davies_bouldin_score
 
@@ -59,6 +63,69 @@ class BaseAlg():
     def get_params(self):
         return self.parameters
 
+class MAFIA(BaseAlg):
+    def __init__(self):
+        self.parameters = {'a': np.linspace(0.5, 5, 5),
+                           'b': np.linspace(0.25, 0.75, 4),
+                           'n': np.arange(100, 2001, 250),
+                           'u': np.arange(1, 11, 5),
+                           'M': np.arange(15, 31, 5),
+                          }
+        self.algorithm = None
+        self.classes_ = None
+        self.current_params = None
+
+    # Can be changed
+    def set_classes(self, X):
+        # Load all the classes 
+        rows = []
+        clusters = []
+        directory = '/data/g0017139/MAFIA'
+        for filename in os.listdir(directory):
+            if filename.endswith(".idx"):
+                loadedrow = pd.read_table(f"{directory}/{filename}",sep="  ", header=None, engine='python').values.tolist()
+                os.remove(f"{directory}/{filename}")
+                clusters.extend(np.repeat(int(filename.split('-')[1].replace('.idx','')), len(loadedrow)))
+                rows.extend(loadedrow)
+        rows = np.array(rows).ravel()
+        clusters = np.array(clusters)
+        # Get some outliers
+        test = np.arange(0,len(X))
+        for x in test:
+            if x not in rows:
+                rows = np.append(rows, x)
+                clusters = np.append(clusters, -1)
+        rows_to_cluster = pd.DataFrame(clusters, index=rows)
+        rows_to_cluster = rows_to_cluster[~rows_to_cluster.index.duplicated(keep='last')]
+        rows_to_cluster = rows_to_cluster.sort_index()
+        self.classes_ = rows_to_cluster.values.ravel()
+
+    def fit(self, X):
+        pd.DataFrame(X).to_csv("/data/g0017139/MAFIA/X.dat", sep = " ",header=False, index=False)
+        start_time = time.time()
+        subprocess.run(f"/home/g0017139/UMCG_Thesis/Working_Code/bin/cppmafia /data/g0017139/MAFIA/X.dat -a {self.current_params['a']} -b {self.current_params['b']} -n {self.current_params['n']} -u {self.current_params['u']} -M {self.current_params['M']}",
+                shell=True)
+        fit_time = time.time() - start_time
+        self.set_classes(X)
+        return fit_time
+
+    def get_classes(self):
+        if self.classes_ is not None:
+            return self.classes_
+        else:
+            warnings.warn('Classes have not been set')
+
+    # Can be changed
+    def helper_set(self, parameter):
+        self.current_params = parameter
+
+    # parameter should be a dictionary
+    def set_params(self, parameter):
+        self.helper_set(parameter)
+
+    def get_params(self):
+        return self.parameters
+
 
 class Kmeans(BaseAlg):
     def __init__(self):
@@ -70,8 +137,8 @@ class Kmeans(BaseAlg):
 class ESSCGrid(BaseAlg):
     def __init__(self):
         self.parameters = {'n_cluster': np.arange(2, 15, 1),
-                           'eta': [0, 0.1, 0.2, 0.3, 0.5, 0.7, 0.9],
-                           'gamma': [1, 2, 5, 10, 50, 100, 1000]
+                           'eta': [0, 0.01, 0.25, 0.5, 0.75, 1.0],
+                           'gamma': [1, 5, 10, 50, 100, 500, 1000]
                            }
         self.algorithm = ESSC(None)
         self.classes_ = None
@@ -88,10 +155,9 @@ class ESSCGrid(BaseAlg):
 
 class ENSC(BaseAlg):
     def __init__(self):
-        self.parameters = {'n_clusters': np.arange(2, 15, 1),
-                           #              'affinity ': ['symmetrize', 'nearest_neighbors'],
-                           'tau': np.linspace(0.1, 1, 4),
-                           'gamma': [5, 50, 100, 500]
+        self.parameters = {'n_clusters': np.arange(2, 6, 1),
+                           'tau': np.linspace(0.1, 1, 3),
+                           'gamma': [1, 5, 100, 500]
                            }
         self.algorithm = ElasticNetSubspaceClustering(algorithm='spams')
         self.classes_ = None
@@ -140,19 +206,25 @@ class Gridsearch():
         self.scores = []
         self.parameters = self.algorithm.get_params()
         self.X = X
+        
+    # Fit alg
+    def fit(self, parameter):
+        self.algorithm.set_params(parameter)
+        fit_time = self.algorithm.fit(self.X)
+        current_scores = self.get_score(self.algorithm.get_classes())
+        current_scores['Fit_Time'] = fit_time
+        current_scores.update(parameter)
+        return current_scores
 
     def start(self):
+        MAX = 24
         combinations = list(self.product_dict(**self.parameters))
-        for parameter in tqdm(combinations):
-            # Fit alg
-            self.algorithm.set_params(parameter)
-            fit_time = self.algorithm.fit(self.X)
-            current_scores = self.get_score(self.algorithm.get_classes())
-            current_scores['Fit_Time'] = fit_time
-            current_scores.update(parameter)
-            self.scores.append(current_scores)
-        with open(f'/home/g0017139/UMCG_Thesis/Working_Code/Results/{self.name}{time.time()}.pkl', 'wb') as f:
-            pickle.dump(pd.DataFrame(self.scores), f, pickle.HIGHEST_PROTOCOL)
+        print('cpu count:')
+        print(os.cpu_count())
+        print(f'used: {MAX}')
+        self.scores = process_map(self.fit, combinations, max_workers=MAX)
+        return self.scores          
+        
 
     def get_alg(self, name):
         if name == 'kmeans':
@@ -163,8 +235,10 @@ class Gridsearch():
             class_alg = ENSC()
         elif name == 'dbscan':
             class_alg = UHDBSCAN()
+        elif name == 'mafia':
+            class_alg = MAFIA()
         else:
-            raise ValueError(f'Algorithm {name} is not implemented chose "kmeans" "essc" "ensc" "dbscan"')
+            raise ValueError(f'Algorithm {name} is not implemented chose "kmeans" "essc" "ensc" "dbscan" "MAFIA"')
         return class_alg
 
     def get_score(self, labels):
@@ -194,7 +268,7 @@ class Gridsearch():
 if __name__ == "__main__":
     argv = sys.argv[1:]
     try:
-        opts, args = getopt.getopt(argv, "f:a:")
+        opts, args = getopt.getopt(argv, "f:a:s:")
     except getopt.GetoptError:
         sys.exit(2)
     for opt, arg in opts:
@@ -202,6 +276,10 @@ if __name__ == "__main__":
             input_path = arg
         elif opt == "-a":
             algorithm_name = arg
+        elif opt == "-s":
+            folder = arg
     df = pd.read_csv(input_path, sep=None, engine='python', header=None)
     search = Gridsearch(algorithm_name, df)
-    search.start()
+    result = search.start()
+    with open(f'/home/g0017139/UMCG_Thesis/Working_Code/Results/{folder}/{algorithm_name}{time.time()}.pkl', 'wb') as f:
+            pickle.dump(pd.DataFrame(result), f, pickle.HIGHEST_PROTOCOL)
