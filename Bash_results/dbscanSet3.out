@@ -1,0 +1,66 @@
+cpu count: 24
+used: 6
+  0%|          | 0/1458 [00:00<?, ?it/s]  0%|          | 0/1458 [47:10<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/Main.py", line 310, in <module>
+    result = search.start()
+  File "/home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/Main.py", line 250, in start
+    self.scores = process_map(self.fit, combinations, max_workers=MAX, chunksize=10)
+  File "/data/g0017139/.envs/ClusterEnv/lib/python3.9/site-packages/tqdm/contrib/concurrent.py", line 130, in process_map
+    return _executor_map(ProcessPoolExecutor, fn, *iterables, **tqdm_kwargs)
+  File "/data/g0017139/.envs/ClusterEnv/lib/python3.9/site-packages/tqdm/contrib/concurrent.py", line 76, in _executor_map
+    return list(tqdm_class(ex.map(fn, *iterables, **map_args), **kwargs))
+  File "/data/g0017139/.envs/ClusterEnv/lib/python3.9/site-packages/tqdm/std.py", line 1180, in __iter__
+    for obj in iterable:
+  File "/data/g0017139/.envs/ClusterEnv/lib/python3.9/concurrent/futures/process.py", line 559, in _chain_from_iterable_of_lists
+    for element in iterable:
+  File "/data/g0017139/.envs/ClusterEnv/lib/python3.9/concurrent/futures/_base.py", line 608, in result_iterator
+    yield fs.pop().result()
+  File "/data/g0017139/.envs/ClusterEnv/lib/python3.9/concurrent/futures/_base.py", line 445, in result
+    return self.__get_result()
+  File "/data/g0017139/.envs/ClusterEnv/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+concurrent.futures.process.BrokenProcessPool: A process in the process pool was terminated abruptly while the future was running or pending.
+slurmstepd: error: Detected 71 oom-kill event(s) in StepId=21543287.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.
+
+
+###############################################################################
+Peregrine Cluster
+Job 21543287 for user 'g0017139'
+Finished at: Mon Oct  4 18:05:47 CEST 2021
+
+Job details:
+============
+
+Job ID              : 21543287
+Name                : dbscan3
+User                : g0017139
+Partition           : regular
+Nodes               : pg-node156
+Number of Nodes     : 1
+Cores               : 6
+Number of Tasks     : 1
+State               : OUT_OF_MEMORY
+Submit              : 2021-10-04T16:21:06
+Start               : 2021-10-04T17:11:59
+End                 : 2021-10-04T18:05:47
+Reserved walltime   : 1-06:00:00
+Used walltime       :   00:53:48
+Used CPU time       :   04:45:11 (efficiency: 88.35%)
+% User (Computation): 76.31%
+% System (I/O)      : 23.69%
+Mem reserved        : 56G/node
+Max Mem (Node/step) : 55.21G (pg-node156, per node)
+Full Max Mem usage  : 55.21G
+Total Disk Read     : 7.14M
+Total Disk Write    : 28.79K
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################

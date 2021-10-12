@@ -1,0 +1,97 @@
+Loading required package: MASS
+[1] "/home/g0017139/UMCG_Thesis/Working_Code/Results/Set1/HDDCGrid6.csv"
+[1] "/home/g0017139/UMCG_Thesis/Working_Code/Results/Set1/HDDCGrid6.csv"
+
+
+###############################################################################
+Peregrine Cluster
+Job 21550163 for user 'g0017139'
+Finished at: Tue Oct  5 09:43:07 CEST 2021
+
+Job details:
+============
+
+Job ID              : 21550163
+Name                : Set1R6
+User                : g0017139
+Partition           : vulture
+Nodes               : pg-node178
+Number of Nodes     : 1
+Cores               : 2
+Number of Tasks     : 1
+State               : COMPLETED
+Submit              : 2021-10-05T09:12:30
+Start               : 2021-10-05T09:12:30
+End                 : 2021-10-05T09:43:07
+Reserved walltime   : 12:00:00
+Used walltime       : 00:30:37
+Used CPU time       : 00:56:36 (efficiency: 92.44%)
+% User (Computation): 82.01%
+% System (I/O)      : 17.99%
+Mem reserved        : 125G/node
+Max Mem (Node/step) : 8.92G (pg-node178, per node)
+Full Max Mem usage  : 8.92G
+Total Disk Read     : 62.41M
+Total Disk Write    : 57.06K
+Hints and tips      :
+ 1) You requested much more memory than your program used.
+    Please reduce the requested amount of memory.
+ *) For more information on these issues see:
+    https://wiki.hpc.rug.nl/peregrine/additional_information/job_hints
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################
+
+
+###############################################################################
+Peregrine Cluster
+Job 21550164 for user 'g0017139'
+Finished at: Tue Oct  5 09:45:45 CEST 2021
+
+Job details:
+============
+
+Job ID              : 21550164
+Name                : Set1R6
+User                : g0017139
+Partition           : vulture
+Nodes               : pg-node187
+Number of Nodes     : 1
+Cores               : 2
+Number of Tasks     : 1
+State               : COMPLETED
+Submit              : 2021-10-05T09:12:40
+Start               : 2021-10-05T09:12:41
+End                 : 2021-10-05T09:45:45
+Reserved walltime   : 12:00:00
+Used walltime       : 00:33:04
+Used CPU time       : 01:02:45 (efficiency: 94.88%)
+% User (Computation): 81.62%
+% System (I/O)      : 18.40%
+Mem reserved        : 125G/node
+Max Mem (Node/step) : 9.25G (pg-node187, per node)
+Full Max Mem usage  : 9.25G
+Total Disk Read     : 62.41M
+Total Disk Write    : 57.06K
+Hints and tips      :
+ 1) You requested much more memory than your program used.
+    Please reduce the requested amount of memory.
+ *) For more information on these issues see:
+    https://wiki.hpc.rug.nl/peregrine/additional_information/job_hints
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################

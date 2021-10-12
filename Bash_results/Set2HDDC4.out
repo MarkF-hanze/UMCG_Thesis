@@ -1,0 +1,51 @@
+Loading required package: MASS
+[1] "/home/g0017139/UMCG_Thesis/Working_Code/Results/Set2/HDDCGrid4.csv"
+Warning message:
+Quick-TRANSfer stage steps exceeded maximum (= 1079600) 
+
+
+###############################################################################
+Peregrine Cluster
+Job 21566565 for user 'g0017139'
+Finished at: Mon Oct 11 00:11:25 CEST 2021
+
+Job details:
+============
+
+Job ID              : 21566565
+Name                : Set2HDDC4
+User                : g0017139
+Partition           : regular
+Nodes               : pg-node041
+Number of Nodes     : 1
+Cores               : 1
+Number of Tasks     : 1
+State               : COMPLETED
+Submit              : 2021-10-07T19:23:10
+Start               : 2021-10-08T01:15:20
+End                 : 2021-10-11T00:11:25
+Reserved walltime   : 8-08:00:00
+Used walltime       : 2-22:56:05
+Used CPU time       : 2-22:54:15 (efficiency: 99.96%)
+% User (Computation): 96.36%
+% System (I/O)      :  3.64%
+Mem reserved        : 125G/node
+Max Mem (Node/step) : 38.62G (pg-node041, per node)
+Full Max Mem usage  : 38.62G
+Total Disk Read     : 62.37M
+Total Disk Write    : 57.06K
+Hints and tips      :
+ 1) You requested much more memory than your program used.
+    Please reduce the requested amount of memory.
+ *) For more information on these issues see:
+    https://wiki.hpc.rug.nl/peregrine/additional_information/job_hints
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################

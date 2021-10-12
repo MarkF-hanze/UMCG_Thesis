@@ -1,0 +1,52 @@
+cpu count: 12
+used: 1
+  0%|          | 0/112 [00:00<?, ?it/s]  1%|          | 1/112 [00:11<21:42, 11.73s/it] 10%|▉         | 11/112 [00:22<02:57,  1.75s/it] 19%|█▉        | 21/112 [00:32<02:02,  1.34s/it] 28%|██▊       | 31/112 [00:43<01:38,  1.22s/it] 37%|███▋      | 41/112 [00:54<01:22,  1.17s/it] 46%|████▌     | 51/112 [01:05<01:09,  1.14s/it] 54%|█████▍    | 61/112 [01:16<00:57,  1.12s/it] 63%|██████▎   | 71/112 [01:27<00:46,  1.12s/it] 72%|███████▏  | 81/112 [01:38<00:34,  1.12s/it] 81%|████████▏ | 91/112 [01:49<00:23,  1.13s/it] 90%|█████████ | 101/112 [02:01<00:12,  1.13s/it] 99%|█████████▉| 111/112 [02:03<00:00,  1.16it/s]100%|██████████| 112/112 [02:03<00:00,  1.10s/it]
+
+
+###############################################################################
+Peregrine Cluster
+Job 21524535 for user 'g0017139'
+Finished at: Fri Oct  1 11:29:00 CEST 2021
+
+Job details:
+============
+
+Job ID              : 21524535
+Name                : kmeansMixing
+User                : g0017139
+Partition           : vulture
+Nodes               : pg-node273
+Number of Nodes     : 1
+Cores               : 1
+Number of Tasks     : 1
+State               : COMPLETED
+Submit              : 2021-10-01T11:24:11
+Start               : 2021-10-01T11:24:11
+End                 : 2021-10-01T11:29:00
+Reserved walltime   : 12:00:00
+Used walltime       : 00:04:49
+Used CPU time       : 00:02:14 (efficiency: 46.55%)
+% User (Computation): 89.88%
+% System (I/O)      : 10.12%
+Mem reserved        : 125G/node
+Max Mem (Node/step) : 768.73M (pg-node273, per node)
+Full Max Mem usage  : 768.73M
+Total Disk Read     : 6.55M
+Total Disk Write    : 10.72K
+Hints and tips      :
+ 1) The program efficiency is low.
+    Check the file in- and output pattern of your application.
+ 2) You requested much more memory than your program used.
+    Please reduce the requested amount of memory.
+ *) For more information on these issues see:
+    https://wiki.hpc.rug.nl/peregrine/additional_information/job_hints
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################

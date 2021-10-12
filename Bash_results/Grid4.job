@@ -1,15 +1,14 @@
 #!/bin/bash
-#SBATCH --time=00:10:00
-#SBATCH --job-name=multi
-#SBATCH --output=multi6.out
-#SBATCH --mem=14GB
+#SBATCH --time=12:00:00
+#SBATCH --job-name=kmeans3
+#SBATCH --output=kmeansSet3.out
+#SBATCH --mem=124GB
+#SBATCH --ntasks=1
 #SBATCH --nodes=1
-#SBATCH --ntasks=4
-
 #SBATCH --partition=regular
 
 module load Anaconda3/2020.11
 eval "$(conda shell.bash hook)"
 conda activate /data/g0017139/.envs/ClusterEnv
 
-python3 /home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/Main.py -f /data/g0017139/gene_expression_norm.dat -a kmeans
+python3 /home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/Main.py -f /data/g0017139/TCGA__RSEM_norm.dat -a kmeans -s Set4

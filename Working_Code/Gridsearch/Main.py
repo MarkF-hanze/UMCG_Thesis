@@ -18,6 +18,8 @@ import time
 import numpy as np
 
 from multiprocessing import Pool
+from sklearn.cluster import AgglomerativeClustering
+from scipy.cluster.hierarchy import dendrogram, linkage
 from tqdm.contrib.concurrent import process_map
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import silhouette_score, calinski_harabasz_score, davies_bouldin_score
@@ -34,6 +36,7 @@ class BaseAlg():
         self.classes_ = self.algorithm.labels_
 
     def fit(self, X):
+        self.classes_ = None
         start_time = time.time()
         self.algorithm.fit(X)
         fit_time = time.time() - start_time
@@ -62,6 +65,23 @@ class BaseAlg():
 
     def get_params(self):
         return self.parameters
+    
+class Hierachical(BaseAlg):
+    def __init__(self, X):
+        self.parameters = {'n_clusters': np.arange(2,25),
+        }
+        self.algorithm = AgglomerativeClustering()
+        self.corr = 1 - np.absolute(pd.DataFrame(X).T.corr().values)
+        
+        
+    def fit(self, X):
+        self.classes_ = None
+        start_time = time.time()
+        self.algorithm.fit(self.corr)
+        fit_time = time.time() - start_time
+        self.set_classes(X)
+        return fit_time
+
 
 class MAFIA(BaseAlg):
     def __init__(self):
@@ -101,6 +121,7 @@ class MAFIA(BaseAlg):
         self.classes_ = rows_to_cluster.values.ravel()
 
     def fit(self, X):
+        self.classes_ = None
         pd.DataFrame(X).to_csv("/data/g0017139/MAFIA/X.dat", sep = " ",header=False, index=False)
         start_time = time.time()
         subprocess.run(f"/home/g0017139/UMCG_Thesis/Working_Code/bin/cppmafia /data/g0017139/MAFIA/X.dat -a {self.current_params['a']} -b {self.current_params['b']} -n {self.current_params['n']} -u {self.current_params['u']} -M {self.current_params['M']}",
@@ -137,7 +158,7 @@ class Kmeans(BaseAlg):
 class ESSCGrid(BaseAlg):
     def __init__(self):
         self.parameters = {'n_cluster': np.arange(2, 15, 1),
-                           'eta': [0, 0.01, 0.25, 0.5, 0.75, 1.0],
+                           'eta': [0.01, 0.25, 0.5, 0.75, 1.0],
                            'gamma': [1, 5, 10, 50, 100, 500, 1000]
                            }
         self.algorithm = ESSC(None)
@@ -169,11 +190,11 @@ class ENSC(BaseAlg):
 
 class UHDBSCAN(BaseAlg):
     def __init__(self):
-        self.parameters = {'DimReduction__n_neighbors': np.arange(30, 100, 20),
-                           'DimReduction__min_dist': np.linspace(0, 1, 3),
-                           'DimReduction__n_components': np.arange(1, 100, 25)[::-1],
-                           'Clustering__min_cluster_size': [2, 25, 50, 75, 100],
-                           'Clustering__min_samples': [2, 25, 50, 75, 100],
+        self.parameters = {'DimReduction__n_neighbors': [25, 50, 100],
+                           'DimReduction__min_dist': [0.1, 0.5, 1],
+                           'DimReduction__n_components': [50, 10, 2],
+                           'Clustering__min_cluster_size': [25, 50, 100],
+                           'Clustering__min_samples': [25, 50, 100],
                            'Clustering__cluster_selection_epsilon': [0.1, 0.5, 1],
                            'Clustering__cluster_selection_method': ['eom', 'leaf']
                            }
@@ -202,10 +223,10 @@ class UHDBSCAN(BaseAlg):
 class Gridsearch():
     def __init__(self, name, X):
         self.name = name
-        self.algorithm = self.get_alg(name)
-        self.scores = []
-        self.parameters = self.algorithm.get_params()
         self.X = X
+        self.scores = []
+        self.algorithm = self.get_alg(name)
+        self.parameters = self.algorithm.get_params()
         
     # Fit alg
     def fit(self, parameter):
@@ -214,15 +235,19 @@ class Gridsearch():
         current_scores = self.get_score(self.algorithm.get_classes())
         current_scores['Fit_Time'] = fit_time
         current_scores.update(parameter)
+        if 'n_clusters' not in current_scores:
+            current_scores['n_clusters'] = len(set(self.algorithm.get_classes()))
+            if -1 in self.algorithm.get_classes():
+                current_scores['n_clusters'] = current_scores['n_clusters'] - 1
+              
         return current_scores
 
     def start(self):
-        MAX = 24
+        MAX = 6
         combinations = list(self.product_dict(**self.parameters))
-        print('cpu count:')
-        print(os.cpu_count())
+        print(f'cpu count: {os.cpu_count()}')
         print(f'used: {MAX}')
-        self.scores = process_map(self.fit, combinations, max_workers=MAX)
+        self.scores = process_map(self.fit, combinations, max_workers=MAX, chunksize=10)
         return self.scores          
         
 
@@ -237,14 +262,16 @@ class Gridsearch():
             class_alg = UHDBSCAN()
         elif name == 'mafia':
             class_alg = MAFIA()
+        elif name == 'hierach':
+            class_alg = Hierachical(self.X)
         else:
-            raise ValueError(f'Algorithm {name} is not implemented chose "kmeans" "essc" "ensc" "dbscan" "MAFIA"')
+            raise ValueError(f'Algorithm {name} is not implemented chose "kmeans" "essc" "ensc" "dbscan" "MAFIA", "hierach"')
         return class_alg
 
     def get_score(self, labels):
         result = {}
         try:
-            result['silhouette_score'] = silhouette_score(self.X, labels, metric='euclidean')
+            result['silhouette_score'] = silhouette_score(self.X, labels, metric='manhattan')
         except:
             result['silhouette_score'] = np.nan
 

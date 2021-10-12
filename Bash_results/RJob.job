@@ -1,14 +1,14 @@
 #!/bin/bash
 #SBATCH --nodes=1
-#SBATCH --time=12:00:00
-#SBATCH --job-name=R_Script_set2
-#SBATCH --output=HDDC_set2.out
-#SBATCH --mem=124GB
-#SBATCH --ntasks=24
-#SBATCH --partition=vulture
+#SBATCH --time=200:00:00
+#SBATCH --job-name=TestTime
+#SBATCH --output=TestTime.out
+#SBATCH --mem=250GB
+#SBATCH --ntasks=1
+#SBATCH --partition=himem
 
 module load Anaconda3/2020.11
 eval "$(conda shell.bash hook)"
 conda activate /data/g0017139/.envs/r_env
 
-Rscript /home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/HDDC.R
+Rscript /home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/TestTimeR.R 

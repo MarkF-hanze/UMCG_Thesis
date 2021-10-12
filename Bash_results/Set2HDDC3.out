@@ -1,0 +1,49 @@
+Loading required package: MASS
+[1] "/home/g0017139/UMCG_Thesis/Working_Code/Results/Set2/HDDCGrid3.csv"
+
+
+###############################################################################
+Peregrine Cluster
+Job 21566564 for user 'g0017139'
+Finished at: Sun Oct 10 17:29:38 CEST 2021
+
+Job details:
+============
+
+Job ID              : 21566564
+Name                : Set2HDDC3
+User                : g0017139
+Partition           : regular
+Nodes               : pg-node052
+Number of Nodes     : 1
+Cores               : 1
+Number of Tasks     : 1
+State               : COMPLETED
+Submit              : 2021-10-07T19:22:58
+Start               : 2021-10-08T01:15:20
+End                 : 2021-10-10T17:29:38
+Reserved walltime   : 8-08:00:00
+Used walltime       : 2-16:14:18
+Used CPU time       : 2-04:08:20 (efficiency: 81.16%)
+% User (Computation): 96.86%
+% System (I/O)      :  3.14%
+Mem reserved        : 125G/node
+Max Mem (Node/step) : 39.19G (pg-node052, per node)
+Full Max Mem usage  : 39.19G
+Total Disk Read     : 51.18M
+Total Disk Write    : 57.06K
+Hints and tips      :
+ 1) You requested much more memory than your program used.
+    Please reduce the requested amount of memory.
+ *) For more information on these issues see:
+    https://wiki.hpc.rug.nl/peregrine/additional_information/job_hints
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################
