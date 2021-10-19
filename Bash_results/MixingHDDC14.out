@@ -1,0 +1,49 @@
+Loading required package: MASS
+[1] "/home/g0017139/UMCG_Thesis/Working_Code/Results/Set3/HDDCGrid14.csv"
+
+
+###############################################################################
+Peregrine Cluster
+Job 21585413 for user 'g0017139'
+Finished at: Tue Oct 12 23:40:14 CEST 2021
+
+Job details:
+============
+
+Job ID              : 21585413
+Name                : MiHDDC14
+User                : g0017139
+Partition           : vulture
+Nodes               : pg-node168
+Number of Nodes     : 1
+Cores               : 12
+Number of Tasks     : 1
+State               : COMPLETED
+Submit              : 2021-10-12T15:00:52
+Start               : 2021-10-12T23:31:37
+End                 : 2021-10-12T23:40:14
+Reserved walltime   : 12:00:00
+Used walltime       : 00:08:37
+Used CPU time       : 01:40:35 (efficiency: 97.28%)
+% User (Computation): 43.35%
+% System (I/O)      : 56.67%
+Mem reserved        : 125G/node
+Max Mem (Node/step) : 5.27G (pg-node168, per node)
+Full Max Mem usage  : 5.27G
+Total Disk Read     : 60.69M
+Total Disk Write    : 36.50K
+Hints and tips      :
+ 1) You requested much more memory than your program used.
+    Please reduce the requested amount of memory.
+ *) For more information on these issues see:
+    https://wiki.hpc.rug.nl/peregrine/additional_information/job_hints
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################

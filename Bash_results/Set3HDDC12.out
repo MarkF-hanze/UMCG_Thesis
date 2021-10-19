@@ -1,2 +1,51 @@
 Loading required package: MASS
 [1] "/home/g0017139/UMCG_Thesis/Working_Code/Results/Set4/HDDCGrid12.csv"
+Warning message:
+did not converge in 10 iterations 
+
+
+###############################################################################
+Peregrine Cluster
+Job 21566657 for user 'g0017139'
+Finished at: Wed Oct 13 18:18:57 CEST 2021
+
+Job details:
+============
+
+Job ID              : 21566657
+Name                : Set3HDDC12
+User                : g0017139
+Partition           : regular
+Nodes               : pg-node019
+Number of Nodes     : 1
+Cores               : 1
+Number of Tasks     : 1
+State               : COMPLETED
+Submit              : 2021-10-07T19:45:18
+Start               : 2021-10-11T10:27:52
+End                 : 2021-10-13T18:18:57
+Reserved walltime   : 8-08:00:00
+Used walltime       : 2-07:51:05
+Used CPU time       : 2-07:49:52 (efficiency: 99.96%)
+% User (Computation): 94.84%
+% System (I/O)      :  5.16%
+Mem reserved        : 125G/node
+Max Mem (Node/step) : 48.06G (pg-node019, per node)
+Full Max Mem usage  : 48.06G
+Total Disk Read     : 60.68M
+Total Disk Write    : 36.50K
+Hints and tips      :
+ 1) You requested much more memory than your program used.
+    Please reduce the requested amount of memory.
+ *) For more information on these issues see:
+    https://wiki.hpc.rug.nl/peregrine/additional_information/job_hints
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################

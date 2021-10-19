@@ -1,37 +1,37 @@
-cpu count: 28
+cpu count: 24
 used: 6
-  0%|          | 0/112 [00:00<?, ?it/s]  1%|          | 1/112 [2:05:04<231:22:54, 7504.27s/it]  2%|▏         | 2/112 [2:05:04<94:25:29, 3090.27s/it]  10%|▉         | 11/112 [2:13:31<11:31:07, 410.57s/it] 54%|█████▍    | 61/112 [3:40:26<2:01:10, 142.55s/it]  55%|█████▌    | 62/112 [3:40:27<1:55:54, 139.08s/it] 63%|██████▎   | 71/112 [3:45:20<1:17:39, 113.65s/it] 64%|██████▍   | 72/112 [3:45:20<1:13:00, 109.50s/it] 81%|████████▏ | 91/112 [3:51:02<22:23, 63.97s/it]   100%|██████████| 112/112 [3:51:02<00:00, 123.78s/it]
+  0%|          | 0/56 [00:00<?, ?it/s]  2%|▏         | 1/56 [10:04:47<554:23:39, 36287.62s/it]  4%|▎         | 2/56 [10:04:48<224:08:06, 14942.34s/it] 20%|█▉        | 11/56 [10:06:36<21:56:40, 1755.57s/it]  38%|███▊      | 21/56 [10:10:41<7:14:41, 745.20s/it]   55%|█████▌    | 31/56 [10:11:21<2:50:05, 408.22s/it] 73%|███████▎  | 41/56 [10:11:54<1:02:11, 248.74s/it]100%|██████████| 56/56 [10:11:54<00:00, 655.61s/it]  
 
 
 ###############################################################################
 Peregrine Cluster
-Job 21538991 for user 'g0017139'
-Finished at: Mon Oct  4 14:05:35 CEST 2021
+Job 21604254 for user 'g0017139'
+Finished at: Sat Oct 16 23:55:29 CEST 2021
 
 Job details:
 ============
 
-Job ID              : 21538991
+Job ID              : 21604254
 Name                : kmeans2
 User                : g0017139
-Partition           : vulture
-Nodes               : pg-node163
+Partition           : regular
+Nodes               : pg-node136
 Number of Nodes     : 1
-Cores               : 6
+Cores               : 1
 Number of Tasks     : 1
 State               : COMPLETED
-Submit              : 2021-10-04T10:06:55
-Start               : 2021-10-04T10:06:56
-End                 : 2021-10-04T14:05:35
-Reserved walltime   : 12:00:00
-Used walltime       : 03:58:39
-Used CPU time       : 23:10:06 (efficiency: 97.08%)
-% User (Computation): 76.46%
-% System (I/O)      : 23.54%
+Submit              : 2021-10-15T13:04:41
+Start               : 2021-10-16T13:35:40
+End                 : 2021-10-16T23:55:29
+Reserved walltime   : 4-04:00:00
+Used walltime       :   10:19:49
+Used CPU time       :   10:17:23 (efficiency: 99.61%)
+% User (Computation): 98.63%
+% System (I/O)      :  1.37%
 Mem reserved        : 125G/node
-Max Mem (Node/step) : 59.83G (pg-node163, per node)
-Full Max Mem usage  : 59.83G
-Total Disk Read     : 6.57M
+Max Mem (Node/step) : 60.49G (pg-node136, per node)
+Full Max Mem usage  : 60.49G
+Total Disk Read     : 6.53M
 Total Disk Write    : 10.72K
 Hints and tips      :
  1) You requested much more memory than your program used.

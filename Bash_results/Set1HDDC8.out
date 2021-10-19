@@ -1,0 +1,44 @@
+Loading required package: MASS
+[1] "/home/g0017139/UMCG_Thesis/Working_Code/Results/Set1/HDDCGrid8.csv"
+
+
+###############################################################################
+Peregrine Cluster
+Job 21585438 for user 'g0017139'
+Finished at: Tue Oct 12 23:51:41 CEST 2021
+
+Job details:
+============
+
+Job ID              : 21585438
+Name                : S1HDDC8
+User                : g0017139
+Partition           : vulture
+Nodes               : pg-node260
+Number of Nodes     : 1
+Cores               : 12
+Number of Tasks     : 1
+State               : COMPLETED
+Submit              : 2021-10-12T15:16:50
+Start               : 2021-10-12T23:32:08
+End                 : 2021-10-12T23:51:41
+Reserved walltime   : 12:00:00
+Used walltime       : 00:19:33
+Used CPU time       : 03:18:44 (efficiency: 84.71%)
+% User (Computation): 52.93%
+% System (I/O)      : 47.07%
+Mem reserved        : 125G/node
+Max Mem (Node/step) : 28.22G (pg-node260, per node)
+Full Max Mem usage  : 28.22G
+Total Disk Read     : 60.67M
+Total Disk Write    : 36.50K
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################

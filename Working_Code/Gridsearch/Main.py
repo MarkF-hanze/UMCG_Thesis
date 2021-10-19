@@ -150,7 +150,7 @@ class MAFIA(BaseAlg):
 
 class Kmeans(BaseAlg):
     def __init__(self):
-        self.parameters = {'n_clusters': np.arange(2, 30), 'batch_size': [128, 256, 512, 1024]}
+        self.parameters = {'n_clusters': np.arange(2, 16), 'batch_size': [128, 256, 512, 1024]}
         self.algorithm = MiniBatchKMeans(random_state=0)
         self.classes_ = None
 
@@ -271,7 +271,13 @@ class Gridsearch():
     def get_score(self, labels):
         result = {}
         try:
-            result['silhouette_score'] = silhouette_score(self.X, labels, metric='manhattan')
+            if len(self.X) > 10_00:
+                score = 0
+                for _ in range(2):
+                    score += silhouette_score(self.X, labels, metric='manhattan', sample_size=round(0.2 * len(self.X)))
+                result['silhouette_score'] = score / 2
+            else:
+                result['silhouette_score'] = silhouette_score(self.X, labels, metric='manhattan')
         except:
             result['silhouette_score'] = np.nan
 

@@ -1,36 +1,38 @@
-/data/g0017139/.envs/r_env/lib/R/bin/R: line 240: /data/g0017139/.envs/r_env/lib/R/etc/ldpaths: No such file or directory
+Loading required package: MASS
+[1] "/home/g0017139/UMCG_Thesis/Working_Code/Results/Set4/HDDCGrid11.csv"
+slurmstepd: error: *** JOB 21601935 ON pg-node185 CANCELLED AT 2021-10-18T08:11:12 DUE TO TIME LIMIT ***
 
 
 ###############################################################################
 Peregrine Cluster
-Job 21566656 for user 'g0017139'
-Finished at: Mon Oct 11 10:28:03 CEST 2021
+Job 21601935 for user 'g0017139'
+Finished at: Mon Oct 18 08:11:16 CEST 2021
 
 Job details:
 ============
 
-Job ID              : 21566656
-Name                : Set3HDDC11
+Job ID              : 21601935
+Name                : S3HDDC11
 User                : g0017139
 Partition           : regular
-Nodes               : pg-node066
+Nodes               : pg-node185
 Number of Nodes     : 1
 Cores               : 1
 Number of Tasks     : 1
-State               : FAILED
-Submit              : 2021-10-07T19:45:11
-Start               : 2021-10-11T10:27:52
-End                 : 2021-10-11T10:28:03
-Reserved walltime   : 8-08:00:00
-Used walltime       :   00:00:11
-Used CPU time       :   00:00:03 (efficiency: 28.33%)
-% User (Computation): 74.45%
-% System (I/O)      : 25.55%
-Mem reserved        : 125G/node
-Max Mem (Node/step) : 0.00  (Node unknown, N/A)
-Full Max Mem usage  : 0.00 
-Total Disk Read     : 0.00 
-Total Disk Write    : 0.00 
+State               : CANCELLED,TIMEOUT
+Submit              : 2021-10-15T10:10:49
+Start               : 2021-10-15T10:10:55
+End                 : 2021-10-18T08:11:15
+Reserved walltime   : 2-22:00:00
+Used walltime       : 2-22:00:20
+Used CPU time       : 2-21:55:54 (efficiency: 99.89%)
+% User (Computation): 92.61%
+% System (I/O)      :  7.39%
+Mem reserved        : 55G/node
+Max Mem (Node/step) : 43.65G (pg-node185, per node)
+Full Max Mem usage  : 43.65G
+Total Disk Read     : 49.51M
+Total Disk Write    : 37.46K
 
 
 Acknowledgements:

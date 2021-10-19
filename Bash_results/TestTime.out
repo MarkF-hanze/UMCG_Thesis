@@ -17668,3 +17668,57 @@ https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
 ################################################################################
 [1] 97471.46
 [1] 6477
+[1] 182054.2
+Warning message:
+did not converge in 10 iterations 
+[1]  215 2159 4318 6477
+[1]    895.4548  34420.9773  97471.4629 182054.2317
+null device 
+          1 
+
+
+###############################################################################
+Peregrine Cluster
+Job 21566664 for user 'g0017139'
+Finished at: Thu Oct 14 09:04:09 CEST 2021
+
+Job details:
+============
+
+Job ID              : 21566664
+Name                : TestTime
+User                : g0017139
+Partition           : himem
+Nodes               : pg-memory07
+Number of Nodes     : 1
+Cores               : 1
+Number of Tasks     : 1
+State               : COMPLETED
+Submit              : 2021-10-07T19:47:14
+Start               : 2021-10-10T17:35:01
+End                 : 2021-10-14T09:04:09
+Reserved walltime   : 8-08:00:00
+Used walltime       : 3-15:29:08
+Used CPU time       : 3-15:22:39 (efficiency: 99.88%)
+% User (Computation): 94.94%
+% System (I/O)      :  5.06%
+Mem reserved        : 250G/node
+Max Mem (Node/step) : 40.01G (pg-memory07, per node)
+Full Max Mem usage  : 40.01G
+Total Disk Read     : 60.70M
+Total Disk Write    : 36.50K
+Hints and tips      :
+ 1) You requested much more memory than your program used.
+    Please reduce the requested amount of memory.
+ *) For more information on these issues see:
+    https://wiki.hpc.rug.nl/peregrine/additional_information/job_hints
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################
