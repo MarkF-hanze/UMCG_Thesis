@@ -1,0 +1,10 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --time=12:00:00
+#SBATCH --job-name=SOM
+#SBATCH --output=SOM.out
+#SBATCH --mem=125GB
+#SBATCH --ntasks=1
+#SBATCH --partition=vulture
+
+/data/g0017139/SOM/larfdssom -f /data/g0017139/SOM/test1.csv -v 0.7 -l 0.1 
