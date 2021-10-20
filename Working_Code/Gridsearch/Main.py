@@ -204,7 +204,7 @@ class UHDBSCAN(BaseAlg):
         self.algorithm = Pipeline([('DimReduction',
                                     umap.UMAP()),
                                    ('Clustering',
-                                    hdbscan.HDBSCAN())
+                                    hdbscan.HDBSCAN(core_dist_n_jobs=-1))
                                    ])
         self.classes_ = None
 
@@ -271,25 +271,26 @@ class Gridsearch():
     def get_score(self, labels):
         result = {}
         try:
-            if len(self.X) > 10_00:
-                score = 0
-                for _ in range(2):
-                    score += silhouette_score(self.X, labels, metric='manhattan', sample_size=round(0.2 * len(self.X)))
-                result['silhouette_score'] = score / 2
-            else:
-                result['silhouette_score'] = silhouette_score(self.X, labels, metric='manhattan')
+            result['silhouette_score_euclidean'] = silhouette_score(self.X, labels, metric='euclidean', n_jobs=-1)
         except:
             result['silhouette_score'] = np.nan
-
+        try:
+            result['silhouette_score_jaccard'] = silhouette_score(self.X, labels, metric='jaccard', n_jobs=-1)
+        except:
+            result['silhouette_score'] = np.nan
+        try:
+            result['silhouette_score_correlation'] = silhouette_score(self.X, labels, metric='correlation', n_jobs=-1)
+        except:
+            result['silhouette_score'] = np.nan
+        try:
+            result['silhouette_score_mahalanobis'] = silhouette_score(self.X, labels, metric='mahalanobis', n_jobs=-1)
+        except:
+            result['silhouette_score'] = np.nan
         try:
             result['calinski_harabasz_score'] = calinski_harabasz_score(self.X, labels)
         except:
             result['calinski_harabasz_score'] = np.nan
 
-        try:
-            result['davies_bouldin_score'] = davies_bouldin_score(self.X, labels)
-        except:
-            result['davies_bouldin_score'] = np.nan
         return result
 
     def product_dict(self, **kwargs):
