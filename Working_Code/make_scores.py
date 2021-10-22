@@ -1,4 +1,4 @@
-from Commen_Funtions import get_score, get_score_df, merge_Results, load_sets
+from Commen_Functions import get_score, get_score_df, merge_Results, load_sets
 import pickle
 
 

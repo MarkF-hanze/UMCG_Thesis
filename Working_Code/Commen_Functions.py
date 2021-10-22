@@ -5,24 +5,14 @@ import re
 
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
 from sklearn.metrics import silhouette_score, calinski_harabasz_score, davies_bouldin_score
-from Gridsearch/Main import Gridsearch
+from Gridsearch.Main import Gridsearch
 
 
 def get_score(X, labels):
-    search = Gridsearch('',X)
+    search = Gridsearch('kmeans',X)
     result = search.get_score(labels)
     return result
-    # result = {}
-    # try:
-    #     result['silhouette_score'] = silhouette_score(X, labels, metric='manhattan', n_jobs=-1)
-    # except:
-    #     result['silhouette_score'] = np.nan
-    #
-    # try:
-    #     result['calinski_harabasz_score'] = calinski_harabasz_score(X, labels)
-    # except:
-    #     result['calinski_harabasz_score'] = np.nan
-    # return result
+
 
 
 def get_score_df(df, norm_df):

@@ -1,0 +1,43 @@
+Loading required package: MASS
+
+
+###############################################################################
+Peregrine Cluster
+Job 21914439 for user 'g0017139'
+Finished at: Thu Oct 21 01:41:12 CEST 2021
+
+Job details:
+============
+
+Job ID              : 21914439
+Name                : 3HDDC6
+User                : g0017139
+Partition           : vulture
+Nodes               : pg-node251
+Number of Nodes     : 1
+Cores               : 3
+Number of Tasks     : 1
+State               : COMPLETED
+Submit              : 2021-10-20T23:09:59
+Start               : 2021-10-21T01:40:40
+End                 : 2021-10-21T01:41:12
+Reserved walltime   : 12:00:00
+Used walltime       : 00:00:32
+Used CPU time       : 00:00:58 (efficiency: 61.28%)
+% User (Computation): 69.17%
+% System (I/O)      : 30.83%
+Mem reserved        : 124G/node
+Max Mem (Node/step) : 490.78M (pg-node251, per node)
+Full Max Mem usage  : 490.78M
+Total Disk Read     : 60.67M
+Total Disk Write    : 36.50K
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################

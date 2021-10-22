@@ -1,0 +1,219 @@
+  0%|          | 0/56 [00:00<?, ?it/s]  2%|▏         | 1/56 [00:11<10:45, 11.74s/it]  4%|▎         | 2/56 [00:23<10:32, 11.72s/it]  5%|▌         | 3/56 [00:36<10:47, 12.22s/it]  7%|▋         | 4/56 [00:52<11:55, 13.75s/it]  9%|▉         | 5/56 [01:02<10:42, 12.60s/it] 11%|█         | 6/56 [01:14<10:09, 12.19s/it] 12%|█▎        | 7/56 [01:26<10:03, 12.31s/it] 14%|█▍        | 8/56 [01:42<10:48, 13.51s/it] 16%|█▌        | 9/56 [01:53<09:55, 12.67s/it] 18%|█▊        | 10/56 [02:05<09:25, 12.29s/it] 20%|█▉        | 11/56 [02:17<09:14, 12.32s/it] 21%|██▏       | 12/56 [02:33<09:49, 13.40s/it] 23%|██▎       | 13/56 [02:43<08:53, 12.41s/it] 25%|██▌       | 14/56 [02:54<08:21, 11.94s/it] 27%|██▋       | 15/56 [03:07<08:21, 12.24s/it] 29%|██▊       | 16/56 [03:23<09:00, 13.52s/it] 30%|███       | 17/56 [03:34<08:15, 12.70s/it] 32%|███▏      | 18/56 [03:46<07:54, 12.48s/it] 34%|███▍      | 19/56 [04:00<07:53, 12.79s/it] 36%|███▌      | 20/56 [04:15<08:09, 13.60s/it] 38%|███▊      | 21/56 [04:26<07:27, 12.78s/it] 39%|███▉      | 22/56 [04:38<07:02, 12.44s/it] 41%|████      | 23/56 [04:51<06:54, 12.57s/it] 43%|████▎     | 24/56 [05:06<07:05, 13.30s/it] 45%|████▍     | 25/56 [05:16<06:25, 12.45s/it] 46%|████▋     | 26/56 [05:27<06:02, 12.10s/it] 48%|████▊     | 27/56 [05:40<05:56, 12.29s/it] 50%|█████     | 28/56 [05:56<06:16, 13.45s/it] 52%|█████▏    | 29/56 [06:07<05:39, 12.58s/it] 54%|█████▎    | 30/56 [06:18<05:19, 12.30s/it] 55%|█████▌    | 31/56 [06:30<05:05, 12.20s/it] 57%|█████▋    | 32/56 [06:48<05:32, 13.87s/it] 59%|█████▉    | 33/56 [06:59<04:55, 12.86s/it] 61%|██████    | 34/56 [07:11<04:40, 12.74s/it] 62%|██████▎   | 35/56 [07:25<04:32, 12.95s/it] 64%|██████▍   | 36/56 [07:43<04:52, 14.63s/it] 66%|██████▌   | 37/56 [07:54<04:14, 13.42s/it] 68%|██████▊   | 38/56 [08:05<03:52, 12.93s/it] 70%|██████▉   | 39/56 [08:18<03:39, 12.92s/it] 71%|███████▏  | 40/56 [08:34<03:39, 13.73s/it] 73%|███████▎  | 41/56 [08:45<03:12, 12.81s/it] 75%|███████▌  | 42/56 [08:57<02:55, 12.56s/it] 77%|███████▋  | 43/56 [09:10<02:45, 12.74s/it] 79%|███████▊  | 44/56 [09:26<02:44, 13.71s/it] 80%|████████  | 45/56 [09:37<02:21, 12.84s/it] 82%|████████▏ | 46/56 [09:48<02:04, 12.43s/it] 84%|████████▍ | 47/56 [10:01<01:54, 12.71s/it] 86%|████████▌ | 48/56 [10:17<01:49, 13.70s/it] 88%|████████▊ | 49/56 [10:29<01:30, 12.95s/it] 89%|████████▉ | 50/56 [10:41<01:16, 12.68s/it] 91%|█████████ | 51/56 [10:54<01:04, 12.81s/it] 93%|█████████▎| 52/56 [11:09<00:54, 13.63s/it] 95%|█████████▍| 53/56 [11:20<00:38, 12.68s/it] 96%|█████████▋| 54/56 [11:32<00:24, 12.48s/it] 98%|█████████▊| 55/56 [11:45<00:12, 12.57s/it]100%|██████████| 56/56 [12:00<00:00, 13.40s/it]100%|██████████| 56/56 [12:00<00:00, 12.86s/it]
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+Euclid
+Correlation
+manhattan
+
+
+###############################################################################
+Peregrine Cluster
+Job 21916842 for user 'g0017139'
+Finished at: Thu Oct 21 19:18:13 CEST 2021
+
+Job details:
+============
+
+Job ID              : 21916842
+Name                : kmeans1
+User                : g0017139
+Partition           : vulture
+Nodes               : pg-node163
+Number of Nodes     : 1
+Cores               : 24
+Number of Tasks     : 1
+State               : COMPLETED
+Submit              : 2021-10-21T15:16:58
+Start               : 2021-10-21T19:04:06
+End                 : 2021-10-21T19:18:13
+Reserved walltime   : 12:00:00
+Used walltime       : 00:14:07
+Used CPU time       : 03:58:05 (efficiency: 70.27%)
+% User (Computation): 80.78%
+% System (I/O)      : 19.21%
+Mem reserved        : 124G/node
+Max Mem (Node/step) : 8.54G (pg-node163, per node)
+Full Max Mem usage  : 8.54G
+Total Disk Read     : 6.54M
+Total Disk Write    : 10.72K
+Hints and tips      :
+ 1) The program efficiency is low. Your program is not using the assigned cores
+    effectively. Please check if you are using all the cores you requested.
+    You may also need to check the file in- and output pattern of your program.
+ 2) You requested much more memory than your program used.
+    Please reduce the requested amount of memory.
+ *) For more information on these issues see:
+    https://wiki.hpc.rug.nl/peregrine/additional_information/job_hints
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################

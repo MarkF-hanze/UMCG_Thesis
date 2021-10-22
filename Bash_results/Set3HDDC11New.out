@@ -41,3 +41,50 @@ Please see this page for information about acknowledging Peregrine in your publi
 https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
 
 ################################################################################
+
+
+###############################################################################
+Peregrine Cluster
+Job 21839096 for user 'g0017139'
+Finished at: Thu Oct 21 20:58:58 CEST 2021
+
+Job details:
+============
+
+Job ID              : 21839096
+Name                : S3HDDC11
+User                : g0017139
+Partition           : regular
+Nodes               : pg-node076
+Number of Nodes     : 1
+Cores               : 2
+Number of Tasks     : 1
+State               : COMPLETED
+Submit              : 2021-10-18T09:10:24
+Start               : 2021-10-18T09:10:24
+End                 : 2021-10-21T20:58:58
+Reserved walltime   : 4-04:00:00
+Used walltime       : 3-11:48:34
+Used CPU time       : 5-18:28:39 (efficiency: 82.61%)
+% User (Computation): 85.71%
+% System (I/O)      : 14.29%
+Mem reserved        : 125G/node
+Max Mem (Node/step) : 68.63G (pg-node076, per node)
+Full Max Mem usage  : 68.63G
+Total Disk Read     : 60.69M
+Total Disk Write    : 36.50K
+Hints and tips      :
+ 1) You requested much more memory than your program used.
+    Please reduce the requested amount of memory.
+ *) For more information on these issues see:
+    https://wiki.hpc.rug.nl/peregrine/additional_information/job_hints
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################

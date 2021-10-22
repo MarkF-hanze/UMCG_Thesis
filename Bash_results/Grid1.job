@@ -1,11 +1,11 @@
 #!/bin/bash
 #SBATCH --time=01:00:00
 #SBATCH --job-name=kmeans1
-#SBATCH --output=kmeansSet1.out
+#SBATCH --output=kmeansSet1Test.out
 #SBATCH --mem=12GB
-#SBATCH --ntasks=6
+#SBATCH --ntasks=12
 #SBATCH --nodes=1
-#SBATCH --partition=vulture
+#SBATCH --partition=regular
 
 module load Anaconda3/2020.11
 eval "$(conda shell.bash hook)"

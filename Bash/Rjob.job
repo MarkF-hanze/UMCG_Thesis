@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --time=100:00:00
+#SBATCH --job-name=2HDDC12
+#SBATCH --output=HDDCS2C12.out
+#SBATCH --mem=124GB
+#SBATCH --ntasks=3
+#SBATCH --partition=himem
+
+module load Anaconda3/2020.11
+eval "$(conda shell.bash hook)"
+conda activate /data/g0017139/.envs/r_env
+
+Rscript /home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/HDDC.R 2 12

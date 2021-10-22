@@ -228,10 +228,35 @@ class Gridsearch():
         self.algorithm = self.get_alg(name)
         self.parameters = self.algorithm.get_params()
         
+    def get_str(self,alg):
+        the_str = str(alg)
+        the_str = the_str.replace('(', '_')
+        the_str = the_str.replace(')', '')
+        the_str = the_str.replace('=', '__')
+        the_str = the_str.replace(',', '_')
+        the_str = the_str.replace('\n', '')
+        for x in range(30):
+            the_str = the_str.replace(' ', '')
+        the_str = the_str.replace('[', '')
+        the_str = the_str.replace(']', '')
+        the_str = the_str.replace("'", '')
+        the_str = the_str.replace("DimReduction", '')
+        the_str = the_str.replace("Clustering", '')
+        the_str = the_str.replace("Pipeline_steps", '')
+        the_str = the_str.replace("dens_frac__0.0_dens_lambda__0.0", '')
+        the_str = the_str.replace("____", '__')
+        the_str = the_str.replace("__UMAP_", 'UMAP_')
+        return the_str
+        
     # Fit alg
-    def fit(self, parameter):
+    def fit(self, parameter, folder):
         self.algorithm.set_params(parameter)
         fit_time = self.algorithm.fit(self.X)
+        # Save alg
+        algorithm_name = get_str(self.algorithm.algorithm)
+        with open(f'/data/g0017139/Models/{folder}/{algorithm_name}.pkl', 'wb') as f:
+            pickle.dump(self.algorithm.algorithm, f, pickle.HIGHEST_PROTOCOL)
+            
         current_scores = self.get_score(self.algorithm.get_classes())
         current_scores['Fit_Time'] = fit_time
         current_scores.update(parameter)
@@ -242,12 +267,11 @@ class Gridsearch():
               
         return current_scores
 
-    def start(self):
-        MAX = 6
+    def start(self, folder):
         combinations = list(self.product_dict(**self.parameters))
-        print(f'cpu count: {os.cpu_count()}')
-        print(f'used: {MAX}')
-        self.scores = process_map(self.fit, combinations, max_workers=MAX, chunksize=10)
+        self.scores = []
+        for combination in tqdm(combinations):
+            self.scores.append(self.fit(combination, folder))
         return self.scores          
         
 
@@ -273,19 +297,15 @@ class Gridsearch():
         try:
             result['silhouette_score_euclidean'] = silhouette_score(self.X, labels, metric='euclidean', n_jobs=-1)
         except:
-            result['silhouette_score'] = np.nan
-        try:
-            result['silhouette_score_jaccard'] = silhouette_score(self.X, labels, metric='jaccard', n_jobs=-1)
-        except:
-            result['silhouette_score'] = np.nan
+            result['silhouette_score_euclidean'] = np.nan
         try:
             result['silhouette_score_correlation'] = silhouette_score(self.X, labels, metric='correlation', n_jobs=-1)
         except:
-            result['silhouette_score'] = np.nan
+            result['silhouette_score_correlation'] = np.nan
         try:
-            result['silhouette_score_mahalanobis'] = silhouette_score(self.X, labels, metric='mahalanobis', n_jobs=-1)
+            result['silhouette_score_manhattan'] = silhouette_score(self.X, labels, metric='manhattan', n_jobs=-1)
         except:
-            result['silhouette_score'] = np.nan
+            result['silhouette_score_manhattan'] = np.nan
         try:
             result['calinski_harabasz_score'] = calinski_harabasz_score(self.X, labels)
         except:
@@ -314,6 +334,6 @@ if __name__ == "__main__":
             folder = arg
     df = pd.read_csv(input_path, sep=None, engine='python', header=None)
     search = Gridsearch(algorithm_name, df)
-    result = search.start()
+    result = search.start(folder)
     with open(f'/home/g0017139/UMCG_Thesis/Working_Code/Results/{folder}/{algorithm_name}{time.time()}.pkl', 'wb') as f:
             pickle.dump(pd.DataFrame(result), f, pickle.HIGHEST_PROTOCOL)

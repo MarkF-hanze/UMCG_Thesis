@@ -1,0 +1,46 @@
+Traceback (most recent call last):
+  File "/home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/Main.py", line 10, in <module>
+    from TSKFS.fuzzy_cluster import ESSC
+ModuleNotFoundError: No module named 'TSKFS'
+
+
+###############################################################################
+Peregrine Cluster
+Job 21921074 for user 'g0017139'
+Finished at: Fri Oct 22 10:21:33 CEST 2021
+
+Job details:
+============
+
+Job ID              : 21921074
+Name                : dbscan1
+User                : g0017139
+Partition           : vulture
+Nodes               : pg-node252
+Number of Nodes     : 1
+Cores               : 2
+Number of Tasks     : 1
+State               : FAILED
+Submit              : 2021-10-22T10:20:26
+Start               : 2021-10-22T10:20:46
+End                 : 2021-10-22T10:21:33
+Reserved walltime   : 12:00:00
+Used walltime       : 00:00:47
+Used CPU time       : 00:00:03 (efficiency:  3.42%)
+% User (Computation): 58.06%
+% System (I/O)      : 41.94%
+Mem reserved        : 124G/node
+Max Mem (Node/step) : 56.39M (pg-node252, per node)
+Full Max Mem usage  : 56.39M
+Total Disk Read     : 6.52M
+Total Disk Write    : 10.72K
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################
