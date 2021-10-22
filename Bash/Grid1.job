@@ -1,14 +1,14 @@
 #!/bin/bash
-#SBATCH --time=12:00:00
-#SBATCH --job-name=dbscan1
-#SBATCH --output=dbscanSet1.out
-#SBATCH --mem=124GB
-#SBATCH --ntasks=2
+#SBATCH --time=100:00:00
+#SBATCH --job-name=dbscanH2
+#SBATCH --output=dbscanSet2.out
+#SBATCH --mem=250GB
+#SBATCH --ntasks=24
 #SBATCH --nodes=1
-#SBATCH --partition=vulture
+#SBATCH --partition=himem
 
 module load Anaconda3/2020.11
 eval "$(conda shell.bash hook)"
 conda activate /data/g0017139/.envs/ClusterEnv
 
-python3 /home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/Main.py -f /data/g0017139/gene_expression_norm.dat -a dbscan -s TSet1
+python3 /home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/Main.py -f /data/g0017139/GPL570_norm.dat -a dbscan -s TSet2

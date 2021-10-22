@@ -7,8 +7,8 @@ import numpy as np
 from sklearn.cluster import MiniBatchKMeans
 import warnings
 import time
-from TSKFS.fuzzy_cluster import ESSC
-from subspaceClustering.cluster.selfrepresentation import ElasticNetSubspaceClustering
+#from TSKFS.fuzzy_cluster import ESSC
+#from subspaceClustering.cluster.selfrepresentation import ElasticNetSubspaceClustering
 from sklearn.pipeline import Pipeline
 import hdbscan
 import umap
@@ -253,7 +253,7 @@ class Gridsearch():
         self.algorithm.set_params(parameter)
         fit_time = self.algorithm.fit(self.X)
         # Save alg
-        algorithm_name = get_str(self.algorithm.algorithm)
+        algorithm_name = self.get_str(self.algorithm.algorithm)
         with open(f'/data/g0017139/Models/{folder}/{algorithm_name}.pkl', 'wb') as f:
             pickle.dump(self.algorithm.algorithm, f, pickle.HIGHEST_PROTOCOL)
             

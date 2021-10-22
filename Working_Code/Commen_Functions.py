@@ -82,6 +82,11 @@ def load_sets(loaded_set):
 
         Type_df = pd.read_csv("/data/g0017139/Set2/GPL570__Sample_To_TumorType.csv").set_index('GSM_IDENTIFIER')
         df = df.join(Type_df)
+        test = df['TYPE'].str.split(' - ', expand=True)[0]
+        test = (['Leukemia' if ('leukemia' in x) else x for x in test])
+        test = (['Lymphoma' if ('lymphoma' in x) else x for x in test])
+        test = (['Sarcoma' if ('sarcoma' in x) or ('Sarcoma' in x) else x for x in test])
+        df['TYPE'] = test
 
     if loaded_set == 3:
         df = pd.read_csv('/data/g0017139/Set2/Consensus mixing matrix.txt', sep='\t').set_index('Unnamed: 0')

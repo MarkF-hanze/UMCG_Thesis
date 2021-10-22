@@ -1,1 +1,48 @@
 Loading required package: MASS
+
+
+###############################################################################
+Peregrine Cluster
+Job 21911576 for user 'g0017139'
+Finished at: Fri Oct 22 15:27:05 CEST 2021
+
+Job details:
+============
+
+Job ID              : 21911576
+Name                : 2HDDC14
+User                : g0017139
+Partition           : himem
+Nodes               : pg-memory01
+Number of Nodes     : 1
+Cores               : 3
+Number of Tasks     : 1
+State               : COMPLETED
+Submit              : 2021-10-20T17:07:05
+Start               : 2021-10-21T17:25:45
+End                 : 2021-10-22T15:27:04
+Reserved walltime   : 4-04:00:00
+Used walltime       :   22:01:19
+Used CPU time       : 2-15:59:47 (efficiency: 96.87%)
+% User (Computation): 78.16%
+% System (I/O)      : 21.84%
+Mem reserved        : 500G/node
+Max Mem (Node/step) : 72.85G (pg-memory01, per node)
+Full Max Mem usage  : 72.85G
+Total Disk Read     : 60.71M
+Total Disk Write    : 36.50K
+Hints and tips      :
+ 1) You requested much more memory than your program used.
+    Please reduce the requested amount of memory.
+ *) For more information on these issues see:
+    https://wiki.hpc.rug.nl/peregrine/additional_information/job_hints
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################
