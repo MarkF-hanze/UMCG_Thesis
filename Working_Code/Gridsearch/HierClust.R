@@ -1,6 +1,6 @@
 library(data.table)
 paths = c("/data/g0017139/gene_expression_norm.dat", "/data/g0017139/GPL570_norm.dat", "/data/g0017139/mixing_mat.dat", "/data/g0017139/TCGA__RSEM_norm.dat")
-for (j in 2:4){
+for (j in 1:1){
   mydata <- fread(paths[j], data.table=FALSE)
   print('START!')
   rows.cor <- cor(t(mydata), method = "pearson")

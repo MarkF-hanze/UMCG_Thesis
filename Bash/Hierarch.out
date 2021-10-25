@@ -1,0 +1,95 @@
+[1] "START!"
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+[1] 6
+[1] 7
+[1] 8
+[1] 9
+[1] 10
+[1] 11
+[1] 12
+[1] 13
+[1] 14
+[1] 15
+[1] 2
+[1] "START!"
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+[1] 6
+[1] 7
+[1] 8
+[1] 9
+[1] 10
+[1] 11
+[1] 12
+[1] 13
+[1] 14
+[1] 15
+[1] 3
+[1] "START!"
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+[1] 6
+[1] 7
+[1] 8
+[1] 9
+[1] 10
+[1] 11
+[1] 12
+[1] 13
+[1] 14
+[1] 15
+[1] 4
+
+
+###############################################################################
+Peregrine Cluster
+Job 21911555 for user 'g0017139'
+Finished at: Sat Oct 23 17:16:18 CEST 2021
+
+Job details:
+============
+
+Job ID              : 21911555
+Name                : Hierarch
+User                : g0017139
+Partition           : regular
+Nodes               : pg-node094
+Number of Nodes     : 1
+Cores               : 1
+Number of Tasks     : 1
+State               : COMPLETED
+Submit              : 2021-10-20T17:03:04
+Start               : 2021-10-23T15:09:13
+End                 : 2021-10-23T17:16:18
+Reserved walltime   : 4-04:00:00
+Used walltime       :   02:07:05
+Used CPU time       :   02:06:33 (efficiency: 99.58%)
+% User (Computation): 99.55%
+% System (I/O)      :  0.45%
+Mem reserved        : 125G/node
+Max Mem (Node/step) : 16.87G (pg-node094, per node)
+Full Max Mem usage  : 16.87G
+Total Disk Read     : 49.50M
+Total Disk Write    : 36.50K
+Hints and tips      :
+ 1) You requested much more memory than your program used.
+    Please reduce the requested amount of memory.
+ *) For more information on these issues see:
+    https://wiki.hpc.rug.nl/peregrine/additional_information/job_hints
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################

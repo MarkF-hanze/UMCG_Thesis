@@ -24,14 +24,14 @@ from sklearn.decomposition import PCA, FastICA
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
 from sklearn.cluster import MiniBatchKMeans, AgglomerativeClustering
 from sklearn.metrics import silhouette_score, calinski_harabasz_score, davies_bouldin_score
-from Commen_Funtions import get_score, get_score_df, merge_Results, load_sets
-
+from Commen_Functions import get_score, get_score_df, merge_Results, load_sets
+from Gridsearch.Main import Gridsearch
 
 
 
 from bokeh.transform import factor_cmap, factor_mark
 from bokeh.plotting import figure, show, output_file, save
-from bokeh.models import ColumnDataSource, Dropdown, Select, Panel, Tabs, CustomJS
+from bokeh.models import ColumnDataSource, Dropdown, Select, Panel, Tabs, CustomJS, LinearAxis, Range1d
 from bokeh.palettes import Category20
 from bokeh.layouts import row, column
 from bokeh.transform import cumsum
@@ -58,16 +58,34 @@ def make_countplot(df, x, hue, pallete):
     g1.set_title('Relative counts')
     return fig, fig2
 
-
+#TODO ALLE AXIS
 def cluster_plot_bokeh(grid):
     if 'n_clusters' in grid.columns:
         df = grid.groupby(['n_clusters']).max().reset_index()
         df = df.sort_values('n_clusters')
-        p = figure(width=700, height=500, x_axis_label='Number clusters', y_axis_label='Silhouette score')
-        p.line(df['n_clusters'], df['silhouette_score'])
+        #p1 = figure(width=700, height=500, x_axis_label='Number clusters', y_axis_label='Silhouette score')
+        #p1.line(df['n_clusters'], df['silhouette_score_euclidean'])
+        #print(df.columns)
+        p = figure(width=1400, height=500, x_axis_label='Number clusters', y_axis_label='Harbrasz score')
+        p.line(df['n_clusters'], df['calinski_harabasz_score'], legend_label='calinski_harabasz_score')
+        p.extra_y_ranges = {"foo1": Range1d(start=0, end=0.15)}
+        
+        p.line(df['n_clusters'], df['silhouette_score_euclidean'], 
+               y_range_name="foo1", legend_label='silhouette_score_euclidean', color='red')
+        p.add_layout(LinearAxis(y_range_name="foo1", axis_label='Silhouette score'), 'left')
+        
+        p.line(df['n_clusters'], df['silhouette_score_correlation'],
+               y_range_name="foo1", legend_label='silhouette_score_correlation', color='hotpink')
+        p.line(df['n_clusters'], df['silhouette_score_manhattan'],
+               y_range_name="foo1", legend_label='silhouette_score_manhattan', color='green')
+        # CHANGES HERE: add to dict, don't replace entire dict
+        #p.extra_y_ranges["foo2"] = Range1d(start=21, end=31)
 
-        p1 = figure(width=700, height=500, x_axis_label='Number clusters', y_axis_label='Calinski Harabasz score')
-        p1.line(df['n_clusters'], df['calinski_harabasz_score'])
+        #p.circle(x, y3, color="green", y_range_name="foo2")
+        #p.add_layout(LinearAxis(y_range_name="foo2"), 'right')
+        #p.line(df['n_clusters'], df['calinski_harabasz_score'])
+        #p.add_layout(LinearAxis(y_range_name="foo", axis_label='foo label'), 'right')
+        #p.line(df['n_clusters'], df['silhouette_score_euclidean'], y_range_name="foo")
     else:
         df = grid.groupby(['K']).max().reset_index()
         TOOLTIPS = [
@@ -79,7 +97,7 @@ def cluster_plot_bokeh(grid):
 
         p1 = figure(width=700, height=500, x_axis_label='Number clusters', y_axis_label='ICL score')
         p1.line(df['K'], df['ICL'])
-    return p, p1
+    return p
 
 
 def do_dim_red(X):
@@ -118,65 +136,81 @@ def transform_clusters(clusters):
 
 
 def get_hierarch(load_set, X):
-    clusters, results =  merge_Results(f'/home/g0017139/UMCG_Thesis/Working_Code/Results/Set{load_set}/', 'Hierarch', X)
+    with open(f'/home/g0017139/UMCG_Thesis/Working_Code/Results/TSet{load_set}/Merged_results.pkl', 'rb') as f:
+        results = pickle.load(f)['Hierarch']
+    with open(f'/home/g0017139/UMCG_Thesis/Working_Code/Results/TSet{load_set}/MergedClustersHierarch.pkl', 'rb') as f:
+        clusters = pickle.load(f)
     clusters = transform_clusters(clusters)
     return clusters, results
 
 
 def get_hddc(load_set, X):
     # THE HDDC
-    clusters, results, grid =  merge_Results(f'/home/g0017139/UMCG_Thesis/Working_Code/Results/Set{load_set}/', 'HDDC', X)
+    with open(f'/home/g0017139/UMCG_Thesis/Working_Code/Results/TSet{load_set}/Merged_results.pkl', 'rb') as f:
+        results = pickle.load(f)['hddc']
+    with open(f'/home/g0017139/UMCG_Thesis/Working_Code/Results/TSet{load_set}/MergedClustersHDDC.pkl', 'rb') as f:
+        clusters = pickle.load(f)
     clusters = transform_clusters(clusters)
-    return clusters, results, grid
+    return clusters, results 
 
 
 def transform_results(results):
-    results = results[results.groupby(['n_clusters'])['silhouette_score'].transform(max) == results['silhouette_score']]
+
+    results = results[results.groupby(['n_clusters'])['silhouette_score_manhattan'].transform(max) == results['silhouette_score_manhattan']]
     results = results.groupby('n_clusters').first()
     results = results.reset_index()
     return results
 
 def get_kmeans(load_set, X):
+    search = Gridsearch('kmeans', X)
     # Get the results of k-means for set 1
-    with open(f"/home/g0017139/UMCG_Thesis/Working_Code/Results/Set{load_set}/kmeans.pkl", 'rb') as f:
+    with open(f"/home/g0017139/UMCG_Thesis/Working_Code/Results/TSet{load_set}/kmeans.pkl", 'rb') as f:
             results = pickle.load(f)
 
     results = transform_results(results)
-
     clusters = pd.DataFrame()
     for index, row in results.iterrows():
-        if row['n_clusters'] < 15:
-            kmeans = MiniBatchKMeans(n_clusters=int(row['n_clusters']),
-                                     random_state=0,
-                                     batch_size=int(row['batch_size']))
-            kmeans.fit(X)
-            clusters[int(row['n_clusters'])] = kmeans.labels_
+        kmeans = MiniBatchKMeans(n_clusters=int(row['n_clusters']),
+                                 random_state=0,
+                                 batch_size=int(row['batch_size']))
+        name = search.get_str(kmeans)
+        with open(f"/data/g0017139/Models/TSet{load_set}/{name}.pkl", 'rb') as f:
+            kmeans = pickle.load(f)
+        clusters[int(row['n_clusters'])] = kmeans.labels_
     return clusters, results
 
 def get_dbscan(load_set, X):
+    search = Gridsearch('dbscan', X)
     # Get the results of DBSCAN for set 1
-    with open(f"/home/g0017139/UMCG_Thesis/Working_Code/Results/Set{load_set}/dbscan.pkl", 'rb') as f:
+    with open(f"/home/g0017139/UMCG_Thesis/Working_Code/Results/TSet{load_set}/dbscan.pkl", 'rb') as f:
             results = pickle.load(f)
-
+                                     
     results = transform_results(results)
 
     clusters = pd.DataFrame()
     for index, row in results.iterrows():
-        if row['n_clusters'] < 15:
-            pipe = Pipeline([('DimReduction',
+        f1 = float(row['Clustering__cluster_selection_epsilon'])
+        if f1 == 1.0:
+            f1 = int(f1)
+        
+        pipe = Pipeline([('DimReduction',
                       umap.UMAP(
                           n_neighbors=int(row['DimReduction__n_neighbors']),
                           min_dist=float(row['DimReduction__min_dist']),
-                          n_components=int(row['DimReduction__n_components']),
-                          random_state=1)),
+                          n_components=int(row['DimReduction__n_components']))),
                      ('Clustering',
                      hdbscan.HDBSCAN(min_cluster_size=int(row['Clustering__min_cluster_size']),
                                     min_samples=int(row['Clustering__min_samples']),
-                                    cluster_selection_epsilon=float(row['Clustering__cluster_selection_epsilon']),
-                                    cluster_selection_method=row['Clustering__cluster_selection_method']))
+                                    cluster_selection_epsilon=f1,
+                                    cluster_selection_method=row['Clustering__cluster_selection_method'],
+                                    core_dist_n_jobs=-1
+                                    ))
                     ])
-            pipe.fit(X)
-            clusters[int(row['n_clusters'])] = pipe['Clustering'].labels_
+        name = search.get_str(pipe)
+        with open(f"/data/g0017139/Models/TSet{load_set}/{name}.pkl", 'rb') as f:
+            pipe = pickle.load(f)
+        clusters[int(row['n_clusters'])] = pipe['Clustering'].labels_
+    
     return clusters, results
 
 def tab1(source, df):
@@ -210,24 +244,35 @@ def make_pca_umap(source, alg):
     return p1, p2
 
 
+
+
 def sankey_plot(df):
+    df = df.drop('Type', axis=1)
     l1 = []
     l2 = []
     l3 = []
+    
+    nodes = []
+    edges = []
+    count = 0
     for i in range(len(df.columns) - 1):
         for x in set(df.iloc[:,i]):
             for y in set(df.iloc[:,i + 1]):
-                l1.append(f'{i}_{x}')
-                l2.append(f'{i+1}_{y}')
-                l3.append(len(df[((df.iloc[:,i] == x) & (df.iloc[:,i + 1] == y))]))
-    sankey_df = pd.DataFrame(
-        {'Group1': l1,
-         'Group2': l2,
-         'Count': l3
-        })
-    sankey_df = sankey_df[sankey_df['Count'] !=0]
-    sankey = hv.Sankey(sankey_df.values)
-    sankey.opts(opts.Sankey(label_position='right', width=1800, height=800))
+                if f'{i}_{x}' not in l1:
+                    l1.append(f'{i}_{x}')
+                    nodes.append((f'{i}_{x}', ''))
+                if f'{i+1}_{y}' not in l1:
+                    l1.append(f'{i+1}_{y}')
+                    nodes.append((f'{i+1}_{y}', ''))
+                if len(df[((df.iloc[:,i] == x) & (df.iloc[:,i + 1] == y))]) !=0:
+                    edges.append((f'{i}_{x}', f'{i+1}_{y}',len(df[((df.iloc[:,i] == x) & (df.iloc[:,i + 1] == y))])))
+    nodes = hv.Dataset(nodes, 'index', 'label')
+    sankey = hv.Sankey((edges, nodes), ['From', 'To'])
+    sankey.opts(
+    opts.Sankey(labels='label', label_position='right', width=1800, height=800, 
+                edge_color='#058896', node_color='#058896', color_index = None))
+    
+    
     return sankey
 
 
@@ -298,7 +343,7 @@ def set_board(X, X_with_type, current_set):
     X_with_type['DBSCAN'] = clusters['DBSCAN'][2].values
 
     # HDDC
-    clusters['HDDC'], results_grid['HDDC'], grid = get_hddc(current_set, X)
+    clusters['HDDC'], results_grid['HDDC'] = get_hddc(current_set, X)
     df['HDDC'] = [cluster_colors[x] for x in clusters['HDDC'][2]]
     X_with_type['HDDC'] = clusters['HDDC'][2].values
 
@@ -320,19 +365,20 @@ def set_board(X, X_with_type, current_set):
         p4 = pn.pane.Matplotlib(p4, tight=True)
         p5 = pn.pane.Matplotlib(p5, tight=True)
         # LinePLOT
-        p6, p7 = cluster_plot_bokeh(results_grid[alg])
+        p6 = cluster_plot_bokeh(results_grid[alg])
         # SANKEY PLOT
         sankey = sankey_plot(clusters[alg])
         # PIE CHARTS
         pie_p = pie_plot(clusters[alg], color_mapper)
         # Make the tab
-        tab = pn.Column(pn.Row(p2, p3), pn.Row(p4, p5), pn.Row(p6, p7), sankey, pie_p)
+        tab = pn.Column(pn.Row(p2, p3), pn.Row(p4, p5), p6, sankey, pie_p)
         tabs_cluster.append((alg, tab))
     return pn.Tabs(('Data Exporation', explore_tab), *tabs_cluster)
 
 if __name__ == '__main__':
+    hv.extension('bokeh')
     tabs = []
-    for LOADED_SET in range(1, 5):
+    for LOADED_SET in range(1, 2):
         df, df_normalized, Type_df = load_sets(LOADED_SET)
         tabs.append(set_board(df_normalized, df, LOADED_SET))
 

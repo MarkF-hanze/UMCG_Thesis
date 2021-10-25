@@ -1,2 +1,50 @@
 Loading required package: MASS
 [1] "/home/g0017139/UMCG_Thesis/Working_Code/Results/Set2/HDDCGrid12.csv"
+slurmstepd: error: *** JOB 21615069 ON pg-node161 CANCELLED AT 2021-10-25T13:34:12 DUE TO TIME LIMIT ***
+
+
+###############################################################################
+Peregrine Cluster
+Job 21615069 for user 'g0017139'
+Finished at: Mon Oct 25 13:34:16 CEST 2021
+
+Job details:
+============
+
+Job ID              : 21615069
+Name                : S2HDDC12
+User                : g0017139
+Partition           : regular
+Nodes               : pg-node161
+Number of Nodes     : 1
+Cores               : 2
+Number of Tasks     : 1
+State               : CANCELLED,TIMEOUT
+Submit              : 2021-10-16T13:57:46
+Start               : 2021-10-17T05:33:56
+End                 : 2021-10-25T13:34:15
+Reserved walltime   : 8-08:00:00
+Used walltime       : 8-08:00:19
+Used CPU time       : 15-16:05:30 (efficiency: 94.02%)
+% User (Computation): 84.54%
+% System (I/O)      : 15.46%
+Mem reserved        : 125G/node
+Max Mem (Node/step) : 67.92G (pg-node161, per node)
+Full Max Mem usage  : 67.92G
+Total Disk Read     : 60.69M
+Total Disk Write    : 36.50K
+Hints and tips      :
+ 1) You requested much more memory than your program used.
+    Please reduce the requested amount of memory.
+ *) For more information on these issues see:
+    https://wiki.hpc.rug.nl/peregrine/additional_information/job_hints
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################

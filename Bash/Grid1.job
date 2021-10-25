@@ -1,11 +1,11 @@
 #!/bin/bash
 #SBATCH --time=100:00:00
-#SBATCH --job-name=dbscanH2
+#SBATCH --job-name=dbscan2
 #SBATCH --output=dbscanSet2.out
-#SBATCH --mem=250GB
+#SBATCH --mem=124GB
 #SBATCH --ntasks=24
 #SBATCH --nodes=1
-#SBATCH --partition=himem
+#SBATCH --partition=regular
 
 module load Anaconda3/2020.11
 eval "$(conda shell.bash hook)"

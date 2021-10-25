@@ -246,6 +246,7 @@ class Gridsearch():
         the_str = the_str.replace("dens_frac__0.0_dens_lambda__0.0", '')
         the_str = the_str.replace("____", '__')
         the_str = the_str.replace("__UMAP_", 'UMAP_')
+        #the_str = the_str.replace(".", 'c')
         return the_str
         
     # Fit alg

@@ -1,0 +1,217 @@
+  0%|          | 0/56 [00:00<?, ?it/s]  2%|▏         | 1/56 [00:04<04:24,  4.82s/it]  4%|▎         | 2/56 [00:08<03:39,  4.07s/it]  5%|▌         | 3/56 [00:12<03:29,  3.94s/it]  7%|▋         | 4/56 [00:15<03:21,  3.87s/it]  9%|▉         | 5/56 [00:19<03:17,  3.86s/it] 11%|█         | 6/56 [00:23<03:08,  3.77s/it] 12%|█▎        | 7/56 [00:27<03:04,  3.76s/it] 14%|█▍        | 8/56 [00:31<03:05,  3.86s/it] 16%|█▌        | 9/56 [00:34<02:57,  3.78s/it] 18%|█▊        | 10/56 [00:38<02:51,  3.74s/it] 20%|█▉        | 11/56 [00:42<02:47,  3.73s/it] 21%|██▏       | 12/56 [00:46<02:54,  3.96s/it] 23%|██▎       | 13/56 [00:50<02:49,  3.93s/it] 25%|██▌       | 14/56 [00:54<02:44,  3.91s/it] 27%|██▋       | 15/56 [00:58<02:40,  3.91s/it] 29%|██▊       | 16/56 [01:02<02:46,  4.16s/it] 30%|███       | 17/56 [01:06<02:37,  4.04s/it] 32%|███▏      | 18/56 [01:10<02:32,  4.01s/it] 34%|███▍      | 19/56 [01:14<02:27,  3.98s/it] 36%|███▌      | 20/56 [01:19<02:29,  4.15s/it] 38%|███▊      | 21/56 [01:22<02:19,  3.99s/it] 39%|███▉      | 22/56 [01:26<02:13,  3.94s/it] 41%|████      | 23/56 [01:30<02:08,  3.91s/it] 43%|████▎     | 24/56 [01:34<02:10,  4.09s/it] 45%|████▍     | 25/56 [01:38<02:01,  3.93s/it] 46%|████▋     | 26/56 [01:41<01:53,  3.80s/it] 48%|████▊     | 27/56 [01:45<01:51,  3.85s/it] 50%|█████     | 28/56 [01:50<01:55,  4.13s/it] 52%|█████▏    | 29/56 [01:54<01:48,  4.00s/it] 54%|█████▎    | 30/56 [01:58<01:41,  3.89s/it] 55%|█████▌    | 31/56 [02:01<01:37,  3.89s/it] 57%|█████▋    | 32/56 [02:06<01:36,  4.02s/it] 59%|█████▉    | 33/56 [02:09<01:30,  3.92s/it] 61%|██████    | 34/56 [02:13<01:25,  3.89s/it] 62%|██████▎   | 35/56 [02:17<01:22,  3.93s/it] 64%|██████▍   | 36/56 [02:22<01:22,  4.10s/it] 66%|██████▌   | 37/56 [02:25<01:15,  3.96s/it] 68%|██████▊   | 38/56 [02:29<01:10,  3.91s/it] 70%|██████▉   | 39/56 [02:33<01:06,  3.93s/it] 71%|███████▏  | 40/56 [02:37<01:04,  4.04s/it] 73%|███████▎  | 41/56 [02:41<00:58,  3.92s/it] 75%|███████▌  | 42/56 [02:45<00:54,  3.86s/it] 77%|███████▋  | 43/56 [02:49<00:50,  3.87s/it] 79%|███████▊  | 44/56 [02:53<00:48,  4.06s/it] 80%|████████  | 45/56 [02:57<00:43,  3.96s/it] 82%|████████▏ | 46/56 [03:01<00:39,  3.92s/it] 84%|████████▍ | 47/56 [03:05<00:35,  3.90s/it] 86%|████████▌ | 48/56 [03:09<00:33,  4.17s/it] 88%|████████▊ | 49/56 [03:13<00:28,  4.03s/it] 89%|████████▉ | 50/56 [03:17<00:23,  3.94s/it] 91%|█████████ | 51/56 [03:21<00:19,  3.97s/it] 93%|█████████▎| 52/56 [03:25<00:16,  4.12s/it] 95%|█████████▍| 53/56 [03:29<00:11,  3.94s/it] 96%|█████████▋| 54/56 [03:33<00:07,  3.88s/it] 98%|█████████▊| 55/56 [03:37<00:03,  3.92s/it]100%|██████████| 56/56 [03:41<00:00,  4.07s/it]100%|██████████| 56/56 [03:41<00:00,  3.96s/it]
+Started
+FITTED
+MiniBatchKMeans_batch_size__128_n_clusters__2_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__256_n_clusters__2_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__512_n_clusters__2_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__1024_n_clusters__2_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__128_n_clusters__3_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__256_n_clusters__3_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__512_n_clusters__3_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__1024_n_clusters__3_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__128_n_clusters__4_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__256_n_clusters__4_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__512_n_clusters__4_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__1024_n_clusters__4_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__128_n_clusters__5_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__256_n_clusters__5_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__512_n_clusters__5_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__1024_n_clusters__5_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__128_n_clusters__6_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__256_n_clusters__6_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__512_n_clusters__6_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__1024_n_clusters__6_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__128_n_clusters__7_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__256_n_clusters__7_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__512_n_clusters__7_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__1024_n_clusters__7_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__128_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__256_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__512_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__1024_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__128_n_clusters__9_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__256_n_clusters__9_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__512_n_clusters__9_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__1024_n_clusters__9_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__128_n_clusters__10_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__256_n_clusters__10_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__512_n_clusters__10_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__1024_n_clusters__10_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__128_n_clusters__11_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__256_n_clusters__11_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__512_n_clusters__11_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__1024_n_clusters__11_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__128_n_clusters__12_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__256_n_clusters__12_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__512_n_clusters__12_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__1024_n_clusters__12_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__128_n_clusters__13_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__256_n_clusters__13_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__512_n_clusters__13_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__1024_n_clusters__13_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__128_n_clusters__14_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__256_n_clusters__14_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__512_n_clusters__14_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__1024_n_clusters__14_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__128_n_clusters__15_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__256_n_clusters__15_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__512_n_clusters__15_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__1024_n_clusters__15_random_state__0
+
+
+###############################################################################
+Peregrine Cluster
+Job 21914492 for user 'g0017139'
+Finished at: Mon Oct 25 08:43:05 CEST 2021
+
+Job details:
+============
+
+Job ID              : 21914492
+Name                : kmeans3
+User                : g0017139
+Partition           : regular
+Nodes               : pg-node041
+Number of Nodes     : 1
+Cores               : 24
+Number of Tasks     : 1
+State               : COMPLETED
+Submit              : 2021-10-20T23:59:44
+Start               : 2021-10-25T08:39:06
+End                 : 2021-10-25T08:43:05
+Reserved walltime   : 4-04:00:00
+Used walltime       :   00:03:59
+Used CPU time       :   01:01:10 (efficiency: 63.98%)
+% User (Computation): 74.61%
+% System (I/O)      : 25.42%
+Mem reserved        : 124G/node
+Max Mem (Node/step) : 2.01G (pg-node041, per node)
+Full Max Mem usage  : 2.01G
+Total Disk Read     : 6.53M
+Total Disk Write    : 10.72K
+Hints and tips      :
+ 1) The program efficiency is low. Your program is not using the assigned cores
+    effectively. Please check if you are using all the cores you requested.
+    You may also need to check the file in- and output pattern of your program.
+ *) For more information on these issues see:
+    https://wiki.hpc.rug.nl/peregrine/additional_information/job_hints
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################

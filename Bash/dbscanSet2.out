@@ -1,0 +1,51 @@
+  0%|          | 0/1458 [00:00<?, ?it/s]/var/spool/slurmd/job21914490/slurm_script: line 14: 27399 Segmentation fault      python3 /home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/Main.py -f /data/g0017139/GPL570_norm.dat -a dbscan -s TSet2
+
+
+###############################################################################
+Peregrine Cluster
+Job 21914490 for user 'g0017139'
+Finished at: Mon Oct 25 01:52:06 CEST 2021
+
+Job details:
+============
+
+Job ID              : 21914490
+Name                : dbscan2
+User                : g0017139
+Partition           : regular
+Nodes               : pg-node106
+Number of Nodes     : 1
+Cores               : 24
+Number of Tasks     : 1
+State               : FAILED
+Submit              : 2021-10-20T23:58:49
+Start               : 2021-10-25T01:42:45
+End                 : 2021-10-25T01:52:06
+Reserved walltime   : 4-04:00:00
+Used walltime       :   00:09:21
+Used CPU time       :   00:09:20 (efficiency:  4.16%)
+% User (Computation): 89.61%
+% System (I/O)      : 10.39%
+Mem reserved        : 124G/node
+Max Mem (Node/step) : 41.78G (pg-node106, per node)
+Full Max Mem usage  : 41.78G
+Total Disk Read     : 6.53M
+Total Disk Write    : 10.72K
+Hints and tips      :
+ 1) The program efficiency is very low. Your program does not seem to run in
+    parallel. Please check the program documentation to see how to make the
+    program run in parallel.
+    If you can't find information about this, the program will not run in
+    parallel! Stop requesting multiple CPU cores if that is the case.
+ *) For more information on these issues see:
+    https://wiki.hpc.rug.nl/peregrine/additional_information/job_hints
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################
