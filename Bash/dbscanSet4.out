@@ -1,35 +1,35 @@
-  0%|          | 0/1458 [00:00<?, ?it/s]/var/spool/slurmd/job21914494/slurm_script: line 14: 24230 Segmentation fault      python3 /home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/Main.py -f /data/g0017139/TCGA__RSEM_norm.dat -a dbscan -s TSet4
+  0%|          | 0/1458 [00:00<?, ?it/s]/var/spool/slurmd/job21958500/slurm_script: line 15: 43205 Segmentation fault      python3 /home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/Main.py -f /data/g0017139/TCGA__RSEM_norm.dat -a dbscan -s TSet4
 
 
 ###############################################################################
 Peregrine Cluster
-Job 21914494 for user 'g0017139'
-Finished at: Mon Oct 25 12:52:52 CEST 2021
+Job 21958500 for user 'g0017139'
+Finished at: Wed Oct 27 14:31:02 CEST 2021
 
 Job details:
 ============
 
-Job ID              : 21914494
+Job ID              : 21958500
 Name                : dbscan4
 User                : g0017139
-Partition           : regular
-Nodes               : pg-node089
+Partition           : himem
+Nodes               : pg-memory04
 Number of Nodes     : 1
 Cores               : 24
 Number of Tasks     : 1
 State               : FAILED
-Submit              : 2021-10-21T00:00:39
-Start               : 2021-10-25T12:46:07
-End                 : 2021-10-25T12:52:51
+Submit              : 2021-10-26T09:09:33
+Start               : 2021-10-27T14:22:47
+End                 : 2021-10-27T14:31:02
 Reserved walltime   : 4-04:00:00
-Used walltime       :   00:06:44
-Used CPU time       :   00:05:50 (efficiency:  3.62%)
-% User (Computation): 89.44%
-% System (I/O)      : 10.56%
+Used walltime       :   00:08:15
+Used CPU time       :   00:07:54 (efficiency:  4.00%)
+% User (Computation): 87.57%
+% System (I/O)      : 12.43%
 Mem reserved        : 124G/node
-Max Mem (Node/step) : 21.97G (pg-node089, per node)
-Full Max Mem usage  : 21.97G
-Total Disk Read     : 6.53M
+Max Mem (Node/step) : 21.87G (pg-memory04, per node)
+Full Max Mem usage  : 21.87G
+Total Disk Read     : 6.55M
 Total Disk Write    : 10.72K
 Hints and tips      :
  1) The program efficiency is very low. Your program does not seem to run in
@@ -37,6 +37,8 @@ Hints and tips      :
     program run in parallel.
     If you can't find information about this, the program will not run in
     parallel! Stop requesting multiple CPU cores if that is the case.
+ 2) You requested much more memory than your program used.
+    Please reduce the requested amount of memory.
  *) For more information on these issues see:
     https://wiki.hpc.rug.nl/peregrine/additional_information/job_hints
 

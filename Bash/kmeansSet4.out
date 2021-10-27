@@ -1,1 +1,211 @@
-  0%|          | 0/56 [00:00<?, ?it/s]  2%|▏         | 1/56 [19:37<17:59:33, 1177.70s/it]  4%|▎         | 2/56 [38:55<17:29:31, 1166.14s/it]  5%|▌         | 3/56 [58:29<17:13:11, 1169.66s/it]  7%|▋         | 4/56 [1:18:10<16:57:38, 1174.20s/it]  9%|▉         | 5/56 [1:37:40<16:36:36, 1172.48s/it] 11%|█         | 6/56 [1:58:05<16:31:58, 1190.36s/it] 12%|█▎        | 7/56 [2:18:07<16:15:20, 1194.31s/it] 14%|█▍        | 8/56 [2:38:36<16:04:13, 1205.29s/it] 16%|█▌        | 9/56 [2:59:03<15:49:30, 1212.14s/it] 18%|█▊        | 10/56 [3:18:13<15:14:36, 1192.96s/it] 20%|█▉        | 11/56 [3:38:21<14:58:09, 1197.55s/it] 21%|██▏       | 12/56 [3:58:41<14:43:16, 1204.46s/it] 23%|██▎       | 13/56 [4:18:58<14:25:49, 1208.13s/it] 25%|██▌       | 14/56 [4:38:50<14:02:15, 1203.23s/it] 27%|██▋       | 15/56 [4:59:07<13:45:09, 1207.55s/it] 29%|██▊       | 16/56 [5:19:17<13:25:30, 1208.26s/it] 30%|███       | 17/56 [5:38:43<12:56:56, 1195.29s/it] 32%|███▏      | 18/56 [5:58:21<12:33:49, 1190.25s/it] 34%|███▍      | 19/56 [6:17:51<12:10:17, 1184.27s/it] 36%|███▌      | 20/56 [6:36:50<11:42:16, 1170.45s/it] 38%|███▊      | 21/56 [6:56:38<11:25:57, 1175.92s/it] 39%|███▉      | 22/56 [7:16:13<11:06:11, 1175.62s/it] 41%|████      | 23/56 [7:35:49<10:46:41, 1175.79s/it] 43%|████▎     | 24/56 [7:55:13<10:25:04, 1172.01s/it] 45%|████▍     | 25/56 [8:14:59<10:07:47, 1176.36s/it] 46%|████▋     | 26/56 [8:35:15<9:54:07, 1188.27s/it]  48%|████▊     | 27/56 [8:55:09<9:35:10, 1190.01s/it] 50%|█████     | 28/56 [9:15:24<9:18:48, 1197.45s/it] 52%|█████▏    | 29/56 [9:34:44<8:53:45, 1186.13s/it] 54%|█████▎    | 30/56 [9:53:58<8:29:49, 1176.53s/it] 55%|█████▌    | 31/56 [10:13:19<8:08:14, 1171.80s/it]
+  0%|          | 0/56 [00:00<?, ?it/s]  2%|▏         | 1/56 [19:37<17:59:33, 1177.70s/it]  4%|▎         | 2/56 [38:55<17:29:31, 1166.14s/it]  5%|▌         | 3/56 [58:29<17:13:11, 1169.66s/it]  7%|▋         | 4/56 [1:18:10<16:57:38, 1174.20s/it]  9%|▉         | 5/56 [1:37:40<16:36:36, 1172.48s/it] 11%|█         | 6/56 [1:58:05<16:31:58, 1190.36s/it] 12%|█▎        | 7/56 [2:18:07<16:15:20, 1194.31s/it] 14%|█▍        | 8/56 [2:38:36<16:04:13, 1205.29s/it] 16%|█▌        | 9/56 [2:59:03<15:49:30, 1212.14s/it] 18%|█▊        | 10/56 [3:18:13<15:14:36, 1192.96s/it] 20%|█▉        | 11/56 [3:38:21<14:58:09, 1197.55s/it] 21%|██▏       | 12/56 [3:58:41<14:43:16, 1204.46s/it] 23%|██▎       | 13/56 [4:18:58<14:25:49, 1208.13s/it] 25%|██▌       | 14/56 [4:38:50<14:02:15, 1203.23s/it] 27%|██▋       | 15/56 [4:59:07<13:45:09, 1207.55s/it] 29%|██▊       | 16/56 [5:19:17<13:25:30, 1208.26s/it] 30%|███       | 17/56 [5:38:43<12:56:56, 1195.29s/it] 32%|███▏      | 18/56 [5:58:21<12:33:49, 1190.25s/it] 34%|███▍      | 19/56 [6:17:51<12:10:17, 1184.27s/it] 36%|███▌      | 20/56 [6:36:50<11:42:16, 1170.45s/it] 38%|███▊      | 21/56 [6:56:38<11:25:57, 1175.92s/it] 39%|███▉      | 22/56 [7:16:13<11:06:11, 1175.62s/it] 41%|████      | 23/56 [7:35:49<10:46:41, 1175.79s/it] 43%|████▎     | 24/56 [7:55:13<10:25:04, 1172.01s/it] 45%|████▍     | 25/56 [8:14:59<10:07:47, 1176.36s/it] 46%|████▋     | 26/56 [8:35:15<9:54:07, 1188.27s/it]  48%|████▊     | 27/56 [8:55:09<9:35:10, 1190.01s/it] 50%|█████     | 28/56 [9:15:24<9:18:48, 1197.45s/it] 52%|█████▏    | 29/56 [9:34:44<8:53:45, 1186.13s/it] 54%|█████▎    | 30/56 [9:53:58<8:29:49, 1176.53s/it] 55%|█████▌    | 31/56 [10:13:19<8:08:14, 1171.80s/it] 57%|█████▋    | 32/56 [10:33:18<7:52:03, 1180.13s/it] 59%|█████▉    | 33/56 [10:53:45<7:37:43, 1194.07s/it] 61%|██████    | 34/56 [11:13:06<7:14:09, 1184.08s/it] 62%|██████▎   | 35/56 [11:32:43<6:53:41, 1181.98s/it] 64%|██████▍   | 36/56 [11:53:04<6:37:58, 1193.90s/it] 66%|██████▌   | 37/56 [12:13:23<6:20:22, 1201.18s/it] 68%|██████▊   | 38/56 [12:33:31<6:01:02, 1203.45s/it] 70%|██████▉   | 39/56 [12:52:53<5:37:28, 1191.07s/it] 71%|███████▏  | 40/56 [13:12:24<5:15:57, 1184.86s/it] 73%|███████▎  | 41/56 [13:32:23<4:57:18, 1189.21s/it] 75%|███████▌  | 42/56 [13:52:10<4:37:20, 1188.59s/it] 77%|███████▋  | 43/56 [14:12:34<4:19:49, 1199.23s/it] 79%|███████▊  | 44/56 [14:32:21<3:59:04, 1195.39s/it] 80%|████████  | 45/56 [14:51:25<3:36:21, 1180.16s/it] 82%|████████▏ | 46/56 [15:11:49<3:18:50, 1193.03s/it] 84%|████████▍ | 47/56 [15:32:11<3:00:18, 1202.00s/it] 86%|████████▌ | 48/56 [15:52:27<2:40:48, 1206.09s/it] 88%|████████▊ | 49/56 [16:12:47<2:21:12, 1210.34s/it] 89%|████████▉ | 50/56 [16:32:49<2:00:46, 1207.82s/it] 91%|█████████ | 51/56 [16:52:56<1:40:37, 1207.48s/it] 93%|█████████▎| 52/56 [17:12:40<1:20:01, 1200.43s/it] 95%|█████████▍| 53/56 [17:31:45<59:11, 1183.82s/it]   96%|█████████▋| 54/56 [17:50:39<38:57, 1168.85s/it] 98%|█████████▊| 55/56 [18:09:55<19:25, 1165.15s/it]100%|██████████| 56/56 [18:29:17<00:00, 1164.06s/it]100%|██████████| 56/56 [18:29:17<00:00, 1188.53s/it]
+Started
+FITTED
+MiniBatchKMeans_batch_size__128_n_clusters__2_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__256_n_clusters__2_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__512_n_clusters__2_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__1024_n_clusters__2_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__128_n_clusters__3_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__256_n_clusters__3_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__512_n_clusters__3_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__1024_n_clusters__3_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__128_n_clusters__4_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__256_n_clusters__4_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__512_n_clusters__4_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__1024_n_clusters__4_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__128_n_clusters__5_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__256_n_clusters__5_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__512_n_clusters__5_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__1024_n_clusters__5_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__128_n_clusters__6_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__256_n_clusters__6_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__512_n_clusters__6_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__1024_n_clusters__6_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__128_n_clusters__7_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__256_n_clusters__7_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__512_n_clusters__7_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__1024_n_clusters__7_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__128_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__256_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__512_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__1024_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__128_n_clusters__9_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__256_n_clusters__9_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__512_n_clusters__9_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__1024_n_clusters__9_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__128_n_clusters__10_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__256_n_clusters__10_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__512_n_clusters__10_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__1024_n_clusters__10_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__128_n_clusters__11_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__256_n_clusters__11_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__512_n_clusters__11_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__1024_n_clusters__11_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__128_n_clusters__12_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__256_n_clusters__12_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__512_n_clusters__12_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__1024_n_clusters__12_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__128_n_clusters__13_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__256_n_clusters__13_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__512_n_clusters__13_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__1024_n_clusters__13_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__128_n_clusters__14_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__256_n_clusters__14_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__512_n_clusters__14_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__1024_n_clusters__14_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__128_n_clusters__15_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__256_n_clusters__15_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__512_n_clusters__15_random_state__0
+Started
+FITTED
+MiniBatchKMeans_batch_size__1024_n_clusters__15_random_state__0
+
+
+###############################################################################
+Peregrine Cluster
+Job 21914493 for user 'g0017139'
+Finished at: Tue Oct 26 03:15:53 CEST 2021
+
+Job details:
+============
+
+Job ID              : 21914493
+Name                : kmeans4
+User                : g0017139
+Partition           : regular
+Nodes               : pg-node041
+Number of Nodes     : 1
+Cores               : 24
+Number of Tasks     : 1
+State               : COMPLETED
+Submit              : 2021-10-21T00:00:09
+Start               : 2021-10-25T08:43:07
+End                 : 2021-10-26T03:15:53
+Reserved walltime   : 4-04:00:00
+Used walltime       :    18:32:46
+Used CPU time       : 17-10:28:50 (efficiency: 94.02%)
+% User (Computation): 99.11%
+% System (I/O)      :  0.89%
+Mem reserved        : 124G/node
+Max Mem (Node/step) : 86.81G (pg-node041, per node)
+Full Max Mem usage  : 86.81G
+Total Disk Read     : 6.53M
+Total Disk Write    : 10.72K
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################

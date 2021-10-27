@@ -1,0 +1,49 @@
+################################################################################
+slurmstepd: error: *** JOB 21958565 ON pg-node178 CANCELLED AT 2021-10-26T23:25:06 DUE TO TIME LIMIT ***
+
+
+###############################################################################
+Peregrine Cluster
+Job 21958565 for user 'g0017139'
+Finished at: Tue Oct 26 23:25:08 CEST 2021
+
+Job details:
+============
+
+Job ID              : 21958565
+Name                : merge
+User                : g0017139
+Partition           : vulture
+Nodes               : pg-node178
+Number of Nodes     : 1
+Cores               : 24
+Number of Tasks     : 1
+State               : TIMEOUT,CANCELLED
+Submit              : 2021-10-26T10:11:16
+Start               : 2021-10-26T11:24:39
+End                 : 2021-10-26T23:25:07
+Reserved walltime   :    12:00:00
+Used walltime       :    12:00:28
+Used CPU time       : 11-05:23:05 (efficiency: 93.48%)
+% User (Computation): 99.57%
+% System (I/O)      :  0.43%
+Mem reserved        : 124G/node
+Max Mem (Node/step) : 61.63G (pg-node178, per node)
+Full Max Mem usage  : 61.63G
+Total Disk Read     : 6.54M
+Total Disk Write    : 11.16K
+Hints and tips      :
+ 1) You requested much more memory than your program used.
+    Please reduce the requested amount of memory.
+ *) For more information on these issues see:
+    https://wiki.hpc.rug.nl/peregrine/additional_information/job_hints
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################

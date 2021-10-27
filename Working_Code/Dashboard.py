@@ -31,7 +31,7 @@ from Gridsearch.Main import Gridsearch
 
 from bokeh.transform import factor_cmap, factor_mark
 from bokeh.plotting import figure, show, output_file, save
-from bokeh.models import ColumnDataSource, Dropdown, Select, Panel, Tabs, CustomJS, LinearAxis, Range1d
+from bokeh.models import ColumnDataSource, Dropdown, Select, Panel, Tabs, CustomJS, LinearAxis, Range1d, HoverTool
 from bokeh.palettes import Category20
 from bokeh.layouts import row, column
 from bokeh.transform import cumsum
@@ -66,26 +66,28 @@ def cluster_plot_bokeh(grid):
         #p1 = figure(width=700, height=500, x_axis_label='Number clusters', y_axis_label='Silhouette score')
         #p1.line(df['n_clusters'], df['silhouette_score_euclidean'])
         #print(df.columns)
+        source = ColumnDataSource(df)
         p = figure(width=1400, height=500, x_axis_label='Number clusters', y_axis_label='Harbrasz score')
-        p.line(df['n_clusters'], df['calinski_harabasz_score'], legend_label='calinski_harabasz_score')
-        p.extra_y_ranges = {"foo1": Range1d(start=0, end=0.15)}
+        l1 = p.line('n_clusters', 'calinski_harabasz_score', legend_label='calinski_harabasz_score', source=source)
+        p.add_tools(HoverTool(renderers=[l1], tooltips=[('Calinski Score',"@calinski_harabasz_score{0.00}"),
+                                                        ('Clusters', '@n_clusters')],
+                              mode='vline'))
         
-        p.line(df['n_clusters'], df['silhouette_score_euclidean'], 
+        p.extra_y_ranges = {"foo1": Range1d(start=0, end=0.15)}
+        l2 = p.line('n_clusters', 'silhouette_score_euclidean', source=source,
                y_range_name="foo1", legend_label='silhouette_score_euclidean', color='red')
+        p.add_tools(HoverTool(renderers=[l2], tooltips=[('Silhoette euclidian',"@silhouette_score_euclidean{0.00}")],
+                              mode='vline'))
         p.add_layout(LinearAxis(y_range_name="foo1", axis_label='Silhouette score'), 'left')
         
-        p.line(df['n_clusters'], df['silhouette_score_correlation'],
+        l3 = p.line('n_clusters', 'silhouette_score_correlation', source=source,
                y_range_name="foo1", legend_label='silhouette_score_correlation', color='hotpink')
-        p.line(df['n_clusters'], df['silhouette_score_manhattan'],
+        p.add_tools(HoverTool(renderers=[l3], tooltips=[('Silhoette correlation',"@silhouette_score_correlation{0.00}")],
+                              mode='vline'))
+        l4 = p.line('n_clusters', 'silhouette_score_manhattan', source=source,
                y_range_name="foo1", legend_label='silhouette_score_manhattan', color='green')
-        # CHANGES HERE: add to dict, don't replace entire dict
-        #p.extra_y_ranges["foo2"] = Range1d(start=21, end=31)
-
-        #p.circle(x, y3, color="green", y_range_name="foo2")
-        #p.add_layout(LinearAxis(y_range_name="foo2"), 'right')
-        #p.line(df['n_clusters'], df['calinski_harabasz_score'])
-        #p.add_layout(LinearAxis(y_range_name="foo", axis_label='foo label'), 'right')
-        #p.line(df['n_clusters'], df['silhouette_score_euclidean'], y_range_name="foo")
+        p.add_tools(HoverTool(renderers=[l4], tooltips=[('Silhoette manhattan',"@silhouette_score_manhattan{0.00}")],
+                               mode='vline'))
     else:
         df = grid.groupby(['K']).max().reset_index()
         TOOLTIPS = [
@@ -311,8 +313,27 @@ def pie_plot(df, color_mapper):
     pie_p = pn.Tabs(*tabs_pie)
     return pie_p
 
+def heatmap(df):
+    tabs = []
+    for column in df:
+        if column != 'Type':
+            start_df = df.copy()
+            start_df['count'] = 1
+            count_df = start_df.groupby([column, 'Type']).sum().reset_index()
+            sum_df = start_df.groupby(['Type']).sum()
+            new_col = []
+            for index, row in count_df.iterrows():
+                new_col.append(sum_df.loc[row['Type'],:]['count'])
 
-
+            count_df['Percentage'] = count_df['count'] / new_col
+            count_df = count_df.drop('count', axis=1)
+            data = pd.pivot_table(count_df, values='Percentage', index='Type', columns=column, fill_value=0)
+            fig, ax = plt.subplots(figsize=(20,7))
+            sns.heatmap(data, vmin=0, vmax=1, linewidths=.5, cmap="YlGnBu", ax=ax)
+            tabs.append((f'Clusters {column}', pn.pane.Matplotlib(fig, tight=True)))
+    fig = pn.Tabs(*tabs)
+    return fig
+    
 
 def set_board(X, X_with_type, current_set):
     # Train PCA and UMAP
@@ -361,17 +382,19 @@ def set_board(X, X_with_type, current_set):
         # PCA UMAP Plot
         p2, p3 = make_pca_umap(source, alg)
         # HISTOGRAM
-        p4, p5 = make_countplot(clusters[alg], 2, 'Type', palette)
-        p4 = pn.pane.Matplotlib(p4, tight=True)
-        p5 = pn.pane.Matplotlib(p5, tight=True)
+        #p4, p5 = make_countplot(clusters[alg], 2, 'Type', palette)
+        #p4 = pn.pane.Matplotlib(p4, tight=True)
+        #p5 = pn.pane.Matplotlib(p5, tight=True)
         # LinePLOT
         p6 = cluster_plot_bokeh(results_grid[alg])
         # SANKEY PLOT
         sankey = sankey_plot(clusters[alg])
         # PIE CHARTS
         pie_p = pie_plot(clusters[alg], color_mapper)
+        # Heat map
+        heatmap_fig = heatmap(clusters[alg])
         # Make the tab
-        tab = pn.Column(pn.Row(p2, p3), pn.Row(p4, p5), p6, sankey, pie_p)
+        tab = pn.Column(pn.Row(p2, p3), p6, sankey, heatmap_fig, pie_p)
         tabs_cluster.append((alg, tab))
     return pn.Tabs(('Data Exporation', explore_tab), *tabs_cluster)
 

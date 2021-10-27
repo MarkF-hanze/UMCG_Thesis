@@ -3,7 +3,7 @@ import pickle
 
 
 #LOAD
-for x in range(1,2):
+for x in range(2,4):
     df, df_normalized, Type_df = load_sets(x)
     results_grid = {}
     path = f'/home/g0017139/UMCG_Thesis/Working_Code/Results/TSet{x}/'
@@ -11,8 +11,8 @@ for x in range(1,2):
                                                        'Hierarch', df_normalized)
     with open(f"{path}kmeans.pkl", 'rb') as f:
         results_grid['kMeans'] = pickle.load(f)
-    with open(f'{path}dbscan.pkl', 'rb') as f:
-        results_grid['dbscan'] = pickle.load(f)
+#     with open(f'{path}dbscan.pkl', 'rb') as f:
+#         results_grid['dbscan'] = pickle.load(f)
     clustersHDDC, results_grid['hddc'], bic_df = merge_Results(f'{path}',
                                                            'HDDC', df_normalized)
     # SAVE

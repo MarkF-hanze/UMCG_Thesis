@@ -296,18 +296,22 @@ class Gridsearch():
     def get_score(self, labels):
         result = {}
         try:
+            print('euclidean')
             result['silhouette_score_euclidean'] = silhouette_score(self.X, labels, metric='euclidean', n_jobs=-1)
         except:
             result['silhouette_score_euclidean'] = np.nan
         try:
+            print('correlation')
             result['silhouette_score_correlation'] = silhouette_score(self.X, labels, metric='correlation', n_jobs=-1)
         except:
             result['silhouette_score_correlation'] = np.nan
         try:
+            print('manhattan')
             result['silhouette_score_manhattan'] = silhouette_score(self.X, labels, metric='manhattan', n_jobs=-1)
         except:
             result['silhouette_score_manhattan'] = np.nan
         try:
+            print('calinski_harabasz_score')
             result['calinski_harabasz_score'] = calinski_harabasz_score(self.X, labels)
         except:
             result['calinski_harabasz_score'] = np.nan

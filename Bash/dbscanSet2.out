@@ -1,34 +1,34 @@
-  0%|          | 0/1458 [00:00<?, ?it/s]/var/spool/slurmd/job21914490/slurm_script: line 14: 27399 Segmentation fault      python3 /home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/Main.py -f /data/g0017139/GPL570_norm.dat -a dbscan -s TSet2
+  0%|          | 0/1458 [00:00<?, ?it/s]/var/spool/slurmd/job21932707/slurm_script: line 14: 14344 Segmentation fault      python3 /home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/Main.py -f /data/g0017139/GPL570_norm.dat -a dbscan -s TSet2
 
 
 ###############################################################################
 Peregrine Cluster
-Job 21914490 for user 'g0017139'
-Finished at: Mon Oct 25 01:52:06 CEST 2021
+Job 21932707 for user 'g0017139'
+Finished at: Tue Oct 26 03:24:53 CEST 2021
 
 Job details:
 ============
 
-Job ID              : 21914490
+Job ID              : 21932707
 Name                : dbscan2
 User                : g0017139
 Partition           : regular
-Nodes               : pg-node106
+Nodes               : pg-node063
 Number of Nodes     : 1
 Cores               : 24
 Number of Tasks     : 1
 State               : FAILED
-Submit              : 2021-10-20T23:58:49
-Start               : 2021-10-25T01:42:45
-End                 : 2021-10-25T01:52:06
+Submit              : 2021-10-25T09:22:24
+Start               : 2021-10-26T03:15:53
+End                 : 2021-10-26T03:24:53
 Reserved walltime   : 4-04:00:00
-Used walltime       :   00:09:21
-Used CPU time       :   00:09:20 (efficiency:  4.16%)
-% User (Computation): 89.61%
-% System (I/O)      : 10.39%
+Used walltime       :   00:09:00
+Used CPU time       :   00:08:52 (efficiency:  4.11%)
+% User (Computation): 91.12%
+% System (I/O)      :  8.88%
 Mem reserved        : 124G/node
-Max Mem (Node/step) : 41.78G (pg-node106, per node)
-Full Max Mem usage  : 41.78G
+Max Mem (Node/step) : 42.08G (pg-node063, per node)
+Full Max Mem usage  : 42.08G
 Total Disk Read     : 6.53M
 Total Disk Write    : 10.72K
 Hints and tips      :
