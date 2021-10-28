@@ -328,8 +328,9 @@ def heatmap(df):
             count_df['Percentage'] = count_df['count'] / new_col
             count_df = count_df.drop('count', axis=1)
             data = pd.pivot_table(count_df, values='Percentage', index='Type', columns=column, fill_value=0)
-            fig, ax = plt.subplots(figsize=(20,7))
+            #fig, ax = plt.subplots(figsize=(20,7))
             sns.heatmap(data, vmin=0, vmax=1, linewidths=.5, cmap="YlGnBu", ax=ax)
+            #fig= sns.clustermap(data, method="ward", metric="correlation", col_cluster=False,  cmap="YlGnBu", figsize=(20,7))
             tabs.append((f'Clusters {column}', pn.pane.Matplotlib(fig, tight=True)))
     fig = pn.Tabs(*tabs)
     return fig

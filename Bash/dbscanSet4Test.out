@@ -1,0 +1,98 @@
+  0%|          | 0/1458 [00:00<?, ?it/s]  0%|          | 1/1458 [12:29<303:22:19, 749.58s/it]  0%|          | 2/1458 [22:54<273:27:57, 676.15s/it]  0%|          | 3/1458 [33:20<263:58:38, 653.14s/it]  0%|          | 4/1458 [43:43<259:06:41, 641.54s/it]  0%|          | 5/1458 [54:13<257:12:28, 637.27s/it]  0%|          | 6/1458 [1:04:40<255:35:13, 633.69s/it]  0%|          | 7/1458 [1:15:43<259:20:53, 643.46s/it]  1%|          | 8/1458 [1:26:29<259:24:06, 644.03s/it]  1%|          | 9/1458 [1:37:10<258:51:42, 643.14s/it]  1%|          | 10/1458 [1:48:09<260:42:39, 648.18s/it]  1%|          | 11/1458 [1:59:09<261:54:08, 651.59s/it]  1%|          | 12/1458 [2:09:50<260:31:15, 648.60s/it]  1%|          | 13/1458 [2:20:36<260:00:43, 647.78s/it]  1%|          | 14/1458 [2:31:27<260:12:07, 648.70s/it]  1%|          | 14/1458 [2:32:47<262:38:34, 654.79s/it]
+euclidean
+correlation
+calinski_harabasz_score
+euclidean
+correlation
+calinski_harabasz_score
+euclidean
+correlation
+calinski_harabasz_score
+euclidean
+correlation
+calinski_harabasz_score
+euclidean
+correlation
+calinski_harabasz_score
+euclidean
+correlation
+calinski_harabasz_score
+euclidean
+correlation
+calinski_harabasz_score
+euclidean
+correlation
+calinski_harabasz_score
+euclidean
+correlation
+calinski_harabasz_score
+euclidean
+correlation
+calinski_harabasz_score
+euclidean
+correlation
+calinski_harabasz_score
+euclidean
+correlation
+calinski_harabasz_score
+euclidean
+correlation
+calinski_harabasz_score
+euclidean
+correlation
+calinski_harabasz_score
+Traceback (most recent call last):
+  File "/home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/Main.py", line 342, in <module>
+    elif opt == "-a":
+  File "/home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/Main.py", line 275, in start
+    self.scores.append(self.fit(combination, folder))
+  File "/home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/Main.py", line 259, in fit
+    pickle.dump(self.algorithm.algorithm, f, pickle.HIGHEST_PROTOCOL)
+OSError: [Errno 122] Disk quota exceeded
+
+
+###############################################################################
+Peregrine Cluster
+Job 21977809 for user 'g0017139'
+Finished at: Thu Oct 28 14:16:22 CEST 2021
+
+Job details:
+============
+
+Job ID              : 21977809
+Name                : dbscan4
+User                : g0017139
+Partition           : vulture
+Nodes               : pg-node163
+Number of Nodes     : 1
+Cores               : 4
+Number of Tasks     : 1
+State               : FAILED
+Submit              : 2021-10-28T10:30:54
+Start               : 2021-10-28T11:39:31
+End                 : 2021-10-28T14:16:22
+Reserved walltime   : 12:00:00
+Used walltime       : 02:36:51
+Used CPU time       : 09:24:17 (efficiency: 89.94%)
+% User (Computation): 99.18%
+% System (I/O)      :  0.82%
+Mem reserved        : 124G/node
+Max Mem (Node/step) : 36.45G (pg-node163, per node)
+Full Max Mem usage  : 36.45G
+Total Disk Read     : 6.54M
+Total Disk Write    : 10.72K
+Hints and tips      :
+ 1) You requested much more memory than your program used.
+    Please reduce the requested amount of memory.
+ *) For more information on these issues see:
+    https://wiki.hpc.rug.nl/peregrine/additional_information/job_hints
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################

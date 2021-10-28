@@ -1,11 +1,11 @@
 #!/bin/bash
-#SBATCH --time=100:00:00
-#SBATCH --job-name=merge
+#SBATCH --time=3:00:00
+#SBATCH --job-name=mergeH
 #SBATCH --output=MergeScores1.out
-#SBATCH --mem=50GB
+#SBATCH --mem=70GB
 #SBATCH --ntasks=24
 #SBATCH --nodes=1
-#SBATCH --partition=regular
+#SBATCH --partition=himem
 
 ulimit -s 50000
 module load Anaconda3/2020.11

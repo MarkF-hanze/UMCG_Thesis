@@ -41,6 +41,7 @@ def merge_Results(directory, alg, norm_df):
                                                                               index_col=0).values.ravel()
                 except:
                     pass
+    print('Done')
     scores_df = get_score_df(cluster_df, norm_df)
 
     if alg == 'HDDC':
