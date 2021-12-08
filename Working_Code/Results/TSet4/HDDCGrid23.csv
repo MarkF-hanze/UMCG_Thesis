@@ -1,0 +1,11 @@
+"","V1","V2","V3"
+"model","1","1","1"
+"K","23","23","23"
+"threshold","0.01","0.1","0.2"
+"LL","-179903119.477556","-Inf","-Inf"
+"BIC","-467708096.590757","-Inf","-Inf"
+"ICL","-467708096.594097","-Inf","-Inf"
+"rank","1","2","3"
+"originalOrder","1","2","3"
+"complexity","11616247",NA,NA
+"comment","","pop<min.individuals","pop<min.individuals"

@@ -1,0 +1,7 @@
+"","V1","V2","V3"
+"model",1,1,1
+"K",27,27,27
+"threshold",0.01,0.1,0.2
+"LL",-Inf,-Inf,-Inf
+"BIC",NA,NA,NA
+"comment",1,1,1

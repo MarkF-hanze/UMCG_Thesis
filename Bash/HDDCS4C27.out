@@ -1,0 +1,54 @@
+Loading required package: MASS
+Warning message:
+In hddc(mydata, K = i, model = 1, itermax = 200, mc.cores = 3, threshold = c(0.01,  :
+  All models diverged.
+
+
+###############################################################################
+Peregrine Cluster
+Job 22315345 for user 'g0017139'
+Finished at: Tue Nov 30 08:35:28 CET 2021
+
+Job details:
+============
+
+Job ID              : 22315345
+Name                : 4HDDC27
+User                : g0017139
+Partition           : himem
+Nodes               : pg-memory03
+Number of Nodes     : 1
+Cores               : 3
+Number of Tasks     : 1
+State               : COMPLETED
+Submit              : 2021-11-29T20:14:29
+Start               : 2021-11-30T08:13:20
+End                 : 2021-11-30T08:35:28
+Reserved walltime   : 1-00:00:00
+Used walltime       :   00:22:08
+Used CPU time       :   00:32:46 (efficiency: 49.35%)
+% User (Computation): 97.29%
+% System (I/O)      :  2.71%
+Mem reserved        : 124G/node
+Max Mem (Node/step) : 14.99G (pg-memory03, per node)
+Full Max Mem usage  : 14.99G
+Total Disk Read     : 60.71M
+Total Disk Write    : 36.50K
+Hints and tips      :
+ 1) The program efficiency is low. Your program is not using the assigned cores
+    effectively. Please check if you are using all the cores you requested.
+    You may also need to check the file in- and output pattern of your program.
+ 2) You requested much more memory than your program used.
+    Please reduce the requested amount of memory.
+ *) For more information on these issues see:
+    https://wiki.hpc.rug.nl/peregrine/additional_information/job_hints
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################

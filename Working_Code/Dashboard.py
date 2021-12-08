@@ -67,27 +67,17 @@ def cluster_plot_bokeh(grid):
         #p1.line(df['n_clusters'], df['silhouette_score_euclidean'])
         #print(df.columns)
         source = ColumnDataSource(df)
-        p = figure(width=1400, height=500, x_axis_label='Number clusters', y_axis_label='Harbrasz score')
-        l1 = p.line('n_clusters', 'calinski_harabasz_score', legend_label='calinski_harabasz_score', source=source)
-        p.add_tools(HoverTool(renderers=[l1], tooltips=[('Calinski Score',"@calinski_harabasz_score{0.00}"),
-                                                        ('Clusters', '@n_clusters')],
-                              mode='vline'))
-        
-        p.extra_y_ranges = {"foo1": Range1d(start=0, end=0.15)}
+        p = figure(width=1400, height=500, x_axis_label='Number clusters', y_axis_label='Correlation score')
+      
         l2 = p.line('n_clusters', 'silhouette_score_euclidean', source=source,
-               y_range_name="foo1", legend_label='silhouette_score_euclidean', color='red')
+                    legend_label='silhouette_score_euclidean', color='red')
         p.add_tools(HoverTool(renderers=[l2], tooltips=[('Silhoette euclidian',"@silhouette_score_euclidean{0.00}")],
-                              mode='vline'))
-        p.add_layout(LinearAxis(y_range_name="foo1", axis_label='Silhouette score'), 'left')
-        
+                              mode='vline'))        
         l3 = p.line('n_clusters', 'silhouette_score_correlation', source=source,
-               y_range_name="foo1", legend_label='silhouette_score_correlation', color='hotpink')
+                    legend_label='silhouette_score_correlation', color='hotpink')
         p.add_tools(HoverTool(renderers=[l3], tooltips=[('Silhoette correlation',"@silhouette_score_correlation{0.00}")],
                               mode='vline'))
-        l4 = p.line('n_clusters', 'silhouette_score_manhattan', source=source,
-               y_range_name="foo1", legend_label='silhouette_score_manhattan', color='green')
-        p.add_tools(HoverTool(renderers=[l4], tooltips=[('Silhoette manhattan',"@silhouette_score_manhattan{0.00}")],
-                               mode='vline'))
+   
     else:
         df = grid.groupby(['K']).max().reset_index()
         TOOLTIPS = [
@@ -158,7 +148,7 @@ def get_hddc(load_set, X):
 
 def transform_results(results):
 
-    results = results[results.groupby(['n_clusters'])['silhouette_score_manhattan'].transform(max) == results['silhouette_score_manhattan']]
+    results = results[results.groupby(['n_clusters'])['silhouette_score_euclidean'].transform(max) == results['silhouette_score_euclidean']]
     results = results.groupby('n_clusters').first()
     results = results.reset_index()
     return results
@@ -176,8 +166,9 @@ def get_kmeans(load_set, X):
                                  random_state=0,
                                  batch_size=int(row['batch_size']))
         name = search.get_str(kmeans)
-        with open(f"/data/g0017139/Models/TSet{load_set}/{name}.pkl", 'rb') as f:
-            kmeans = pickle.load(f)
+        kmeans.fit(X)
+#         with open(f"/data/g0017139/Models/TSet{load_set}/{name}.pkl", 'rb') as f:
+#             kmeans = pickle.load(f)
         clusters[int(row['n_clusters'])] = kmeans.labels_
     return clusters, results
 
@@ -191,26 +182,41 @@ def get_dbscan(load_set, X):
 
     clusters = pd.DataFrame()
     for index, row in results.iterrows():
+        print(row)
         f1 = float(row['Clustering__cluster_selection_epsilon'])
         if f1 == 1.0:
             f1 = int(f1)
-        
-        pipe = Pipeline([('DimReduction',
-                      umap.UMAP(
-                          n_neighbors=int(row['DimReduction__n_neighbors']),
-                          min_dist=float(row['DimReduction__min_dist']),
-                          n_components=int(row['DimReduction__n_components']))),
-                     ('Clustering',
-                     hdbscan.HDBSCAN(min_cluster_size=int(row['Clustering__min_cluster_size']),
-                                    min_samples=int(row['Clustering__min_samples']),
-                                    cluster_selection_epsilon=f1,
-                                    cluster_selection_method=row['Clustering__cluster_selection_method'],
-                                    core_dist_n_jobs=-1
-                                    ))
-                    ])
+        try:
+            pipe = Pipeline([('DimReduction',
+                          umap.UMAP(
+                              n_neighbors=int(row['DimReduction__n_neighbors']),
+                              min_dist=float(row['DimReduction__min_dist']),
+                              n_components=int(row['DimReduction__n_components']))),
+                         ('Clustering',
+                         hdbscan.HDBSCAN(min_cluster_size=int(row['Clustering__min_cluster_size']),
+                                        min_samples=int(row['Clustering__min_samples']),
+                                        cluster_selection_epsilon=f1,
+                                        cluster_selection_method=row['Clustering__cluster_selection_method'],
+                                        core_dist_n_jobs=-1
+                                        ))
+                        ])
+        except KeyError:
+            pipe = Pipeline([('DimReduction',
+                          umap.UMAP(
+                              n_neighbors=int(row['DimReduction__n_neighbors']),
+                              min_dist=float(row['DimReduction__min_dist']),
+                              n_components=int(row['DimReduction__n_components']))),
+                         ('Clustering',
+                         hdbscan.HDBSCAN(min_cluster_size=int(row['Clustering__min_cluster_size']),
+                                        min_samples=int(row['Clustering__min_samples']),
+                                        cluster_selection_epsilon=f1,
+                                        core_dist_n_jobs=-1
+                                        ))
+                         ])
         name = search.get_str(pipe)
-        with open(f"/data/g0017139/Models/TSet{load_set}/{name}.pkl", 'rb') as f:
-            pipe = pickle.load(f)
+#         with open(f"/data/g0017139/Models/TSet{load_set}/{name}.pkl", 'rb') as f:
+#             pipe = pickle.load(f)
+        pipe.fit(X)
         clusters[int(row['n_clusters'])] = pipe['Clustering'].labels_
     
     return clusters, results
@@ -329,9 +335,10 @@ def heatmap(df):
             count_df = count_df.drop('count', axis=1)
             data = pd.pivot_table(count_df, values='Percentage', index='Type', columns=column, fill_value=0)
             #fig, ax = plt.subplots(figsize=(20,7))
-            sns.heatmap(data, vmin=0, vmax=1, linewidths=.5, cmap="YlGnBu", ax=ax)
-            #fig= sns.clustermap(data, method="ward", metric="correlation", col_cluster=False,  cmap="YlGnBu", figsize=(20,7))
-            tabs.append((f'Clusters {column}', pn.pane.Matplotlib(fig, tight=True)))
+            #sns.heatmap(data, vmin=0, vmax=1, linewidths=.5, cmap="YlGnBu", ax=ax)
+            fig= sns.clustermap(data, method="ward", col_cluster=False,  cmap="YlGnBu", figsize=(20,7))
+            #pn.pane.Matplotlib(fig, tight=True)
+            tabs.append((f'Clusters {column}', fig))
     fig = pn.Tabs(*tabs)
     return fig
     
@@ -348,26 +355,28 @@ def set_board(X, X_with_type, current_set):
     # Get the results of hierarhical clustering for set 1
     results_grid = {}
     clusters = {}
-
+    numbers = {1:[2, 2, 2, 2],
+               2:[11, 2, 11, 2],
+               4:[26, 13, 26, 23]}
     # Hierachical Clustering
     clusters['HierarchicalClustering'], results_grid['HierarchicalClustering'] = get_hierarch(current_set, X)
-    df['HierarchicalClustering'] = [cluster_colors[x] for x in clusters['HierarchicalClustering'][2]]
-    X_with_type['HierarchicalClustering'] = clusters['HierarchicalClustering'][2].values
+    df['HierarchicalClustering'] = [cluster_colors[x] for x in clusters['HierarchicalClustering'][numbers[current_set][0]]]
+    X_with_type['HierarchicalClustering'] = clusters['HierarchicalClustering'][numbers[current_set][0]].values
 
     # KMEANS
     clusters['Kmeans'], results_grid['Kmeans'] = get_kmeans(current_set, X)
-    df['Kmeans'] = [cluster_colors[x] for x in clusters['Kmeans'][2]]
-    X_with_type['Kmeans'] = clusters['Kmeans'][2].values
+    df['Kmeans'] = [cluster_colors[x] for x in clusters['Kmeans'][numbers[current_set][1]]]
+    X_with_type['Kmeans'] = clusters['Kmeans'][numbers[current_set][1]].values
 
     # DBSCAN
     clusters['DBSCAN'], results_grid['DBSCAN'] = get_dbscan(current_set, X)
-    df['DBSCAN'] = [cluster_colors[x] for x in clusters['DBSCAN'][2]]
-    X_with_type['DBSCAN'] = clusters['DBSCAN'][2].values
+    df['DBSCAN'] = [cluster_colors[x] for x in clusters['DBSCAN'][numbers[current_set][2]]]
+    X_with_type['DBSCAN'] = clusters['DBSCAN'][numbers[current_set][2]].values
 
     # HDDC
     clusters['HDDC'], results_grid['HDDC'] = get_hddc(current_set, X)
-    df['HDDC'] = [cluster_colors[x] for x in clusters['HDDC'][2]]
-    X_with_type['HDDC'] = clusters['HDDC'][2].values
+    df['HDDC'] = [cluster_colors[x] for x in clusters['HDDC'][numbers[current_set][3]]]
+    X_with_type['HDDC'] = clusters['HDDC'][numbers[current_set][3]].values
 
     # Everyting in a source
     source = ColumnDataSource(data=df)
@@ -402,9 +411,10 @@ def set_board(X, X_with_type, current_set):
 if __name__ == '__main__':
     hv.extension('bokeh')
     tabs = []
-    for LOADED_SET in range(1, 2):
-        df, df_normalized, Type_df = load_sets(LOADED_SET)
-        tabs.append(set_board(df_normalized, df, LOADED_SET))
-
+    for LOADED_SET in range(1, 5):
+        if LOADED_SET != 3:
+            df, df_normalized, Type_df = load_sets(LOADED_SET)
+            tabs.append((str(LOADED_SET), set_board(df_normalized, df, LOADED_SET)))
+        plt.clf()
     pn.Tabs(*tabs).save('Dashboard.html')
 

@@ -1,0 +1,1227 @@
+/data/g0017139/.envs/ClusterEnv/lib/python3.9/site-packages/seaborn/matrix.py:805: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  self._figure = plt.figure(figsize=figsize)
+n_clusters                                       2
+silhouette_score_euclidean                0.104322
+silhouette_score_correlation              0.099542
+silhouette_score_manhattan                0.111301
+calinski_harabasz_score                  66.925385
+Fit_Time                                  9.408885
+DimReduction__n_neighbors                       25
+DimReduction__min_dist                         0.1
+DimReduction__n_components                      50
+Clustering__min_cluster_size                    25
+Clustering__min_samples                        100
+Clustering__cluster_selection_epsilon          0.5
+Clustering__cluster_selection_method           eom
+Name: 0, dtype: object
+n_clusters                                       3
+silhouette_score_euclidean                0.074502
+silhouette_score_correlation              0.040753
+silhouette_score_manhattan                0.080216
+calinski_harabasz_score                   26.39812
+Fit_Time                                 10.342791
+DimReduction__n_neighbors                       25
+DimReduction__min_dist                         0.5
+DimReduction__n_components                      10
+Clustering__min_cluster_size                    50
+Clustering__min_samples                         25
+Clustering__cluster_selection_epsilon          0.1
+Clustering__cluster_selection_method           eom
+Name: 1, dtype: object
+n_clusters                                       4
+silhouette_score_euclidean                0.074032
+silhouette_score_correlation              0.043547
+silhouette_score_manhattan                0.080523
+calinski_harabasz_score                  35.148325
+Fit_Time                                  8.566194
+DimReduction__n_neighbors                       25
+DimReduction__min_dist                         0.1
+DimReduction__n_components                       2
+Clustering__min_cluster_size                    50
+Clustering__min_samples                         25
+Clustering__cluster_selection_epsilon          1.0
+Clustering__cluster_selection_method           eom
+Name: 2, dtype: object
+n_clusters                                       5
+silhouette_score_euclidean                0.061821
+silhouette_score_correlation              0.037149
+silhouette_score_manhattan                0.069988
+calinski_harabasz_score                  23.824702
+Fit_Time                                  8.553509
+DimReduction__n_neighbors                       25
+DimReduction__min_dist                         0.1
+DimReduction__n_components                       2
+Clustering__min_cluster_size                    25
+Clustering__min_samples                         25
+Clustering__cluster_selection_epsilon          0.5
+Clustering__cluster_selection_method           eom
+Name: 3, dtype: object
+n_clusters                                       6
+silhouette_score_euclidean                0.032805
+silhouette_score_correlation              0.045647
+silhouette_score_manhattan                0.032531
+calinski_harabasz_score                  26.757874
+Fit_Time                                 10.301973
+DimReduction__n_neighbors                       50
+DimReduction__min_dist                         0.1
+DimReduction__n_components                       2
+Clustering__min_cluster_size                    25
+Clustering__min_samples                         25
+Clustering__cluster_selection_epsilon          0.5
+Clustering__cluster_selection_method          leaf
+Name: 4, dtype: object
+n_clusters                                      7
+silhouette_score_euclidean               0.023903
+silhouette_score_correlation             0.061821
+silhouette_score_manhattan               0.026942
+calinski_harabasz_score                  26.39894
+Fit_Time                                 8.549955
+DimReduction__n_neighbors                      25
+DimReduction__min_dist                        0.1
+DimReduction__n_components                     10
+Clustering__min_cluster_size                   50
+Clustering__min_samples                        25
+Clustering__cluster_selection_epsilon         0.1
+Clustering__cluster_selection_method         leaf
+Name: 5, dtype: object
+n_clusters                                       8
+silhouette_score_euclidean                0.031872
+silhouette_score_correlation              0.075697
+silhouette_score_manhattan                0.039688
+calinski_harabasz_score                   25.54007
+Fit_Time                                 12.012096
+DimReduction__n_neighbors                      100
+DimReduction__min_dist                         0.1
+DimReduction__n_components                      50
+Clustering__min_cluster_size                    25
+Clustering__min_samples                         25
+Clustering__cluster_selection_epsilon          0.5
+Clustering__cluster_selection_method          leaf
+Name: 6, dtype: object
+n_clusters                                       9
+silhouette_score_euclidean                0.038849
+silhouette_score_correlation               0.05488
+silhouette_score_manhattan                0.037754
+calinski_harabasz_score                  23.395279
+Fit_Time                                  8.589749
+DimReduction__n_neighbors                       25
+DimReduction__min_dist                         0.1
+DimReduction__n_components                       2
+Clustering__min_cluster_size                    25
+Clustering__min_samples                         25
+Clustering__cluster_selection_epsilon          0.5
+Clustering__cluster_selection_method          leaf
+Name: 7, dtype: object
+n_clusters                                      10
+silhouette_score_euclidean                0.033848
+silhouette_score_correlation              0.066892
+silhouette_score_manhattan                0.037374
+calinski_harabasz_score                  23.055287
+Fit_Time                                 10.018553
+DimReduction__n_neighbors                       50
+DimReduction__min_dist                         0.1
+DimReduction__n_components                      10
+Clustering__min_cluster_size                    25
+Clustering__min_samples                         25
+Clustering__cluster_selection_epsilon          0.5
+Clustering__cluster_selection_method          leaf
+Name: 8, dtype: object
+n_clusters                                      11
+silhouette_score_euclidean                 0.02486
+silhouette_score_correlation              0.059189
+silhouette_score_manhattan                0.030735
+calinski_harabasz_score                  22.536007
+Fit_Time                                 11.090263
+DimReduction__n_neighbors                       50
+DimReduction__min_dist                         0.1
+DimReduction__n_components                      50
+Clustering__min_cluster_size                    25
+Clustering__min_samples                         25
+Clustering__cluster_selection_epsilon          0.5
+Clustering__cluster_selection_method          leaf
+Name: 9, dtype: object
+n_clusters                                      12
+silhouette_score_euclidean                0.020168
+silhouette_score_correlation              0.043799
+silhouette_score_manhattan                0.022148
+calinski_harabasz_score                    19.1956
+Fit_Time                                 10.186058
+DimReduction__n_neighbors                       50
+DimReduction__min_dist                         0.1
+DimReduction__n_components                      10
+Clustering__min_cluster_size                    25
+Clustering__min_samples                         25
+Clustering__cluster_selection_epsilon          0.1
+Clustering__cluster_selection_method          leaf
+Name: 10, dtype: object
+n_clusters                                      13
+silhouette_score_euclidean                0.032986
+silhouette_score_correlation              0.064854
+silhouette_score_manhattan                0.036293
+calinski_harabasz_score                  19.584326
+Fit_Time                                  8.893066
+DimReduction__n_neighbors                       25
+DimReduction__min_dist                         0.1
+DimReduction__n_components                      10
+Clustering__min_cluster_size                    25
+Clustering__min_samples                         25
+Clustering__cluster_selection_epsilon          0.5
+Clustering__cluster_selection_method          leaf
+Name: 11, dtype: object
+n_clusters                                      14
+silhouette_score_euclidean                 0.01605
+silhouette_score_correlation              0.048533
+silhouette_score_manhattan                0.021978
+calinski_harabasz_score                  18.448073
+Fit_Time                                 10.488897
+DimReduction__n_neighbors                       25
+DimReduction__min_dist                         0.1
+DimReduction__n_components                       2
+Clustering__min_cluster_size                    25
+Clustering__min_samples                         25
+Clustering__cluster_selection_epsilon          0.1
+Clustering__cluster_selection_method          leaf
+Name: 12, dtype: object
+n_clusters                                      15
+silhouette_score_euclidean                0.018964
+silhouette_score_correlation              0.052062
+silhouette_score_manhattan                0.023079
+calinski_harabasz_score                  18.173129
+Fit_Time                                  9.219265
+DimReduction__n_neighbors                       25
+DimReduction__min_dist                         0.1
+DimReduction__n_components                      10
+Clustering__min_cluster_size                    25
+Clustering__min_samples                         25
+Clustering__cluster_selection_epsilon          0.1
+Clustering__cluster_selection_method          leaf
+Name: 13, dtype: object
+n_clusters                                 5.000000
+silhouette_score_euclidean                 0.094550
+silhouette_score_correlation              -0.073522
+Fit_Time                                 195.372493
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                10.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 0, dtype: float64
+n_clusters                                 9.000000
+silhouette_score_euclidean                 0.041068
+silhouette_score_correlation              -0.033017
+Fit_Time                                 200.841068
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                10.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 1, dtype: float64
+n_clusters                                10.000000
+silhouette_score_euclidean                 0.045839
+silhouette_score_correlation              -0.027744
+Fit_Time                                 186.530499
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                10.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 2, dtype: float64
+n_clusters                                11.000000
+silhouette_score_euclidean                 0.085364
+silhouette_score_correlation               0.062217
+Fit_Time                                 141.541895
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                 2.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 3, dtype: float64
+n_clusters                                12.000000
+silhouette_score_euclidean                 0.074918
+silhouette_score_correlation               0.037303
+Fit_Time                                 116.840384
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                50.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 4, dtype: float64
+n_clusters                                13.000000
+silhouette_score_euclidean                 0.041851
+silhouette_score_correlation               0.060892
+Fit_Time                                 150.953310
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                 2.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 5, dtype: float64
+n_clusters                                18.000000
+silhouette_score_euclidean                 0.035361
+silhouette_score_correlation               0.023821
+Fit_Time                                 192.016566
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                 2.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 6, dtype: float64
+n_clusters                                19.000000
+silhouette_score_euclidean                 0.038212
+silhouette_score_correlation              -0.003428
+Fit_Time                                 188.438435
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                 2.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 7, dtype: float64
+n_clusters                                20.000000
+silhouette_score_euclidean                 0.051074
+silhouette_score_correlation               0.056823
+Fit_Time                                 243.099826
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                50.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 8, dtype: float64
+n_clusters                                21.000000
+silhouette_score_euclidean                 0.050856
+silhouette_score_correlation               0.049806
+Fit_Time                                 162.727793
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                10.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 9, dtype: float64
+n_clusters                                22.000000
+silhouette_score_euclidean                 0.048482
+silhouette_score_correlation               0.048602
+Fit_Time                                 175.647170
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                10.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 10, dtype: float64
+n_clusters                                23.000000
+silhouette_score_euclidean                 0.047814
+silhouette_score_correlation               0.062269
+Fit_Time                                 170.134372
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                10.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 11, dtype: float64
+n_clusters                                24.000000
+silhouette_score_euclidean                 0.044057
+silhouette_score_correlation               0.061525
+Fit_Time                                 184.812281
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                 2.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 12, dtype: float64
+n_clusters                                25.000000
+silhouette_score_euclidean                 0.052438
+silhouette_score_correlation               0.066939
+Fit_Time                                 167.022789
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                10.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 13, dtype: float64
+n_clusters                                26.000000
+silhouette_score_euclidean                 0.051088
+silhouette_score_correlation               0.062328
+Fit_Time                                 196.010353
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                50.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 14, dtype: float64
+n_clusters                                27.000000
+silhouette_score_euclidean                 0.045252
+silhouette_score_correlation               0.051854
+Fit_Time                                 219.841787
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                 2.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 15, dtype: float64
+n_clusters                                28.000000
+silhouette_score_euclidean                 0.044475
+silhouette_score_correlation               0.053869
+Fit_Time                                 139.930045
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                50.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 16, dtype: float64
+n_clusters                                29.000000
+silhouette_score_euclidean                 0.047004
+silhouette_score_correlation               0.059773
+Fit_Time                                 121.241850
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                10.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 17, dtype: float64
+n_clusters                                30.000000
+silhouette_score_euclidean                 0.025597
+silhouette_score_correlation               0.047799
+Fit_Time                                 125.119820
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                50.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 18, dtype: float64
+n_clusters                                31.000000
+silhouette_score_euclidean                 0.042623
+silhouette_score_correlation               0.049255
+Fit_Time                                  99.910733
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                 2.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 19, dtype: float64
+n_clusters                                32.000000
+silhouette_score_euclidean                 0.028064
+silhouette_score_correlation               0.028996
+Fit_Time                                  93.225901
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                 2.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 20, dtype: float64
+n_clusters                                33.000000
+silhouette_score_euclidean                 0.041770
+silhouette_score_correlation               0.064542
+Fit_Time                                 113.010932
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                10.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 21, dtype: float64
+n_clusters                                34.000000
+silhouette_score_euclidean                 0.038092
+silhouette_score_correlation               0.028997
+Fit_Time                                 190.037511
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                10.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 22, dtype: float64
+n_clusters                                35.000000
+silhouette_score_euclidean                 0.029925
+silhouette_score_correlation               0.063811
+Fit_Time                                 133.686418
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                50.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 23, dtype: float64
+n_clusters                                36.000000
+silhouette_score_euclidean                 0.033880
+silhouette_score_correlation               0.079129
+Fit_Time                                 186.004879
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                10.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 24, dtype: float64
+n_clusters                                37.000000
+silhouette_score_euclidean                 0.028765
+silhouette_score_correlation               0.049344
+Fit_Time                                 116.935420
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                 2.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 25, dtype: float64
+n_clusters                                38.000000
+silhouette_score_euclidean                 0.041637
+silhouette_score_correlation               0.017445
+Fit_Time                                 231.789491
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                50.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 26, dtype: float64
+n_clusters                                39.000000
+silhouette_score_euclidean                 0.029177
+silhouette_score_correlation              -0.000623
+Fit_Time                                 186.545439
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                10.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 27, dtype: float64
+n_clusters                                40.000000
+silhouette_score_euclidean                 0.029214
+silhouette_score_correlation               0.000440
+Fit_Time                                 259.453707
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                50.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 28, dtype: float64
+n_clusters                                42.000000
+silhouette_score_euclidean                 0.025342
+silhouette_score_correlation               0.062262
+Fit_Time                                 129.336068
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                 2.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 29, dtype: float64
+n_clusters                                43.000000
+silhouette_score_euclidean                 0.032418
+silhouette_score_correlation               0.001466
+Fit_Time                                 105.176373
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                10.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 30, dtype: float64
+n_clusters                                44.000000
+silhouette_score_euclidean                 0.049076
+silhouette_score_correlation               0.098026
+Fit_Time                                 137.334600
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                10.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 31, dtype: float64
+n_clusters                                45.000000
+silhouette_score_euclidean                 0.048770
+silhouette_score_correlation               0.096827
+Fit_Time                                 103.150424
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                10.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 32, dtype: float64
+n_clusters                                46.000000
+silhouette_score_euclidean                 0.043117
+silhouette_score_correlation               0.095827
+Fit_Time                                 222.228987
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                10.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 33, dtype: float64
+n_clusters                                47.000000
+silhouette_score_euclidean                 0.040900
+silhouette_score_correlation               0.020481
+Fit_Time                                 134.534275
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                50.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 34, dtype: float64
+n_clusters                                49.000000
+silhouette_score_euclidean                 0.040696
+silhouette_score_correlation               0.089012
+Fit_Time                                 239.508969
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                50.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 35, dtype: float64
+n_clusters                                50.000000
+silhouette_score_euclidean                 0.041485
+silhouette_score_correlation               0.094506
+Fit_Time                                 185.863426
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                10.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 36, dtype: float64
+n_clusters                                52.000000
+silhouette_score_euclidean                 0.038697
+silhouette_score_correlation               0.096222
+Fit_Time                                 232.128769
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                 2.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 37, dtype: float64
+n_clusters                                55.000000
+silhouette_score_euclidean                 0.037984
+silhouette_score_correlation               0.091327
+Fit_Time                                 239.714823
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                50.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 38, dtype: float64
+n_clusters                                56.000000
+silhouette_score_euclidean                 0.053001
+silhouette_score_correlation               0.085144
+Fit_Time                                 202.159995
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                10.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 39, dtype: float64
+n_clusters                                58.000000
+silhouette_score_euclidean                 0.033286
+silhouette_score_correlation               0.025956
+Fit_Time                                 106.268424
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                10.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 40, dtype: float64
+n_clusters                                59.000000
+silhouette_score_euclidean                 0.027723
+silhouette_score_correlation               0.078492
+Fit_Time                                 231.805989
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                 2.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 41, dtype: float64
+n_clusters                                62.000000
+silhouette_score_euclidean                 0.048460
+silhouette_score_correlation               0.081249
+Fit_Time                                 157.895629
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                50.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 42, dtype: float64
+n_clusters                                64.000000
+silhouette_score_euclidean                 0.047474
+silhouette_score_correlation               0.089789
+Fit_Time                                 231.483022
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                 2.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 43, dtype: float64
+n_clusters                                65.000000
+silhouette_score_euclidean                 0.031887
+silhouette_score_correlation               0.073364
+Fit_Time                                  96.410758
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                 2.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 44, dtype: float64
+n_clusters                                68.000000
+silhouette_score_euclidean                 0.018035
+silhouette_score_correlation               0.030147
+Fit_Time                                 190.714092
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                10.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 45, dtype: float64
+n_clusters                                69.000000
+silhouette_score_euclidean                 0.026319
+silhouette_score_correlation               0.045721
+Fit_Time                                 259.195793
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                50.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 46, dtype: float64
+n_clusters                                83.000000
+silhouette_score_euclidean                 0.020929
+silhouette_score_correlation               0.028318
+Fit_Time                                 145.797082
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                10.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 47, dtype: float64
+n_clusters                                87.000000
+silhouette_score_euclidean                 0.021259
+silhouette_score_correlation               0.038283
+Fit_Time                                 121.024706
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                50.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 48, dtype: float64
+n_clusters                                88.000000
+silhouette_score_euclidean                 0.033807
+silhouette_score_correlation               0.050590
+Fit_Time                                 130.437815
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                 2.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 49, dtype: float64
+n_clusters                               128.000000
+silhouette_score_euclidean                 0.046358
+silhouette_score_correlation               0.073655
+Fit_Time                                 189.686594
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                 2.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 50, dtype: float64
+n_clusters                               129.000000
+silhouette_score_euclidean                 0.026911
+silhouette_score_correlation               0.052382
+Fit_Time                                 205.630673
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                50.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 51, dtype: float64
+n_clusters                               133.000000
+silhouette_score_euclidean                 0.031329
+silhouette_score_correlation               0.058414
+Fit_Time                                 328.302272
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                50.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 52, dtype: float64
+n_clusters                               135.000000
+silhouette_score_euclidean                 0.024050
+silhouette_score_correlation               0.042467
+Fit_Time                                 168.667688
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                10.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 53, dtype: float64
+n_clusters                               139.000000
+silhouette_score_euclidean                 0.031061
+silhouette_score_correlation               0.059505
+Fit_Time                                 111.542398
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                10.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 54, dtype: float64
+n_clusters                               151.000000
+silhouette_score_euclidean                 0.038091
+silhouette_score_correlation               0.060924
+Fit_Time                                 116.630129
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                 2.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 55, dtype: float64
+n_clusters                                 2.000000
+silhouette_score_euclidean                 0.317666
+silhouette_score_correlation               0.019549
+Fit_Time                                  71.122410
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                50.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 0, dtype: float64
+n_clusters                                 3.000000
+silhouette_score_euclidean                 0.103996
+silhouette_score_correlation               0.029475
+Fit_Time                                  96.604519
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                10.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 1, dtype: float64
+n_clusters                                 4.000000
+silhouette_score_euclidean                 0.094108
+silhouette_score_correlation              -0.018720
+Fit_Time                                  70.788647
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                50.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 2, dtype: float64
+n_clusters                                 5.000000
+silhouette_score_euclidean                 0.002905
+silhouette_score_correlation               0.016026
+Fit_Time                                 104.710631
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                 2.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 3, dtype: float64
+n_clusters                                 8.000000
+silhouette_score_euclidean                -0.021263
+silhouette_score_correlation               0.057293
+Fit_Time                                  66.054199
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                10.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 4, dtype: float64
+n_clusters                                10.000000
+silhouette_score_euclidean                 0.000871
+silhouette_score_correlation               0.050586
+Fit_Time                                  85.587118
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                 2.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 5, dtype: float64
+n_clusters                                11.000000
+silhouette_score_euclidean                 0.003241
+silhouette_score_correlation               0.091199
+Fit_Time                                  57.501644
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                 2.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 6, dtype: float64
+n_clusters                                12.000000
+silhouette_score_euclidean                 0.014387
+silhouette_score_correlation               0.075157
+Fit_Time                                  68.527249
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                10.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 7, dtype: float64
+n_clusters                                13.000000
+silhouette_score_euclidean                 0.032541
+silhouette_score_correlation               0.115635
+Fit_Time                                  65.148079
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                 2.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 8, dtype: float64
+n_clusters                                14.000000
+silhouette_score_euclidean                 0.034374
+silhouette_score_correlation               0.106126
+Fit_Time                                  65.392297
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                10.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 9, dtype: float64
+n_clusters                                15.000000
+silhouette_score_euclidean                 0.019811
+silhouette_score_correlation               0.124563
+Fit_Time                                  64.535572
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                 2.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 10, dtype: float64
+n_clusters                                16.000000
+silhouette_score_euclidean                 0.041100
+silhouette_score_correlation               0.125474
+Fit_Time                                 117.294235
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                50.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 11, dtype: float64
+n_clusters                               17.000000
+silhouette_score_euclidean                0.012974
+silhouette_score_correlation              0.088406
+Fit_Time                                 51.549950
+DimReduction__n_neighbors                25.000000
+DimReduction__min_dist                    0.100000
+DimReduction__n_components               50.000000
+Clustering__min_cluster_size             25.000000
+Clustering__min_samples                  25.000000
+Clustering__cluster_selection_epsilon     0.750000
+Name: 12, dtype: float64
+n_clusters                                18.000000
+silhouette_score_euclidean                 0.019756
+silhouette_score_correlation               0.145938
+Fit_Time                                  70.391434
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                50.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 13, dtype: float64
+n_clusters                                19.000000
+silhouette_score_euclidean                -0.042691
+silhouette_score_correlation               0.106786
+Fit_Time                                  73.152236
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                50.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 14, dtype: float64
+n_clusters                                20.000000
+silhouette_score_euclidean                 0.027380
+silhouette_score_correlation               0.119940
+Fit_Time                                 102.133149
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                 2.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 15, dtype: float64
+n_clusters                               21.000000
+silhouette_score_euclidean                0.028366
+silhouette_score_correlation              0.100368
+Fit_Time                                 63.523057
+DimReduction__n_neighbors                25.000000
+DimReduction__min_dist                    0.750000
+DimReduction__n_components               50.000000
+Clustering__min_cluster_size             25.000000
+Clustering__min_samples                  25.000000
+Clustering__cluster_selection_epsilon     0.750000
+Name: 16, dtype: float64
+n_clusters                                22.000000
+silhouette_score_euclidean                 0.032353
+silhouette_score_correlation               0.147552
+Fit_Time                                  51.511012
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                50.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                  100.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 17, dtype: float64
+n_clusters                                23.000000
+silhouette_score_euclidean                 0.036451
+silhouette_score_correlation               0.118824
+Fit_Time                                 104.659086
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.750000
+DimReduction__n_components                50.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.750000
+Name: 18, dtype: float64
+n_clusters                               24.000000
+silhouette_score_euclidean                0.034941
+silhouette_score_correlation              0.119879
+Fit_Time                                 98.767648
+DimReduction__n_neighbors                50.000000
+DimReduction__min_dist                    0.750000
+DimReduction__n_components               10.000000
+Clustering__min_cluster_size             25.000000
+Clustering__min_samples                  25.000000
+Clustering__cluster_selection_epsilon     0.750000
+Name: 19, dtype: float64
+n_clusters                                25.000000
+silhouette_score_euclidean                 0.039668
+silhouette_score_correlation               0.158448
+Fit_Time                                 110.722902
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                50.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 20, dtype: float64
+n_clusters                                26.000000
+silhouette_score_euclidean                 0.043773
+silhouette_score_correlation               0.160901
+Fit_Time                                  52.583073
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                50.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 21, dtype: float64
+n_clusters                                27.000000
+silhouette_score_euclidean                 0.041937
+silhouette_score_correlation               0.157675
+Fit_Time                                  47.761487
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                10.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 22, dtype: float64
+n_clusters                               28.000000
+silhouette_score_euclidean                0.030192
+silhouette_score_correlation              0.139419
+Fit_Time                                 67.004509
+DimReduction__n_neighbors                25.000000
+DimReduction__min_dist                    0.750000
+DimReduction__n_components               10.000000
+Clustering__min_cluster_size             25.000000
+Clustering__min_samples                  25.000000
+Clustering__cluster_selection_epsilon     0.750000
+Name: 23, dtype: float64
+n_clusters                                30.000000
+silhouette_score_euclidean                 0.028402
+silhouette_score_correlation               0.134754
+Fit_Time                                  90.654262
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                 2.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 24, dtype: float64
+n_clusters                                31.000000
+silhouette_score_euclidean                 0.029644
+silhouette_score_correlation               0.133276
+Fit_Time                                  45.452609
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                 2.000000
+Clustering__min_cluster_size             100.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 25, dtype: float64
+n_clusters                               35.000000
+silhouette_score_euclidean                0.033440
+silhouette_score_correlation              0.132818
+Fit_Time                                 80.598752
+DimReduction__n_neighbors                25.000000
+DimReduction__min_dist                    0.750000
+DimReduction__n_components               50.000000
+Clustering__min_cluster_size             25.000000
+Clustering__min_samples                  25.000000
+Clustering__cluster_selection_epsilon     0.100000
+Name: 26, dtype: float64
+n_clusters                                37.000000
+silhouette_score_euclidean                 0.052197
+silhouette_score_correlation               0.146230
+Fit_Time                                 211.903435
+DimReduction__n_neighbors                 25.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                50.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 27, dtype: float64
+n_clusters                                38.000000
+silhouette_score_euclidean                 0.048807
+silhouette_score_correlation               0.157501
+Fit_Time                                 111.662699
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                50.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 28, dtype: float64
+n_clusters                                40.000000
+silhouette_score_euclidean                 0.051165
+silhouette_score_correlation               0.153195
+Fit_Time                                 107.326002
+DimReduction__n_neighbors                 50.000000
+DimReduction__min_dist                     0.100000
+DimReduction__n_components                10.000000
+Clustering__min_cluster_size              25.000000
+Clustering__min_samples                   25.000000
+Clustering__cluster_selection_epsilon      0.100000
+Name: 29, dtype: float64
+n_clusters                               44.000000
+silhouette_score_euclidean                0.047638
+silhouette_score_correlation              0.149982
+Fit_Time                                 46.437582
+DimReduction__n_neighbors                25.000000
+DimReduction__min_dist                    0.100000
+DimReduction__n_components               10.000000
+Clustering__min_cluster_size             25.000000
+Clustering__min_samples                  25.000000
+Clustering__cluster_selection_epsilon     0.100000
+Name: 30, dtype: float64
+n_clusters                               45.000000
+silhouette_score_euclidean                0.045048
+silhouette_score_correlation              0.129488
+Fit_Time                                 95.324305
+DimReduction__n_neighbors                50.000000
+DimReduction__min_dist                    0.100000
+DimReduction__n_components                2.000000
+Clustering__min_cluster_size             25.000000
+Clustering__min_samples                  25.000000
+Clustering__cluster_selection_epsilon     0.100000
+Name: 31, dtype: float64
+n_clusters                               46.000000
+silhouette_score_euclidean                0.038788
+silhouette_score_correlation              0.126549
+Fit_Time                                 44.457050
+DimReduction__n_neighbors                25.000000
+DimReduction__min_dist                    0.100000
+DimReduction__n_components                2.000000
+Clustering__min_cluster_size             25.000000
+Clustering__min_samples                  25.000000
+Clustering__cluster_selection_epsilon     0.100000
+Name: 32, dtype: float64
+
+
+###############################################################################
+Peregrine Cluster
+Job 22380124 for user 'g0017139'
+Finished at: Mon Dec  6 18:42:04 CET 2021
+
+Job details:
+============
+
+Job ID              : 22380124
+Name                : dashboard
+User                : g0017139
+Partition           : himem
+Nodes               : pg-memory06
+Number of Nodes     : 1
+Cores               : 6
+Number of Tasks     : 1
+State               : COMPLETED
+Submit              : 2021-12-06T14:10:19
+Start               : 2021-12-06T14:10:20
+End                 : 2021-12-06T18:42:04
+Reserved walltime   : 20:00:00
+Used walltime       : 04:31:44
+Used CPU time       : 17:20:55 (efficiency: 63.84%)
+% User (Computation): 93.75%
+% System (I/O)      :  6.25%
+Mem reserved        : 150G/node
+Max Mem (Node/step) : 17.90G (pg-memory06, per node)
+Full Max Mem usage  : 17.90G
+Total Disk Read     : 6.55M
+Total Disk Write    : 10.72K
+Hints and tips      :
+ 1) The program efficiency is low. Your program is not using the assigned cores
+    effectively. Please check if you are using all the cores you requested.
+    You may also need to check the file in- and output pattern of your program.
+ 2) You requested much more memory than your program used.
+    Please reduce the requested amount of memory.
+ *) For more information on these issues see:
+    https://wiki.hpc.rug.nl/peregrine/additional_information/job_hints
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################

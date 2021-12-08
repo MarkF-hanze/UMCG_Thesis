@@ -1,203 +1,35 @@
-  0%|          | 0/56 [00:00<?, ?it/s]  2%|▏         | 1/56 [19:37<17:59:33, 1177.70s/it]  4%|▎         | 2/56 [38:55<17:29:31, 1166.14s/it]  5%|▌         | 3/56 [58:29<17:13:11, 1169.66s/it]  7%|▋         | 4/56 [1:18:10<16:57:38, 1174.20s/it]  9%|▉         | 5/56 [1:37:40<16:36:36, 1172.48s/it] 11%|█         | 6/56 [1:58:05<16:31:58, 1190.36s/it] 12%|█▎        | 7/56 [2:18:07<16:15:20, 1194.31s/it] 14%|█▍        | 8/56 [2:38:36<16:04:13, 1205.29s/it] 16%|█▌        | 9/56 [2:59:03<15:49:30, 1212.14s/it] 18%|█▊        | 10/56 [3:18:13<15:14:36, 1192.96s/it] 20%|█▉        | 11/56 [3:38:21<14:58:09, 1197.55s/it] 21%|██▏       | 12/56 [3:58:41<14:43:16, 1204.46s/it] 23%|██▎       | 13/56 [4:18:58<14:25:49, 1208.13s/it] 25%|██▌       | 14/56 [4:38:50<14:02:15, 1203.23s/it] 27%|██▋       | 15/56 [4:59:07<13:45:09, 1207.55s/it] 29%|██▊       | 16/56 [5:19:17<13:25:30, 1208.26s/it] 30%|███       | 17/56 [5:38:43<12:56:56, 1195.29s/it] 32%|███▏      | 18/56 [5:58:21<12:33:49, 1190.25s/it] 34%|███▍      | 19/56 [6:17:51<12:10:17, 1184.27s/it] 36%|███▌      | 20/56 [6:36:50<11:42:16, 1170.45s/it] 38%|███▊      | 21/56 [6:56:38<11:25:57, 1175.92s/it] 39%|███▉      | 22/56 [7:16:13<11:06:11, 1175.62s/it] 41%|████      | 23/56 [7:35:49<10:46:41, 1175.79s/it] 43%|████▎     | 24/56 [7:55:13<10:25:04, 1172.01s/it] 45%|████▍     | 25/56 [8:14:59<10:07:47, 1176.36s/it] 46%|████▋     | 26/56 [8:35:15<9:54:07, 1188.27s/it]  48%|████▊     | 27/56 [8:55:09<9:35:10, 1190.01s/it] 50%|█████     | 28/56 [9:15:24<9:18:48, 1197.45s/it] 52%|█████▏    | 29/56 [9:34:44<8:53:45, 1186.13s/it] 54%|█████▎    | 30/56 [9:53:58<8:29:49, 1176.53s/it] 55%|█████▌    | 31/56 [10:13:19<8:08:14, 1171.80s/it] 57%|█████▋    | 32/56 [10:33:18<7:52:03, 1180.13s/it] 59%|█████▉    | 33/56 [10:53:45<7:37:43, 1194.07s/it] 61%|██████    | 34/56 [11:13:06<7:14:09, 1184.08s/it] 62%|██████▎   | 35/56 [11:32:43<6:53:41, 1181.98s/it] 64%|██████▍   | 36/56 [11:53:04<6:37:58, 1193.90s/it] 66%|██████▌   | 37/56 [12:13:23<6:20:22, 1201.18s/it] 68%|██████▊   | 38/56 [12:33:31<6:01:02, 1203.45s/it] 70%|██████▉   | 39/56 [12:52:53<5:37:28, 1191.07s/it] 71%|███████▏  | 40/56 [13:12:24<5:15:57, 1184.86s/it] 73%|███████▎  | 41/56 [13:32:23<4:57:18, 1189.21s/it] 75%|███████▌  | 42/56 [13:52:10<4:37:20, 1188.59s/it] 77%|███████▋  | 43/56 [14:12:34<4:19:49, 1199.23s/it] 79%|███████▊  | 44/56 [14:32:21<3:59:04, 1195.39s/it] 80%|████████  | 45/56 [14:51:25<3:36:21, 1180.16s/it] 82%|████████▏ | 46/56 [15:11:49<3:18:50, 1193.03s/it] 84%|████████▍ | 47/56 [15:32:11<3:00:18, 1202.00s/it] 86%|████████▌ | 48/56 [15:52:27<2:40:48, 1206.09s/it] 88%|████████▊ | 49/56 [16:12:47<2:21:12, 1210.34s/it] 89%|████████▉ | 50/56 [16:32:49<2:00:46, 1207.82s/it] 91%|█████████ | 51/56 [16:52:56<1:40:37, 1207.48s/it] 93%|█████████▎| 52/56 [17:12:40<1:20:01, 1200.43s/it] 95%|█████████▍| 53/56 [17:31:45<59:11, 1183.82s/it]   96%|█████████▋| 54/56 [17:50:39<38:57, 1168.85s/it] 98%|█████████▊| 55/56 [18:09:55<19:25, 1165.15s/it]100%|██████████| 56/56 [18:29:17<00:00, 1164.06s/it]100%|██████████| 56/56 [18:29:17<00:00, 1188.53s/it]
-Started
-FITTED
-MiniBatchKMeans_batch_size__128_n_clusters__2_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__256_n_clusters__2_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__512_n_clusters__2_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__1024_n_clusters__2_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__128_n_clusters__3_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__256_n_clusters__3_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__512_n_clusters__3_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__1024_n_clusters__3_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__128_n_clusters__4_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__256_n_clusters__4_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__512_n_clusters__4_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__1024_n_clusters__4_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__128_n_clusters__5_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__256_n_clusters__5_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__512_n_clusters__5_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__1024_n_clusters__5_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__128_n_clusters__6_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__256_n_clusters__6_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__512_n_clusters__6_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__1024_n_clusters__6_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__128_n_clusters__7_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__256_n_clusters__7_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__512_n_clusters__7_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__1024_n_clusters__7_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__128_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__256_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__512_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__1024_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__128_n_clusters__9_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__256_n_clusters__9_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__512_n_clusters__9_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__1024_n_clusters__9_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__128_n_clusters__10_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__256_n_clusters__10_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__512_n_clusters__10_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__1024_n_clusters__10_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__128_n_clusters__11_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__256_n_clusters__11_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__512_n_clusters__11_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__1024_n_clusters__11_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__128_n_clusters__12_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__256_n_clusters__12_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__512_n_clusters__12_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__1024_n_clusters__12_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__128_n_clusters__13_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__256_n_clusters__13_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__512_n_clusters__13_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__1024_n_clusters__13_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__128_n_clusters__14_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__256_n_clusters__14_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__512_n_clusters__14_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__1024_n_clusters__14_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__128_n_clusters__15_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__256_n_clusters__15_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__512_n_clusters__15_random_state__0
-Started
-FITTED
-MiniBatchKMeans_batch_size__1024_n_clusters__15_random_state__0
+  0%|          | 0/116 [00:00<?, ?it/s]  1%|          | 1/116 [04:14<8:08:39, 254.95s/it]  2%|▏         | 2/116 [08:18<7:51:26, 248.12s/it]  3%|▎         | 3/116 [12:22<7:43:58, 246.36s/it]  3%|▎         | 4/116 [16:30<7:41:13, 247.08s/it]  4%|▍         | 5/116 [20:23<7:27:34, 241.94s/it]  5%|▌         | 6/116 [24:19<7:19:34, 239.77s/it]  6%|▌         | 7/116 [28:20<7:16:23, 240.21s/it]  7%|▋         | 8/116 [32:09<7:06:02, 236.69s/it]  8%|▊         | 9/116 [37:03<7:34:22, 254.79s/it]  9%|▊         | 10/116 [41:13<7:27:01, 253.03s/it]  9%|▉         | 11/116 [45:22<7:20:43, 251.85s/it] 10%|█         | 12/116 [49:38<7:18:58, 253.25s/it] 11%|█         | 13/116 [53:32<7:04:30, 247.29s/it] 12%|█▏        | 14/116 [57:24<6:52:24, 242.60s/it] 13%|█▎        | 15/116 [1:01:32<6:51:28, 244.44s/it] 14%|█▍        | 16/116 [1:05:30<6:44:05, 242.46s/it] 15%|█▍        | 17/116 [1:10:07<6:57:07, 252.81s/it] 16%|█▌        | 18/116 [1:14:59<7:12:04, 264.54s/it] 16%|█▋        | 19/116 [1:19:53<7:22:03, 273.44s/it] 17%|█▋        | 20/116 [1:24:20<7:14:30, 271.56s/it] 18%|█▊        | 21/116 [1:28:26<6:57:32, 263.71s/it] 19%|█▉        | 22/116 [1:32:37<6:47:25, 260.06s/it] 20%|█▉        | 23/116 [1:37:07<6:47:44, 263.06s/it] 21%|██        | 24/116 [1:41:17<6:37:20, 259.13s/it] 22%|██▏       | 25/116 [1:45:07<6:19:35, 250.28s/it] 22%|██▏       | 26/116 [1:48:45<6:00:52, 240.58s/it] 23%|██▎       | 27/116 [1:52:58<6:02:38, 244.48s/it] 24%|██▍       | 28/116 [1:57:06<5:59:57, 245.43s/it] 25%|██▌       | 29/116 [2:01:12<5:56:16, 245.71s/it] 26%|██▌       | 30/116 [2:05:23<5:54:11, 247.11s/it] 27%|██▋       | 31/116 [2:09:56<6:01:11, 254.96s/it] 28%|██▊       | 32/116 [2:14:28<6:04:04, 260.05s/it] 28%|██▊       | 33/116 [2:18:42<5:57:22, 258.35s/it] 29%|██▉       | 34/116 [2:23:04<5:54:23, 259.31s/it] 30%|███       | 35/116 [2:27:25<5:50:55, 259.95s/it] 31%|███       | 36/116 [2:31:15<5:34:33, 250.92s/it] 32%|███▏      | 37/116 [2:34:44<5:13:51, 238.37s/it] 33%|███▎      | 38/116 [2:38:18<5:00:18, 231.00s/it] 34%|███▎      | 39/116 [2:42:37<5:07:20, 239.49s/it] 34%|███▍      | 40/116 [2:47:05<5:13:57, 247.86s/it] 35%|███▌      | 41/116 [2:51:20<5:12:27, 249.97s/it] 36%|███▌      | 42/116 [2:56:09<5:23:03, 261.94s/it] 37%|███▋      | 43/116 [3:00:40<5:21:55, 264.59s/it] 38%|███▊      | 44/116 [3:05:04<5:17:12, 264.34s/it] 39%|███▉      | 45/116 [3:09:03<5:03:38, 256.59s/it] 40%|███▉      | 46/116 [3:13:33<5:04:19, 260.84s/it] 41%|████      | 47/116 [3:17:57<5:00:48, 261.57s/it] 41%|████▏     | 48/116 [3:22:28<4:59:44, 264.48s/it] 42%|████▏     | 49/116 [3:26:39<4:51:02, 260.63s/it] 43%|████▎     | 50/116 [3:30:43<4:41:08, 255.58s/it] 44%|████▍     | 51/116 [3:34:55<4:35:45, 254.54s/it] 45%|████▍     | 52/116 [3:39:18<4:33:58, 256.85s/it] 46%|████▌     | 53/116 [3:43:55<4:36:00, 262.87s/it] 47%|████▋     | 54/116 [3:48:20<4:32:32, 263.74s/it] 47%|████▋     | 55/116 [3:52:35<4:25:21, 261.01s/it] 48%|████▊     | 56/116 [3:56:59<4:21:57, 261.96s/it] 49%|████▉     | 57/116 [4:01:43<4:24:12, 268.68s/it] 50%|█████     | 58/116 [4:06:20<4:22:00, 271.05s/it] 51%|█████     | 59/116 [4:11:01<4:20:22, 274.07s/it] 52%|█████▏    | 60/116 [4:15:30<4:14:16, 272.43s/it] 53%|█████▎    | 61/116 [4:19:57<4:08:24, 271.00s/it] 53%|█████▎    | 62/116 [4:24:15<4:00:14, 266.94s/it] 54%|█████▍    | 63/116 [4:28:29<3:52:28, 263.18s/it] 55%|█████▌    | 64/116 [4:32:25<3:41:02, 255.05s/it] 56%|█████▌    | 65/116 [4:36:12<3:29:34, 246.56s/it] 57%|█████▋    | 66/116 [4:40:37<3:30:06, 252.13s/it] 58%|█████▊    | 67/116 [4:45:00<3:28:24, 255.19s/it] 59%|█████▊    | 68/116 [4:49:50<3:32:30, 265.63s/it] 59%|█████▉    | 69/116 [4:54:24<3:30:07, 268.24s/it] 60%|██████    | 70/116 [4:58:38<3:22:26, 264.05s/it] 61%|██████    | 71/116 [5:02:33<3:11:27, 255.28s/it] 62%|██████▏   | 72/116 [5:06:23<3:01:38, 247.69s/it] 63%|██████▎   | 73/116 [5:10:42<2:59:57, 251.11s/it] 64%|██████▍   | 74/116 [5:15:16<3:00:31, 257.88s/it] 65%|██████▍   | 75/116 [5:20:16<3:04:58, 270.69s/it] 66%|██████▌   | 76/116 [5:25:10<3:04:59, 277.49s/it] 66%|██████▋   | 77/116 [5:29:26<2:56:08, 270.99s/it] 67%|██████▋   | 78/116 [5:33:27<2:46:01, 262.14s/it] 68%|██████▊   | 79/116 [5:37:21<2:36:28, 253.74s/it] 69%|██████▉   | 80/116 [5:41:46<2:34:16, 257.12s/it] 70%|██████▉   | 81/116 [5:45:57<2:28:51, 255.19s/it] 71%|███████   | 82/116 [5:50:13<2:24:43, 255.41s/it] 72%|███████▏  | 83/116 [5:54:30<2:20:49, 256.06s/it] 72%|███████▏  | 84/116 [5:58:21<2:12:25, 248.31s/it] 73%|███████▎  | 85/116 [6:02:14<2:05:59, 243.86s/it] 74%|███████▍  | 86/116 [6:06:07<2:00:22, 240.74s/it] 75%|███████▌  | 87/116 [6:10:16<1:57:26, 242.97s/it] 76%|███████▌  | 88/116 [6:14:38<1:56:02, 248.65s/it] 77%|███████▋  | 89/116 [6:18:21<1:48:31, 241.16s/it] 78%|███████▊  | 90/116 [6:21:51<1:40:26, 231.78s/it] 78%|███████▊  | 91/116 [6:25:31<1:35:02, 228.12s/it] 79%|███████▉  | 92/116 [6:29:57<1:35:47, 239.48s/it] 80%|████████  | 93/116 [6:34:00<1:32:11, 240.49s/it] 81%|████████  | 94/116 [6:38:25<1:30:54, 247.91s/it] 82%|████████▏ | 95/116 [6:42:45<1:28:01, 251.49s/it] 83%|████████▎ | 96/116 [6:47:04<1:24:34, 253.74s/it] 84%|████████▎ | 97/116 [6:51:00<1:18:44, 248.65s/it] 84%|████████▍ | 98/116 [6:55:08<1:14:29, 248.29s/it] 85%|████████▌ | 99/116 [6:59:14<1:10:12, 247.79s/it] 86%|████████▌ | 100/116 [7:03:46<1:07:58, 254.94s/it] 87%|████████▋ | 101/116 [7:08:07<1:04:09, 256.60s/it] 88%|████████▊ | 102/116 [7:12:09<58:52, 252.30s/it]   89%|████████▉ | 103/116 [7:15:58<53:10, 245.44s/it] 90%|████████▉ | 104/116 [7:19:55<48:34, 242.85s/it] 91%|█████████ | 105/116 [7:23:51<44:07, 240.64s/it] 91%|█████████▏| 106/116 [7:27:33<39:11, 235.11s/it] 92%|█████████▏| 107/116 [7:31:18<34:49, 232.16s/it] 93%|█████████▎| 108/116 [7:36:08<33:17, 249.63s/it] 94%|█████████▍| 109/116 [7:40:19<29:08, 249.83s/it] 95%|█████████▍| 110/116 [7:44:31<25:03, 250.54s/it] 96%|█████████▌| 111/116 [7:49:05<21:27, 257.51s/it] 97%|█████████▋| 112/116 [7:53:47<17:40, 265.05s/it] 97%|█████████▋| 113/116 [7:58:04<13:07, 262.66s/it] 98%|█████████▊| 114/116 [8:02:29<08:46, 263.15s/it] 99%|█████████▉| 115/116 [8:06:53<04:23, 263.44s/it]100%|██████████| 116/116 [8:11:12<00:00, 262.09s/it]100%|██████████| 116/116 [8:11:12<00:00, 254.07s/it]
 
 
 ###############################################################################
 Peregrine Cluster
-Job 21914493 for user 'g0017139'
-Finished at: Tue Oct 26 03:15:53 CEST 2021
+Job 22364688 for user 'g0017139'
+Finished at: Sat Dec  4 09:48:05 CET 2021
 
 Job details:
 ============
 
-Job ID              : 21914493
+Job ID              : 22364688
 Name                : kmeans4
 User                : g0017139
-Partition           : regular
-Nodes               : pg-node041
+Partition           : himem
+Nodes               : pg-memory03
 Number of Nodes     : 1
 Cores               : 24
 Number of Tasks     : 1
 State               : COMPLETED
-Submit              : 2021-10-21T00:00:09
-Start               : 2021-10-25T08:43:07
-End                 : 2021-10-26T03:15:53
-Reserved walltime   : 4-04:00:00
-Used walltime       :    18:32:46
-Used CPU time       : 17-10:28:50 (efficiency: 94.02%)
-% User (Computation): 99.11%
-% System (I/O)      :  0.89%
-Mem reserved        : 124G/node
-Max Mem (Node/step) : 86.81G (pg-node041, per node)
-Full Max Mem usage  : 86.81G
-Total Disk Read     : 6.53M
+Submit              : 2021-12-04T01:30:05
+Start               : 2021-12-04T01:30:06
+End                 : 2021-12-04T09:48:05
+Reserved walltime   : 1-16:00:00
+Used walltime       :   08:17:59
+Used CPU time       : 6-17:44:47 (efficiency: 81.20%)
+% User (Computation): 89.67%
+% System (I/O)      : 10.33%
+Mem reserved        : 120G/node
+Max Mem (Node/step) : 85.64G (pg-memory03, per node)
+Full Max Mem usage  : 85.64G
+Total Disk Read     : 6.55M
 Total Disk Write    : 10.72K
 
 

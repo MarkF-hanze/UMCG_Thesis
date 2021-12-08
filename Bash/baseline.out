@@ -1,0 +1,45 @@
+  File "/home/g0017139/UMCG_Thesis/Working_Code/make_scores.py", line 13
+    baseline = get_score(df_normalized, df['TYPE'].fillna('Unknown').values)
+IndentationError: unexpected indent
+
+
+###############################################################################
+Peregrine Cluster
+Job 22317064 for user 'g0017139'
+Finished at: Tue Nov 30 02:12:15 CET 2021
+
+Job details:
+============
+
+Job ID              : 22317064
+Name                : merge
+User                : g0017139
+Partition           : vulture
+Nodes               : pg-node163
+Number of Nodes     : 1
+Cores               : 24
+Number of Tasks     : 1
+State               : FAILED
+Submit              : 2021-11-30T00:37:26
+Start               : 2021-11-30T02:12:11
+End                 : 2021-11-30T02:12:15
+Reserved walltime   : 12:00:00
+Used walltime       : 00:00:04
+Used CPU time       : 00:00:01 (efficiency:  1.38%)
+% User (Computation): 71.43%
+% System (I/O)      : 28.57%
+Mem reserved        : 124G/node
+Max Mem (Node/step) : 0.00  (Node unknown, N/A)
+Full Max Mem usage  : 0.00 
+Total Disk Read     : 0.00 
+Total Disk Write    : 0.00 
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################

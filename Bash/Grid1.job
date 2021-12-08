@@ -1,15 +1,17 @@
 #!/bin/bash
-#SBATCH --time=200:00:00
-#SBATCH --job-name=dbscan4
-#SBATCH --output=dbscanSet4.out
-#SBATCH --mem=124GB
+#SBATCH --time=40:00:00
+#SBATCH --job-name=kmeans4
+#SBATCH --output=kmeansSet4.out
+#SBATCH --mem=120GB
 #SBATCH --ntasks=24
 #SBATCH --nodes=1
 #SBATCH --partition=himem
+#SBATCH --qos=priority
 
-ulimit -s 100000
+
+ulimit -s 480000
 module load Anaconda3/2020.11
 eval "$(conda shell.bash hook)"
 conda activate /data/g0017139/.envs/ClusterEnv
 
-python3 /home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/Main.py -f /data/g0017139/TCGA__RSEM_norm.dat -a dbscan -s TSet4
+python3 -Xfaulthandler /home/g0017139/UMCG_Thesis/Working_Code/Gridsearch/Main.py -f /data/g0017139/TCGA__RSEM_norm.dat -a kmeans -s TSet4

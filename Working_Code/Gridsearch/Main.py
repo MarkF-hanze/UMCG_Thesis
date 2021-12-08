@@ -1,3 +1,5 @@
+import faulthandler; faulthandler.enable()
+
 import sys, getopt
 import pickle
 import os
@@ -16,6 +18,7 @@ from tqdm import tqdm
 import itertools
 import time
 import numpy as np
+import joblib
 
 from multiprocessing import Pool
 from sklearn.cluster import AgglomerativeClustering
@@ -23,6 +26,7 @@ from scipy.cluster.hierarchy import dendrogram, linkage
 from tqdm.contrib.concurrent import process_map
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import silhouette_score, calinski_harabasz_score, davies_bouldin_score
+
 
 
 class BaseAlg():
@@ -150,7 +154,7 @@ class MAFIA(BaseAlg):
 
 class Kmeans(BaseAlg):
     def __init__(self):
-        self.parameters = {'n_clusters': np.arange(2, 16), 'batch_size': [128, 256, 512, 1024]}
+        self.parameters = {'n_clusters': np.arange(2, 31), 'batch_size': [128, 256, 512, 1024]}
         self.algorithm = MiniBatchKMeans(random_state=0)
         self.classes_ = None
 
@@ -190,13 +194,13 @@ class ENSC(BaseAlg):
 
 class UHDBSCAN(BaseAlg):
     def __init__(self):
-        self.parameters = {'DimReduction__n_neighbors': [25, 50, 100],
-                           'DimReduction__min_dist': [0.1, 0.5, 1],
+        self.parameters = {'DimReduction__n_neighbors': [25, 50],
+                           'DimReduction__min_dist': [0.1, 0.75],
                            'DimReduction__n_components': [50, 10, 2],
-                           'Clustering__min_cluster_size': [25, 50, 100],
-                           'Clustering__min_samples': [25, 50, 100],
-                           'Clustering__cluster_selection_epsilon': [0.1, 0.5, 1],
-                           'Clustering__cluster_selection_method': ['eom', 'leaf']
+                           'Clustering__min_cluster_size': [25, 100],
+                           'Clustering__min_samples': [25, 100],
+                           'Clustering__cluster_selection_epsilon': [0.1, 0.75],
+                         #  'Clustering__cluster_selection_method': ['eom']
                            }
         for name in self.parameters:
             if isinstance(self.parameters[name], type(np.array)):
@@ -255,8 +259,9 @@ class Gridsearch():
         fit_time = self.algorithm.fit(self.X)
         # Save alg
         algorithm_name = self.get_str(self.algorithm.algorithm)
-        with open(f'/data/g0017139/Models/{folder}/{algorithm_name}.pkl', 'wb') as f:
-            pickle.dump(self.algorithm.algorithm, f, pickle.HIGHEST_PROTOCOL)
+        if 'UMAP' not in algorithm_name:
+            with open(f'/scratch/g0017139/Models/{folder}/{algorithm_name}.pkl', 'wb') as f:
+                pickle.dump(self.algorithm.algorithm, f, pickle.HIGHEST_PROTOCOL) 
             
         current_scores = self.get_score(self.algorithm.get_classes())
         current_scores['Fit_Time'] = fit_time
@@ -295,18 +300,12 @@ class Gridsearch():
 
     def get_score(self, labels):
         result = {}
-        #try:
-        #    start_time = time.time()
-        #    print('euclidean')
-        #    result['silhouette_score_euclidean'] = silhouette_score(self.X, labels, metric='euclidean', n_jobs=-1)
-        #    print(time.time() - start_time())
-        #except:
-        #    result['silhouette_score_euclidean'] = np.nan
         try:
-            start_time = time.time()
-            print('correlation')
+            result['silhouette_score_euclidean'] = silhouette_score(self.X, labels, metric='euclidean', n_jobs=-1)
+        except:
+            result['silhouette_score_euclidean'] = np.nan
+        try:
             result['silhouette_score_correlation'] = silhouette_score(self.X, labels, metric='correlation', n_jobs=-1)
-            print(time.time() - start_time)
         except:
             result['silhouette_score_correlation'] = np.nan
         #try:
@@ -331,6 +330,7 @@ class Gridsearch():
             yield dict(zip(keys, instance))
 
 if __name__ == "__main__":
+    sys.setrecursionlimit(50000)
     argv = sys.argv[1:]
     try:
         opts, args = getopt.getopt(argv, "f:a:s:")

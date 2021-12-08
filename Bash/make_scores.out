@@ -1,0 +1,44 @@
+Done
+Done
+
+
+###############################################################################
+Peregrine Cluster
+Job 22367570 for user 'g0017139'
+Finished at: Sat Dec  4 15:50:28 CET 2021
+
+Job details:
+============
+
+Job ID              : 22367570
+Name                : merge
+User                : g0017139
+Partition           : himem
+Nodes               : pg-memory03
+Number of Nodes     : 1
+Cores               : 24
+Number of Tasks     : 1
+State               : COMPLETED
+Submit              : 2021-12-04T12:20:45
+Start               : 2021-12-04T12:20:45
+End                 : 2021-12-04T15:50:28
+Reserved walltime   :   20:00:00
+Used walltime       :   03:29:43
+Used CPU time       : 2-22:00:26 (efficiency: 83.45%)
+% User (Computation): 90.54%
+% System (I/O)      :  9.46%
+Mem reserved        : 124G/node
+Max Mem (Node/step) : 88.71G (pg-memory03, per node)
+Full Max Mem usage  : 88.71G
+Total Disk Read     : 6.55M
+Total Disk Write    : 10.72K
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################

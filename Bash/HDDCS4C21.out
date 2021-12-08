@@ -1,0 +1,50 @@
+Loading required package: MASS
+Error in LL_all[modelKeep] : invalid subscript type 'list'
+Calls: hddc
+In addition: Warning message:
+In parallel::mclapply(mkt_univariate, hddcWrapper, DATA = data,  :
+  scheduled core 3 did not deliver a result, all values of the job will be affected
+Execution halted
+slurmstepd: error: Detected 1 oom-kill event(s) in StepId=22315339.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.
+
+
+###############################################################################
+Peregrine Cluster
+Job 22315339 for user 'g0017139'
+Finished at: Tue Nov 30 08:00:42 CET 2021
+
+Job details:
+============
+
+Job ID              : 22315339
+Name                : 4HDDC21
+User                : g0017139
+Partition           : himem
+Nodes               : pg-memory03
+Number of Nodes     : 1
+Cores               : 3
+Number of Tasks     : 1
+State               : OUT_OF_MEMORY
+Submit              : 2021-11-29T20:13:27
+Start               : 2021-11-30T03:36:20
+End                 : 2021-11-30T08:00:42
+Reserved walltime   : 1-00:00:00
+Used walltime       :   04:24:22
+Used CPU time       :   12:36:01 (efficiency: 95.32%)
+% User (Computation): 73.08%
+% System (I/O)      : 26.92%
+Mem reserved        : 124G/node
+Max Mem (Node/step) : 119.34G (pg-memory03, per node)
+Full Max Mem usage  : 119.34G
+Total Disk Read     : 60.71M
+Total Disk Write    : 36.50K
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################

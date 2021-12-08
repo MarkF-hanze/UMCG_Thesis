@@ -1,50 +1,0 @@
-cpu count: 12
-used: 1
-  0%|          | 0/56 [00:00<?, ?it/s]  2%|▏         | 1/56 [28:28<26:06:32, 1708.96s/it] 20%|█▉        | 11/56 [59:00<3:32:11, 282.93s/it]  38%|███▊      | 21/56 [1:29:19<2:11:21, 225.20s/it] 39%|███▉      | 22/56 [1:29:19<1:57:58, 208.20s/it] 55%|█████▌    | 31/56 [1:57:36<1:22:42, 198.52s/it] 73%|███████▎  | 41/56 [2:25:28<46:11, 184.75s/it]   91%|█████████ | 51/56 [2:42:32<12:45, 153.03s/it] 93%|█████████▎| 52/56 [2:42:32<09:40, 145.06s/it]100%|██████████| 56/56 [2:42:32<00:00, 174.15s/it]
-
-
-###############################################################################
-Peregrine Cluster
-Job 21604258 for user 'g0017139'
-Finished at: Fri Oct 15 15:55:14 CEST 2021
-
-Job details:
-============
-
-Job ID              : 21604258
-Name                : kmeans3
-User                : g0017139
-Partition           : vulture
-Nodes               : pg-node274
-Number of Nodes     : 1
-Cores               : 1
-Number of Tasks     : 1
-State               : COMPLETED
-Submit              : 2021-10-15T13:07:04
-Start               : 2021-10-15T13:07:05
-End                 : 2021-10-15T15:55:14
-Reserved walltime   : 12:00:00
-Used walltime       : 02:48:09
-Used CPU time       : 02:45:16 (efficiency: 98.29%)
-% User (Computation): 99.06%
-% System (I/O)      :  0.93%
-Mem reserved        : 124G/node
-Max Mem (Node/step) : 21.88G (pg-node274, per node)
-Full Max Mem usage  : 21.88G
-Total Disk Read     : 6.52M
-Total Disk Write    : 10.72K
-Hints and tips      :
- 1) You requested much more memory than your program used.
-    Please reduce the requested amount of memory.
- *) For more information on these issues see:
-    https://wiki.hpc.rug.nl/peregrine/additional_information/job_hints
-
-
-Acknowledgements:
-=================
-
-Please see this page for information about acknowledging Peregrine in your publications:
-
-https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
-
-################################################################################

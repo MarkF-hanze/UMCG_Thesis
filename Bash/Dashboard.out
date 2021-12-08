@@ -1,0 +1,46 @@
+  File "/home/g0017139/UMCG_Thesis/Working_Code/Dashboard.py", line 358
+    numbers {1:[2, 2, 2, 2],
+            ^
+SyntaxError: invalid syntax
+
+
+###############################################################################
+Peregrine Cluster
+Job 22315368 for user 'g0017139'
+Finished at: Mon Nov 29 20:48:18 CET 2021
+
+Job details:
+============
+
+Job ID              : 22315368
+Name                : merge
+User                : g0017139
+Partition           : vulture
+Nodes               : pg-node266
+Number of Nodes     : 1
+Cores               : 4
+Number of Tasks     : 1
+State               : FAILED
+Submit              : 2021-11-29T20:47:49
+Start               : 2021-11-29T20:48:12
+End                 : 2021-11-29T20:48:18
+Reserved walltime   : 12:00:00
+Used walltime       : 00:00:06
+Used CPU time       : --
+% User (Computation): 67.74%
+% System (I/O)      : 32.26%
+Mem reserved        : 124G/node
+Max Mem (Node/step) : 0.00  (Node unknown, N/A)
+Full Max Mem usage  : 0.00 
+Total Disk Read     : 0.00 
+Total Disk Write    : 0.00 
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################

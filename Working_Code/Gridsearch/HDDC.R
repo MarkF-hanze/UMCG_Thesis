@@ -37,7 +37,7 @@ for(i in clusters)
     d = d + 1
   }
   # Save the algorithms
-  filepath = paste(c('/data/g0017139/Models/TSet', set,'/modelHDDCclusters',i, '.rds'), collapse = "")
-  saveRDS(prms, filepath)
+  #filepath = paste(c('/data/g0017139/Models/TSet', set,'/modelHDDCclusters',i, '.rds'), collapse = "")
+  #saveRDS(prms, filepath)
 }
 

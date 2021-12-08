@@ -1,22 +1,13 @@
 library(HDclassif)
 library(data.table)  
-mydata <- fread("/data/g0017139/GPL570_norm.dat", data.table=FALSE)
-#mydata <- fread("/data/g0017139/gene_expression_norm.dat", data.table=FALSE)
-
-prms <- hddc(mydata, K = 5, model = 12, itermax = 200, threshold =  0.01, mc.cores = 1)
-
-i = 0
-for (m in prms$Q){ 
-  df = data.frame(m)
-  path = paste(c('/home/g0017139/UMCG_Thesis/Working_Code/Results/Set2/eigenvec',i, '.csv'), collapse = "")
-  write.csv(df, path)
-  i = i + 1
+mydata <- fread("/data/g0017139/ICA_files/MathExperiment/2_Split/One_Normalized/Math_ExpAll.csv", data.table=FALSE, drop='Unnamed: 0', header=TRUE)
+clusters = c(2,3,4)
+print(dim(mydata))
+for(i in clusters){
+  prms <- hddc(mydata, K = i, model = 12, itermax = 200, threshold =  0.01, mc.cores = 1)
+  # Save the made classes
+  filepath = paste(c("/data/g0017139/ICA_files/Clustering_Math/",i,"_Split/HDDCClusters.csv"), collapse = "")
+  df <- do.call("rbind", lapply(prms$class, as.data.frame)) 
+  write.csv(df, file = filepath) 
+  print("Done")
 }
-filepath = "/home/g0017139/UMCG_Thesis/Working_Code/Results/Set2/HDDCClustersEigen.csv"
-df <- do.call("rbind", lapply(prms$class, as.data.frame)) 
-write.csv(df, file = filepath)  
-#png(filename="Results/Set1/HDDCplot.png")
-#plot(prms, "Cattell", 0.01)
-#dev.off()
-
-

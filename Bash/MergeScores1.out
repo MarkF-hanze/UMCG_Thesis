@@ -1,42 +1,43 @@
-slurmstepd: error: *** JOB 21977811 ON pg-memory04 CANCELLED AT 2021-10-28T13:32:06 DUE TO TIME LIMIT ***
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
 
 
 ###############################################################################
 Peregrine Cluster
-Job 21977811 for user 'g0017139'
-Finished at: Thu Oct 28 13:32:14 CEST 2021
+Job 22301122 for user 'g0017139'
+Finished at: Fri Nov 26 17:29:25 CET 2021
 
 Job details:
 ============
 
-Job ID              : 21977811
-Name                : mergeH
+Job ID              : 22301122
+Name                : merge
 User                : g0017139
-Partition           : himem
-Nodes               : pg-memory04
+Partition           : vulture
+Nodes               : pg-node187
 Number of Nodes     : 1
 Cores               : 24
 Number of Tasks     : 1
-State               : TIMEOUT,CANCELLED
-Submit              : 2021-10-28T10:31:38
-Start               : 2021-10-28T10:31:52
-End                 : 2021-10-28T13:32:14
-Reserved walltime   :   03:00:00
-Used walltime       :   03:00:22
-Used CPU time       : 2-00:08:59 (efficiency: 66.74%)
-% User (Computation): 91.68%
-% System (I/O)      :  8.32%
-Mem reserved        : 70G/node
-Max Mem (Node/step) : 59.84G (pg-memory04, per node)
-Full Max Mem usage  : 59.84G
-Total Disk Read     : 6.55M
+State               : COMPLETED
+Submit              : 2021-11-26T09:31:50
+Start               : 2021-11-26T10:41:07
+End                 : 2021-11-26T17:29:24
+Reserved walltime   :   12:00:00
+Used walltime       :   06:48:17
+Used CPU time       : 6-05:55:08 (efficiency: 91.80%)
+% User (Computation): 98.12%
+% System (I/O)      :  1.88%
+Mem reserved        : 124G/node
+Max Mem (Node/step) : 89.43G (pg-node187, per node)
+Full Max Mem usage  : 89.43G
+Total Disk Read     : 6.54M
 Total Disk Write    : 10.72K
-Hints and tips      :
- 1) The program efficiency is low. Your program is not using the assigned cores
-    effectively. Please check if you are using all the cores you requested.
-    You may also need to check the file in- and output pattern of your program.
- *) For more information on these issues see:
-    https://wiki.hpc.rug.nl/peregrine/additional_information/job_hints
 
 
 Acknowledgements:

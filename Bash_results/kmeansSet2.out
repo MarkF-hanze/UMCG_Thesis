@@ -1,50 +1,0 @@
-cpu count: 24
-used: 6
-  0%|          | 0/56 [00:00<?, ?it/s]  2%|▏         | 1/56 [10:04:47<554:23:39, 36287.62s/it]  4%|▎         | 2/56 [10:04:48<224:08:06, 14942.34s/it] 20%|█▉        | 11/56 [10:06:36<21:56:40, 1755.57s/it]  38%|███▊      | 21/56 [10:10:41<7:14:41, 745.20s/it]   55%|█████▌    | 31/56 [10:11:21<2:50:05, 408.22s/it] 73%|███████▎  | 41/56 [10:11:54<1:02:11, 248.74s/it]100%|██████████| 56/56 [10:11:54<00:00, 655.61s/it]  
-
-
-###############################################################################
-Peregrine Cluster
-Job 21604254 for user 'g0017139'
-Finished at: Sat Oct 16 23:55:29 CEST 2021
-
-Job details:
-============
-
-Job ID              : 21604254
-Name                : kmeans2
-User                : g0017139
-Partition           : regular
-Nodes               : pg-node136
-Number of Nodes     : 1
-Cores               : 1
-Number of Tasks     : 1
-State               : COMPLETED
-Submit              : 2021-10-15T13:04:41
-Start               : 2021-10-16T13:35:40
-End                 : 2021-10-16T23:55:29
-Reserved walltime   : 4-04:00:00
-Used walltime       :   10:19:49
-Used CPU time       :   10:17:23 (efficiency: 99.61%)
-% User (Computation): 98.63%
-% System (I/O)      :  1.37%
-Mem reserved        : 125G/node
-Max Mem (Node/step) : 60.49G (pg-node136, per node)
-Full Max Mem usage  : 60.49G
-Total Disk Read     : 6.53M
-Total Disk Write    : 10.72K
-Hints and tips      :
- 1) You requested much more memory than your program used.
-    Please reduce the requested amount of memory.
- *) For more information on these issues see:
-    https://wiki.hpc.rug.nl/peregrine/additional_information/job_hints
-
-
-Acknowledgements:
-=================
-
-Please see this page for information about acknowledging Peregrine in your publications:
-
-https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
-
-################################################################################

@@ -3,39 +3,34 @@ Loading required package: MASS
 
 ###############################################################################
 Peregrine Cluster
-Job 21914480 for user 'g0017139'
-Finished at: Thu Oct 21 04:37:41 CEST 2021
+Job 22222020 for user 'g0017139'
+Finished at: Sat Nov 20 19:07:03 CET 2021
 
 Job details:
 ============
 
-Job ID              : 21914480
+Job ID              : 22222020
 Name                : 4HDDC9
 User                : g0017139
-Partition           : vulture
-Nodes               : pg-node252
+Partition           : himem
+Nodes               : pg-memory06
 Number of Nodes     : 1
 Cores               : 3
 Number of Tasks     : 1
 State               : COMPLETED
-Submit              : 2021-10-20T23:56:12
-Start               : 2021-10-21T02:55:56
-End                 : 2021-10-21T04:37:41
-Reserved walltime   : 12:00:00
-Used walltime       : 01:41:45
-Used CPU time       : 04:43:27 (efficiency: 92.86%)
-% User (Computation): 92.27%
-% System (I/O)      :  7.73%
+Submit              : 2021-11-18T23:41:12
+Start               : 2021-11-18T23:41:30
+End                 : 2021-11-20T19:07:03
+Reserved walltime   : 2-02:00:00
+Used walltime       : 1-19:25:33
+Used CPU time       : 5-03:59:49 (efficiency: 95.18%)
+% User (Computation): 83.49%
+% System (I/O)      : 16.51%
 Mem reserved        : 124G/node
-Max Mem (Node/step) : 75.14G (pg-node252, per node)
-Full Max Mem usage  : 75.14G
-Total Disk Read     : 60.67M
+Max Mem (Node/step) : 98.84G (pg-memory06, per node)
+Full Max Mem usage  : 98.84G
+Total Disk Read     : 60.71M
 Total Disk Write    : 36.50K
-Hints and tips      :
- 1) You requested much more memory than your program used.
-    Please reduce the requested amount of memory.
- *) For more information on these issues see:
-    https://wiki.hpc.rug.nl/peregrine/additional_information/job_hints
 
 
 Acknowledgements:

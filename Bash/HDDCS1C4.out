@@ -3,39 +3,36 @@ Loading required package: MASS
 
 ###############################################################################
 Peregrine Cluster
-Job 21911628 for user 'g0017139'
-Finished at: Wed Oct 20 17:17:09 CEST 2021
+Job 22196032 for user 'g0017139'
+Finished at: Tue Nov 16 11:41:41 CET 2021
 
 Job details:
 ============
 
-Job ID              : 21911628
+Job ID              : 22196032
 Name                : 1HDDC4
 User                : g0017139
 Partition           : vulture
-Nodes               : pg-node271
+Nodes               : pg-node242
 Number of Nodes     : 1
 Cores               : 3
 Number of Tasks     : 1
 State               : COMPLETED
-Submit              : 2021-10-20T17:13:27
-Start               : 2021-10-20T17:14:06
-End                 : 2021-10-20T17:17:09
+Submit              : 2021-11-16T11:23:38
+Start               : 2021-11-16T11:31:51
+End                 : 2021-11-16T11:41:41
 Reserved walltime   : 12:00:00
-Used walltime       : 00:03:03
-Used CPU time       : 00:06:35 (efficiency: 71.96%)
-% User (Computation): 76.92%
-% System (I/O)      : 23.08%
+Used walltime       : 00:09:50
+Used CPU time       : 00:28:27 (efficiency: 96.46%)
+% User (Computation): 79.25%
+% System (I/O)      : 20.75%
 Mem reserved        : 124G/node
-Max Mem (Node/step) : 4.43G (pg-node271, per node)
-Full Max Mem usage  : 4.43G
+Max Mem (Node/step) : 6.14G (pg-node242, per node)
+Full Max Mem usage  : 6.14G
 Total Disk Read     : 60.67M
 Total Disk Write    : 36.50K
 Hints and tips      :
- 1) The program efficiency is low. Your program is not using the assigned cores
-    effectively. Please check if you are using all the cores you requested.
-    You may also need to check the file in- and output pattern of your program.
- 2) You requested much more memory than your program used.
+ 1) You requested much more memory than your program used.
     Please reduce the requested amount of memory.
  *) For more information on these issues see:
     https://wiki.hpc.rug.nl/peregrine/additional_information/job_hints

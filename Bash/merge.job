@@ -1,15 +1,15 @@
 #!/bin/bash
-#SBATCH --time=3:00:00
-#SBATCH --job-name=mergeH
-#SBATCH --output=MergeScores1.out
-#SBATCH --mem=70GB
-#SBATCH --ntasks=24
+#SBATCH --time=20:00:00
+#SBATCH --job-name=dashboard
+#SBATCH --output=dashboard.out
+#SBATCH --mem=150GB
+#SBATCH --ntasks=6
 #SBATCH --nodes=1
 #SBATCH --partition=himem
 
-ulimit -s 50000
+ulimit -s 100000
 module load Anaconda3/2020.11
 eval "$(conda shell.bash hook)"
 conda activate /data/g0017139/.envs/ClusterEnv
 
-python3 /home/g0017139/UMCG_Thesis/Working_Code/make_scores.py
+python3 /home/g0017139/UMCG_Thesis/Working_Code/Dashboard.py
