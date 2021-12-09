@@ -336,8 +336,8 @@ def heatmap(df):
             data = pd.pivot_table(count_df, values='Percentage', index='Type', columns=column, fill_value=0)
             #fig, ax = plt.subplots(figsize=(20,7))
             #sns.heatmap(data, vmin=0, vmax=1, linewidths=.5, cmap="YlGnBu", ax=ax)
-            fig= sns.clustermap(data, method="ward", col_cluster=False,  cmap="YlGnBu", figsize=(20,7))
-            #pn.pane.Matplotlib(fig, tight=True)
+            fig = sns.clustermap(data, method="ward", col_cluster=False,  cmap="YlGnBu", figsize=(20,7))
+            pn.pane.Matplotlib(fig.fig, tight=True)
             tabs.append((f'Clusters {column}', fig))
     fig = pn.Tabs(*tabs)
     return fig
@@ -414,7 +414,8 @@ if __name__ == '__main__':
     for LOADED_SET in range(1, 5):
         if LOADED_SET != 3:
             df, df_normalized, Type_df = load_sets(LOADED_SET)
-            tabs.append((str(LOADED_SET), set_board(df_normalized, df, LOADED_SET)))
-        plt.clf()
-    pn.Tabs(*tabs).save('Dashboard.html')
+            #tabs.append((str(LOADED_SET), set_board(df_normalized, df, LOADED_SET)))
+            set_board(df_normalized, df, LOADED_SET).save(f'Dashboard_{LOADED_SET}.html')
+            #pn.Tabs(*tabs).save(f'Dashboard_{LOADED_SET}.html')
+            plt.clf()
 

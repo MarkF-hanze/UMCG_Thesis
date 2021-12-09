@@ -1179,32 +1179,32 @@ Name: 32, dtype: float64
 
 ###############################################################################
 Peregrine Cluster
-Job 22380124 for user 'g0017139'
-Finished at: Mon Dec  6 18:42:04 CET 2021
+Job 22417674 for user 'g0017139'
+Finished at: Thu Dec  9 00:46:30 CET 2021
 
 Job details:
 ============
 
-Job ID              : 22380124
+Job ID              : 22417674
 Name                : dashboard
 User                : g0017139
 Partition           : himem
-Nodes               : pg-memory06
+Nodes               : pg-memory04
 Number of Nodes     : 1
 Cores               : 6
 Number of Tasks     : 1
 State               : COMPLETED
-Submit              : 2021-12-06T14:10:19
-Start               : 2021-12-06T14:10:20
-End                 : 2021-12-06T18:42:04
+Submit              : 2021-12-08T20:00:39
+Start               : 2021-12-08T20:01:01
+End                 : 2021-12-09T00:46:30
 Reserved walltime   : 20:00:00
-Used walltime       : 04:31:44
-Used CPU time       : 17:20:55 (efficiency: 63.84%)
-% User (Computation): 93.75%
-% System (I/O)      :  6.25%
+Used walltime       : 04:45:29
+Used CPU time       : 18:23:16 (efficiency: 64.41%)
+% User (Computation): 94.83%
+% System (I/O)      :  5.17%
 Mem reserved        : 150G/node
-Max Mem (Node/step) : 17.90G (pg-memory06, per node)
-Full Max Mem usage  : 17.90G
+Max Mem (Node/step) : 20.06G (pg-memory04, per node)
+Full Max Mem usage  : 20.06G
 Total Disk Read     : 6.55M
 Total Disk Write    : 10.72K
 Hints and tips      :
