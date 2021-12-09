@@ -35,6 +35,7 @@ from bokeh.models import ColumnDataSource, Dropdown, Select, Panel, Tabs, Custom
 from bokeh.palettes import Category20
 from bokeh.layouts import row, column
 from bokeh.transform import cumsum
+from bokeh.io import export_png
 
 import panel as pn
 
@@ -56,6 +57,8 @@ def make_countplot(df, x, hue, pallete):
 
     g1.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
     g1.set_title('Relative counts')
+    export_png(fig, filename=f"/home/g0017139/UMCG_Thesis/Working_Code/Results/Images/{LOADED_SET}_counplot1.png")
+    export_png(fig2, filename=f"/home/g0017139/UMCG_Thesis/Working_Code/Results/Images/{LOADED_SET}_counplot2.png")
     return fig, fig2
 
 #TODO ALLE AXIS
@@ -63,9 +66,6 @@ def cluster_plot_bokeh(grid):
     if 'n_clusters' in grid.columns:
         df = grid.groupby(['n_clusters']).max().reset_index()
         df = df.sort_values('n_clusters')
-        #p1 = figure(width=700, height=500, x_axis_label='Number clusters', y_axis_label='Silhouette score')
-        #p1.line(df['n_clusters'], df['silhouette_score_euclidean'])
-        #print(df.columns)
         source = ColumnDataSource(df)
         p = figure(width=1400, height=500, x_axis_label='Number clusters', y_axis_label='Correlation score')
       
@@ -89,6 +89,7 @@ def cluster_plot_bokeh(grid):
 
         p1 = figure(width=700, height=500, x_axis_label='Number clusters', y_axis_label='ICL score')
         p1.line(df['K'], df['ICL'])
+    export_png(p, filename=f"/home/g0017139/UMCG_Thesis/Working_Code/Results/Images/{LOADED_SET}_clusterScores.png")
     return p
 
 
@@ -182,7 +183,6 @@ def get_dbscan(load_set, X):
 
     clusters = pd.DataFrame()
     for index, row in results.iterrows():
-        print(row)
         f1 = float(row['Clustering__cluster_selection_epsilon'])
         if f1 == 1.0:
             f1 = int(f1)
@@ -227,17 +227,20 @@ def tab1(source, df):
     colors = ['#%02x%02x%02x' % tuple((np.array(x)  * 250).astype(int)) for x in colors_or]
     cmap = factor_cmap('Type', colors, list(set(df['Type'])))
 
-    p = figure(width=550, height=500, x_axis_label='Component 1', y_axis_label='Component 2', title='PCA')
+    p = figure(width=550, height=700, x_axis_label='Component 1', y_axis_label='Component 2', title='PCA')
     p.scatter("PCAComponent1", "PCAComponent2", source=source, legend_field="Type",
               color = cmap
-              )
+              )  
     p.legend.visible=False
-    p1 = figure(width=700, height=500, x_axis_label='Component 1', y_axis_label='Component 2', title='UMAP')
+    p1 = figure(width=700, height=700, x_axis_label='Component 1', y_axis_label='Component 2', title='UMAP')
     p1.scatter("UMAPComponent1", "UMAPComponent2", source=source, legend_field="Type",
                 color = cmap
               )
     p1.add_layout(p1.legend[0], 'right')
+    p1.legend.label_text_font_size = '5pt'
     tab1 = pn.Row(p,p1)
+    export_png(p, filename=f"/home/g0017139/UMCG_Thesis/Working_Code/Results/Images/{LOADED_SET}_PCAREAL.png")
+    export_png(p1, filename=f"/home/g0017139/UMCG_Thesis/Working_Code/Results/Images/{LOADED_SET}_UMAPREAL.png")
     return tab1
 
 def make_pca_umap(source, alg):
@@ -279,8 +282,7 @@ def sankey_plot(df):
     sankey.opts(
     opts.Sankey(labels='label', label_position='right', width=1800, height=800, 
                 edge_color='#058896', node_color='#058896', color_index = None))
-    
-    
+    hv.save(sankey, f"/home/g0017139/UMCG_Thesis/Working_Code/Results/Images/{LOADED_SET}_sankey.png", fmt='png')
     return sankey
 
 
@@ -305,6 +307,7 @@ def pie_plot(df, color_mapper):
                 p.axis.visible=False
                 p.grid.grid_line_color = None
                 figures.append(pn.pane.Bokeh(p))
+                export_png(p, filename=f"/home/g0017139/UMCG_Thesis/Working_Code/Results/Images/{LOADED_SET}_pieplot_{column}_{group}.png")
             # Make the grid
             total = []
             count = len(figures)
@@ -336,8 +339,11 @@ def heatmap(df):
             data = pd.pivot_table(count_df, values='Percentage', index='Type', columns=column, fill_value=0)
             #fig, ax = plt.subplots(figsize=(20,7))
             #sns.heatmap(data, vmin=0, vmax=1, linewidths=.5, cmap="YlGnBu", ax=ax)
-            fig = sns.clustermap(data, method="ward", col_cluster=False,  cmap="YlGnBu", figsize=(20,7))
-            pn.pane.Matplotlib(fig.fig, tight=True)
+            fig = sns.clustermap(data, method="ward", col_cluster=False,  cmap="YlGnBu", figsize=(40,7))
+            fig.savefig(f"/home/g0017139/UMCG_Thesis/Working_Code/Results/Images/{LOADED_SET}_heatmap_{column}.png")
+            #export_png(fig, filename=f"/home/g0017139/UMCG_Thesis/Working_Code/Results/Images/{LOADED_SET}_heatmap_{column}.png")
+            #hv.save(fig, f"/home/g0017139/UMCG_Thesis/Working_Code/Results/Images/{LOADED_SET}_heatmap_{column}.png", fmt='png')
+            fig = pn.pane.Matplotlib(fig.fig, tight=True)
             tabs.append((f'Clusters {column}', fig))
     fig = pn.Tabs(*tabs)
     return fig
