@@ -1,0 +1,45 @@
+Loading required package: MASS
+Error: unexpected '}' in "}"
+Execution halted
+
+
+###############################################################################
+Peregrine Cluster
+Job 22531059 for user 'g0017139'
+Finished at: Tue Dec 14 10:57:40 CET 2021
+
+Job details:
+============
+
+Job ID              : 22531059
+Name                : TestClusterNumberMath
+User                : g0017139
+Partition           : vulture
+Nodes               : pg-node267
+Number of Nodes     : 1
+Cores               : 10
+Number of Tasks     : 1
+State               : FAILED
+Submit              : 2021-12-14T10:29:46
+Start               : 2021-12-14T10:57:18
+End                 : 2021-12-14T10:57:40
+Reserved walltime   : 12:00:00
+Used walltime       : 00:00:22
+Used CPU time       : 00:00:13 (efficiency:  6.18%)
+% User (Computation): 67.60%
+% System (I/O)      : 32.40%
+Mem reserved        : 124G/node
+Max Mem (Node/step) : 0.00  (Node unknown, N/A)
+Full Max Mem usage  : 0.00 
+Total Disk Read     : 0.00 
+Total Disk Write    : 0.00 
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################
