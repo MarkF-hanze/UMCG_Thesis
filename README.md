@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <img src="Images/Logo.png" alt="Logo" width="540" height="240">
+  <img src="umcg_logo.png" alt="Logo" width="540" height="240">
 
   <h3 align="center">End assigment Programming</h3>
 
