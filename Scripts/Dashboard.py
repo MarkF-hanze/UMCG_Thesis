@@ -1,15 +1,7 @@
-from IPython.display import SVG, display
-from tqdm import tqdm
-from pyclustertend import hopkins,ivat
-from tqdm import tqdm
-
-
 import hdbscan
 import umap
 import pickle
-import os
-import itertools
-import time
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -21,9 +13,7 @@ from holoviews import opts, dim
 
 from sklearn.pipeline import Pipeline
 from sklearn.decomposition import PCA, FastICA
-from sklearn.preprocessing import MinMaxScaler, StandardScaler
 from sklearn.cluster import MiniBatchKMeans, AgglomerativeClustering
-from sklearn.metrics import silhouette_score, calinski_harabasz_score, davies_bouldin_score
 from Commen_Functions import get_score, get_score_df, merge_Results, load_sets
 from Gridsearch.Main import Gridsearch
 
@@ -32,14 +22,15 @@ from Gridsearch.Main import Gridsearch
 from bokeh.transform import factor_cmap, factor_mark
 from bokeh.plotting import figure, show, output_file, save
 from bokeh.models import ColumnDataSource, Dropdown, Select, Panel, Tabs, CustomJS, LinearAxis, Range1d, HoverTool
-from bokeh.palettes import Category20
-from bokeh.layouts import row, column
 from bokeh.transform import cumsum
 from bokeh.io import export_png
 
 import panel as pn
-
+"""
+Create a html dashboard with all the clustering results
+"""
 def make_countplot(df, x, hue, pallete):
+    # Make a countplot for every cluster type
     pallette = sns.set_palette(pallete)
     # Make the figure
     fig = plt.figure(figsize=(10, 8))
@@ -61,8 +52,9 @@ def make_countplot(df, x, hue, pallete):
     export_png(fig2, filename=f"/data/g0017139/Images/{LOADED_SET}_counplot2.png")
     return fig, fig2
 
-#TODO ALLE AXIS
+
 def cluster_plot_bokeh(grid, alg):
+    # Create a plot how the scores change in regards to the amount of clusters made
     if 'n_clusters' in grid.columns:
         df = grid.groupby(['n_clusters']).max().reset_index()
         df = df.sort_values('n_clusters')
@@ -92,7 +84,7 @@ def cluster_plot_bokeh(grid, alg):
     export_png(p, filename=f"/data/g0017139/Images/{LOADED_SET}_{alg}_clusterScores.png")
     return p
 
-
+# Do PCA and UMAP on the data
 def do_dim_red(X):
     # Train PCA
     pca = PCA(n_components=2)
@@ -100,7 +92,6 @@ def do_dim_red(X):
     # Train UMAP
     um = umap.UMAP(n_components=2, n_neighbors=90, min_dist=0.1, random_state=42)
     umap_components = um.fit_transform(X)
-
     # Put it in a dataframe
     df = pd.DataFrame(pca_components, columns=['PCAComponent1', 'PCAComponent2'])
     df['UMAPComponent1'] = umap_components[:, 0]
@@ -108,11 +99,11 @@ def do_dim_red(X):
 
     return df
 
-
+# Create distinct colors for every cancer type in df
 def make_colors(df):
     cluster_colors = distinctipy.get_colors(max(15, len(set(df['Type']))),
                                 colorblind_type='Deuteranomaly', n_attempts=10_000)
-    cluster_colors = ['#%02x%02x%02x' % tuple((np.array(x)  * 250).astype(int)) for x in cluster_colors]
+    cluster_colors = ['#%02x%02x%02x' % tuple((np.array(x) * 250).astype(int)) for x in cluster_colors]
 
     color_mapper = dict(zip(set(df['Type']), cluster_colors))
     palette = []
@@ -121,13 +112,14 @@ def make_colors(df):
     palette = sns.color_palette(palette)
     return cluster_colors, color_mapper, palette
 
+# Do some cleaning on the clusters to make them all equal format
 def transform_clusters(clusters):
-    clusters = clusters- 1
+    clusters = clusters - 1
     clusters.columns = [int(x) for x in clusters.columns]
     clusters = clusters.reindex(sorted(clusters.columns), axis=1)
     return clusters
 
-
+# Load hierachical results
 def get_hierarch(load_set, X):
     with open(f'/home/g0017139/UMCG_Thesis/Working_Code/Results/TSet{load_set}/Merged_results.pkl', 'rb') as f:
         results = pickle.load(f)['Hierarch']
@@ -136,7 +128,7 @@ def get_hierarch(load_set, X):
     clusters = transform_clusters(clusters)
     return clusters, results
 
-
+# Load hddc results
 def get_hddc(load_set, X):
     # THE HDDC
     with open(f'/home/g0017139/UMCG_Thesis/Working_Code/Results/TSet{load_set}/Merged_results.pkl', 'rb') as f:
@@ -146,41 +138,39 @@ def get_hddc(load_set, X):
     clusters = transform_clusters(clusters)
     return clusters, results 
 
-
+# Only leave the max silhouette score
 def transform_results(results):
-
-    results = results[results.groupby(['n_clusters'])['silhouette_score_euclidean'].transform(max) == results['silhouette_score_euclidean']]
+    results = results[results.groupby(
+        ['n_clusters'])['silhouette_score_euclidean'].transform(max) == results['silhouette_score_euclidean']]
     results = results.groupby('n_clusters').first()
     results = results.reset_index()
     return results
 
+# Get the K-means results
 def get_kmeans(load_set, X):
-    search = Gridsearch('kmeans', X)
-    # Get the results of k-means for set 1
+    # Get the results of k-means for set
     with open(f"/home/g0017139/UMCG_Thesis/Working_Code/Results/TSet{load_set}/kmeans.pkl", 'rb') as f:
             results = pickle.load(f)
-
+    # Transform the results
     results = transform_results(results)
     clusters = pd.DataFrame()
+    # Retrain the model for later use
     for index, row in results.iterrows():
         kmeans = MiniBatchKMeans(n_clusters=int(row['n_clusters']),
                                  random_state=0,
                                  batch_size=int(row['batch_size']))
-        name = search.get_str(kmeans)
         kmeans.fit(X)
-#         with open(f"/data/g0017139/Models/TSet{load_set}/{name}.pkl", 'rb') as f:
-#             kmeans = pickle.load(f)
         clusters[int(row['n_clusters'])] = kmeans.labels_
     return clusters, results
 
+# Get the dbscan results
 def get_dbscan(load_set, X):
-    search = Gridsearch('dbscan', X)
+    # Load them
     # Get the results of DBSCAN for set 1
     with open(f"/home/g0017139/UMCG_Thesis/Working_Code/Results/TSet{load_set}/dbscan.pkl", 'rb') as f:
             results = pickle.load(f)
-                                     
+    # Retrain the model for later use
     results = transform_results(results)
-
     clusters = pd.DataFrame()
     for index, row in results.iterrows():
         f1 = float(row['Clustering__cluster_selection_epsilon'])
@@ -213,20 +203,18 @@ def get_dbscan(load_set, X):
                                         core_dist_n_jobs=-1
                                         ))
                          ])
-        name = search.get_str(pipe)
-#         with open(f"/data/g0017139/Models/TSet{load_set}/{name}.pkl", 'rb') as f:
-#             pipe = pickle.load(f)
         pipe.fit(X)
         clusters[int(row['n_clusters'])] = pipe['Clustering'].labels_
-    
     return clusters, results
 
+# Make the first step for data exploration
 def tab1(source, df):
+    # Get colors
     colors_or = distinctipy.get_colors(len(set(df['Type'])), colorblind_type='Deuteranomaly',
                                 n_attempts=10_000)
     colors = ['#%02x%02x%02x' % tuple((np.array(x)  * 250).astype(int)) for x in colors_or]
     cmap = factor_cmap('Type', colors, list(set(df['Type'])))
-
+    # Make scatterplots
     p = figure(width=550, height=700, x_axis_label='Component 1', y_axis_label='Component 2', title='PCA')
     p.scatter("PCAComponent1", "PCAComponent2", source=source, legend_field="Type",
               color = cmap
@@ -236,39 +224,41 @@ def tab1(source, df):
     p1.scatter("UMAPComponent1", "UMAPComponent2", source=source, legend_field="Type",
                 color = cmap
               )
+    # Layout
     p1.add_layout(p1.legend[0], 'right')
     if LOADED_SET == 4:
       p1.legend.label_text_font_size = '3pt'
-    tab1 = pn.Row(p,p1)
+    tab1 = pn.Row(p, p1)
     export_png(p, filename=f"/data/g0017139/Images/{LOADED_SET}_PCAREAL.png")
     export_png(p1, filename=f"/data/g0017139/Images/{LOADED_SET}_UMAPREAL.png")
     return tab1
 
-def make_pca_umap(source, alg):
-    # PCA UMAP Plot
+def make_pca_umap(source, colors):
+    # PCA UMAP Plot for
     p1 = figure(width=700, height=500, x_axis_label='Component 1', y_axis_label='Component 2', title='PCA')
-    r1 = p1.scatter("PCAComponent1", "PCAComponent2", source=source, fill_color=alg,
-               line_color=alg)
+    r1 = p1.scatter("PCAComponent1", "PCAComponent2", source=source, fill_color=colors,
+               line_color=colors)
 
     p2 = figure(width=700, height=500, x_axis_label='Component 1', y_axis_label='Component 2', title='UMAP')
-    r2 = p2.scatter("UMAPComponent1", "UMAPComponent2", source=source, fill_color=alg,
-               line_color=alg)
+    r2 = p2.scatter("UMAPComponent1", "UMAPComponent2", source=source, fill_color=colors,
+               line_color=colors)
     return p1, p2
 
 
 
-
+# Plot the sankey, this plot shows how the cluster distribution changed
 def sankey_plot(df, alg):
+    # Drop type because it is not important
     df = df.drop('Type', axis=1)
+    # Fill a dataframe to the correct holoviews format
     l1 = []
-    l2 = []
-    l3 = []
-    
     nodes = []
     edges = []
-    count = 0
+    # Loop over every cluster type (amount of clusters)
     for i in range(len(df.columns) - 1):
+        # Loop over every cluster
         for x in set(df.iloc[:,i]):
+            # loop over every cluster of the next amount and draw the connections
             for y in set(df.iloc[:,i + 1]):
                 if f'{i}_{x}' not in l1:
                     l1.append(f'{i}_{x}')
@@ -278,6 +268,7 @@ def sankey_plot(df, alg):
                     nodes.append((f'{i+1}_{y}', ''))
                 if len(df[((df.iloc[:,i] == x) & (df.iloc[:,i + 1] == y))]) !=0:
                     edges.append((f'{i}_{x}', f'{i+1}_{y}',len(df[((df.iloc[:,i] == x) & (df.iloc[:,i + 1] == y))])))
+    # Make the sankey plot
     nodes = hv.Dataset(nodes, 'index', 'label')
     sankey = hv.Sankey((edges, nodes), ['From', 'To'])
     sankey.opts(
@@ -286,13 +277,16 @@ def sankey_plot(df, alg):
     hv.save(sankey, f"/data/g0017139/Images/{LOADED_SET}_{alg}_sankey.png", fmt='png')
     return sankey
 
-
+# Make the pieplots
 def pie_plot(df, color_mapper, alg):
     tabs_pie = []
+    # Loop over every plot type (different clustering options)
     for column in df:
         if column != 'Type':
+            # Make a pieplot for every cluster
             figures = []
             for group, df_loop in df.groupby(column):
+                # Make a single pieplot
                 size = len(df_loop)
                 df_loop = df_loop.groupby('Type').count()[column].reset_index()
                 df_loop['angle'] = df_loop[column]/df_loop[column].sum() * 2*np.pi
@@ -304,14 +298,14 @@ def pie_plot(df, color_mapper, alg):
                 r = p.wedge(x=0, y=1, radius=0.4,
                         start_angle=cumsum('angle', include_zero=True), end_angle=cumsum('angle'),
                         line_color="white", fill_color='color', source=ColumnDataSource(df_loop))
+                # Layout
                 p.axis.axis_label=None
                 p.axis.visible=False
                 p.grid.grid_line_color = None
                 figures.append(pn.pane.Bokeh(p))
                 export_png(p, filename=f"/data/g0017139/Images/{LOADED_SET}_{alg}_pieplot_{column}_{group}.png")
-            # Make the grid
+            # Make the grid a square grid
             total = []
-            count = len(figures)
             while True:
                 if len(figures) > 4 :
                     total.append(pn.Row(*figures[0:4]))
@@ -320,40 +314,42 @@ def pie_plot(df, color_mapper, alg):
                     total.append(pn.Row(*figures))
                     break
             tabs_pie.append((f'Clusters {column}', pn.Column(*total)))
+    # return the differnt pieplots tabs
     pie_p = pn.Tabs(*tabs_pie)
     return pie_p
 
+# Make the clusterheamap (Shows the same information as the pieplots)
 def heatmap(df, alg):
     tabs = []
+    # Loop over every cluster type
     for column in df:
         if column != 'Type':
             start_df = df.copy()
             start_df['count'] = 1
+            # Count how often every cluster type appears
             count_df = start_df.groupby([column, 'Type']).sum().reset_index()
             sum_df = start_df.groupby(['Type']).sum()
             new_col = []
             for index, row in count_df.iterrows():
                 new_col.append(sum_df.loc[row['Type'],:]['count'])
-
+            # Take the relative counts
             count_df['Percentage'] = count_df['count'] / new_col
             count_df = count_df.drop('count', axis=1)
+            # Pivot it to make it correct input for seaborn
             data = pd.pivot_table(count_df, values='Percentage', index='Type', columns=column, fill_value=0)
-            #fig, ax = plt.subplots(figsize=(20,7))
-            #sns.heatmap(data, vmin=0, vmax=1, linewidths=.5, cmap="YlGnBu", ax=ax)
+            # Make the clustermap from seaborn
             fig = sns.clustermap(data, method="ward", col_cluster=False,  cmap="YlGnBu", figsize=(10,20))
             fig.savefig(f"/data/g0017139/Images/{LOADED_SET}_{alg}_heatmap_{column}.png")
-            #export_png(fig, filename=f"/data/g0017139/Images/{LOADED_SET}_heatmap_{column}.png")
-            #hv.save(fig, f"/data/g0017139/Images/{LOADED_SET}_heatmap_{column}.png", fmt='png')
             fig = pn.pane.Matplotlib(fig.fig, tight=True)
             tabs.append((f'Clusters {column}', fig))
+    # Return all the seperate tabs
     fig = pn.Tabs(*tabs)
     return fig
     
-
+# Combine all the different plots in a single html file
 def set_board(X, X_with_type, current_set):
     # Train PCA and UMAP
     df = do_dim_red(X)
-    # TODO KLOPT DIT VOOR ALLE ANDERE DENK HET NIET
     df['Type'] = X_with_type['TYPE'].values
     df = df.fillna('UNKNOWN')
     # Clustering
@@ -398,10 +394,6 @@ def set_board(X, X_with_type, current_set):
         clusters[alg]['Type'] = df['Type'].values
         # PCA UMAP Plot
         p2, p3 = make_pca_umap(source, alg)
-        # HISTOGRAM
-        #p4, p5 = make_countplot(clusters[alg], 2, 'Type', palette)
-        #p4 = pn.pane.Matplotlib(p4, tight=True)
-        #p5 = pn.pane.Matplotlib(p5, tight=True)
         # LinePLOT
         p6 = cluster_plot_bokeh(results_grid[alg], alg)
         # SANKEY PLOT
@@ -418,11 +410,10 @@ def set_board(X, X_with_type, current_set):
 if __name__ == '__main__':
     hv.extension('bokeh')
     tabs = []
+    # Make a different dashboard file for every set (In one html file the loading time would become to high)
     for LOADED_SET in range(1, 5):
         if LOADED_SET != 3:
             df, df_normalized, Type_df = load_sets(LOADED_SET)
-            #tabs.append((str(LOADED_SET), set_board(df_normalized, df, LOADED_SET)))
             set_board(df_normalized, df, LOADED_SET).save(f'Dashboard_{LOADED_SET}.html')
-            #pn.Tabs(*tabs).save(f'Dashboard_{LOADED_SET}.html')
             plt.clf()
 
