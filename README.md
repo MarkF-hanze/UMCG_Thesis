@@ -41,7 +41,7 @@ This Github page is about the first part of the project, the clustering. High di
 
 ### Built With
 
-* Python 3.8.5
+* Python 3.9.6
 * R 3.6.1
 
 
