@@ -96,7 +96,6 @@ Distributed under the mozilla license. See `LICENSE` for more information.
 <!-- IMAGES -->
 ## Images
  ### End results comparison algorithms
- <details>
    <img src="Scripts/Results/IMAGES/Best_Scores.png" alt="End Result">
 
 
