@@ -95,41 +95,10 @@ Distributed under the mozilla license. See `LICENSE` for more information.
 
 <!-- IMAGES -->
 ## Images
- ### Checking data
+ ### End results comparison algorithms
  <details>
-   <summary>Show images!</summary>
+   <img src="Scripts/Results/IMAGES/Best_Scores.png" alt="End Result">
 
-   <img src="Images/Heatmap.PNG" alt="Heatmap">
-   <img src="Images/Interactive_Geoplot_0.PNG" alt="Interactive geoplot">
-   <img src="Images/Interactive_Geoplot_1PNG.PNG" alt="Interactive geoplot">
-   <img src="Images/Interactive_Geoplot_2.PNG" alt="Interactive geoplot">
-   <img src="Images/Static_Geoplot.PNG" alt="Static geoplot">
- </details>
- 
- ### Linear regression
-  <details>
-   <summary>Show images!</summary>
-  
-   <img src="Images/Linear_regression_model.PNG" alt="Linear model">
-   <img src="Images/Linear_regression_Assumption1.PNG" alt="Linear assumption 1">
-   <img src="Images/Linear_regression_Assumption2_1.PNG" alt="Linear assumption 2">
-   <img src="Images/Linear_regression_Assumption2_2.PNG" alt="Linear assumption 2">
-   <img src="Images/Linear_regression_Assumption2_3.PNG" alt="Linear assumption 2">
-   <img src="Images/Linear_regression_Assumption4.PNG" alt="Linear assumption 4">
-   <img src="Images/Linear_regression_Assumption5.PNG" alt="Linear assumption 5">
-  </details>
-  
- ### ANOVA
-  <details>
-   <summary>Show images!</summary>
-  
-   <img src="Images/ANOVA_hist_1.PNG" alt="Histogram ANOVA">
-   <img src="Images/ANOVA_hist_2.PNG" alt="Histogram ANOVA">
-   <img src="Images/ANOVA_Assumption1_1.PNG" alt="ANOVA assumption 1">
-   <img src="Images/ANOVA_Assumption1_2.PNG" alt="ANOVA assumption 1">
-   <img src="Images/ANOVA_Assumption1_3.PNG" alt="ANOVA assumption 1">
-   <img src="Images/ANOVA_Assumption2.PNG" alt="ANOVA assumption 2">
-  </details>
 
 
 
