@@ -1,15 +1,15 @@
 #!/bin/bash
-#SBATCH --time=20:00:00
+#SBATCH --time=12:00:00
 #SBATCH --job-name=dashboard
 #SBATCH --output=dashboard.out
-#SBATCH --mem=150GB
-#SBATCH --ntasks=6
+#SBATCH --mem=120GB
+#SBATCH --ntasks=24
 #SBATCH --nodes=1
-#SBATCH --partition=himem
+#SBATCH --partition=vulture
 
 ulimit -s 100000
 module load Anaconda3/2020.11
 eval "$(conda shell.bash hook)"
 conda activate /data/g0017139/.envs/ClusterEnv
 
-python3 /home/g0017139/UMCG_Thesis/Working_Code/Dashboard.py
+python3 /home/g0017139/UMCG_Thesis/Scripts/Dashboard.py

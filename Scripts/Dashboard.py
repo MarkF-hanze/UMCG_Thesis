@@ -121,9 +121,9 @@ def transform_clusters(clusters):
 
 # Load hierachical results
 def get_hierarch(load_set, X):
-    with open(f'/home/g0017139/UMCG_Thesis/Working_Code/Results/TSet{load_set}/Merged_results.pkl', 'rb') as f:
+    with open(f'/home/g0017139/UMCG_Thesis/Scripts/Results/TSet{load_set}/Merged_results.pkl', 'rb') as f:
         results = pickle.load(f)['Hierarch']
-    with open(f'/home/g0017139/UMCG_Thesis/Working_Code/Results/TSet{load_set}/MergedClustersHierarch.pkl', 'rb') as f:
+    with open(f'/home/g0017139/UMCG_Thesis/Scripts/Results/TSet{load_set}/MergedClustersHierarch.pkl', 'rb') as f:
         clusters = pickle.load(f)
     clusters = transform_clusters(clusters)
     return clusters, results
@@ -131,9 +131,9 @@ def get_hierarch(load_set, X):
 # Load hddc results
 def get_hddc(load_set, X):
     # THE HDDC
-    with open(f'/home/g0017139/UMCG_Thesis/Working_Code/Results/TSet{load_set}/Merged_results.pkl', 'rb') as f:
+    with open(f'/home/g0017139/UMCG_Thesis/Scripts/Results/TSet{load_set}/Merged_results.pkl', 'rb') as f:
         results = pickle.load(f)['hddc']
-    with open(f'/home/g0017139/UMCG_Thesis/Working_Code/Results/TSet{load_set}/MergedClustersHDDC.pkl', 'rb') as f:
+    with open(f'/home/g0017139/UMCG_Thesis/Scripts/Results/TSet{load_set}/MergedClustersHDDC.pkl', 'rb') as f:
         clusters = pickle.load(f)
     clusters = transform_clusters(clusters)
     return clusters, results 
@@ -149,7 +149,7 @@ def transform_results(results):
 # Get the K-means results
 def get_kmeans(load_set, X):
     # Get the results of k-means for set
-    with open(f"/home/g0017139/UMCG_Thesis/Working_Code/Results/TSet{load_set}/kmeans.pkl", 'rb') as f:
+    with open(f"/home/g0017139/UMCG_Thesis/Scripts/Results/TSet{load_set}/kmeans.pkl", 'rb') as f:
             results = pickle.load(f)
     # Transform the results
     results = transform_results(results)
@@ -167,7 +167,7 @@ def get_kmeans(load_set, X):
 def get_dbscan(load_set, X):
     # Load them
     # Get the results of DBSCAN for set 1
-    with open(f"/home/g0017139/UMCG_Thesis/Working_Code/Results/TSet{load_set}/dbscan.pkl", 'rb') as f:
+    with open(f"/home/g0017139/UMCG_Thesis/Scripts/Results/TSet{load_set}/dbscan.pkl", 'rb') as f:
             results = pickle.load(f)
     # Retrain the model for later use
     results = transform_results(results)
@@ -215,12 +215,12 @@ def tab1(source, df):
     colors = ['#%02x%02x%02x' % tuple((np.array(x)  * 250).astype(int)) for x in colors_or]
     cmap = factor_cmap('Type', colors, list(set(df['Type'])))
     # Make scatterplots
-    p = figure(width=550, height=700, x_axis_label='Component 1', y_axis_label='Component 2', title='PCA')
+    p = figure(width=700, height=500, x_axis_label='Component 1', y_axis_label='Component 2', title='PCA')
     p.scatter("PCAComponent1", "PCAComponent2", source=source, legend_field="Type",
               color = cmap
               )  
     p.legend.visible=False
-    p1 = figure(width=700, height=700, x_axis_label='Component 1', y_axis_label='Component 2', title='UMAP')
+    p1 = figure(width=700, height=500, x_axis_label='Component 1', y_axis_label='Component 2', title='UMAP')
     p1.scatter("UMAPComponent1", "UMAPComponent2", source=source, legend_field="Type",
                 color = cmap
               )
@@ -337,8 +337,8 @@ def heatmap(df, alg):
             count_df = count_df.drop('count', axis=1)
             # Pivot it to make it correct input for seaborn
             data = pd.pivot_table(count_df, values='Percentage', index='Type', columns=column, fill_value=0)
-            # Make the clustermap from seaborn
-            fig = sns.clustermap(data, method="ward", col_cluster=False,  cmap="YlGnBu", figsize=(10,20))
+            # Make the clustermap from seaborn "YlGnBu"
+            fig = sns.clustermap(data, method="ward", col_cluster=False,  cmap="rocket", figsize=(10,20))
             fig.savefig(f"/data/g0017139/Images/{LOADED_SET}_{alg}_heatmap_{column}.png")
             fig = pn.pane.Matplotlib(fig.fig, tight=True)
             tabs.append((f'Clusters {column}', fig))
@@ -414,6 +414,7 @@ if __name__ == '__main__':
     for LOADED_SET in range(1, 5):
         if LOADED_SET != 3:
             df, df_normalized, Type_df = load_sets(LOADED_SET)
-            set_board(df_normalized, df, LOADED_SET).save(f'Dashboard_{LOADED_SET}.html')
+            set_board(df_normalized, df, LOADED_SET).save(f'/home/g0017139/UMCG_Thesis/Scripts/Results/Dashboard_{LOADED_SET}.html')
             plt.clf()
+        
 

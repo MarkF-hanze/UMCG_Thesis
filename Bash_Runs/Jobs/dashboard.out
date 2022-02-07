@@ -1,0 +1,50 @@
+/data/g0017139/.envs/ClusterEnv/lib/python3.9/site-packages/seaborn/matrix.py:805: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  self._figure = plt.figure(figsize=figsize)
+
+
+###############################################################################
+Peregrine Cluster
+Job 22923429 for user 'g0017139'
+Finished at: Fri Feb  4 09:20:25 CET 2022
+
+Job details:
+============
+
+Job ID              : 22923429
+Name                : dashboard
+User                : g0017139
+Partition           : vulture
+Nodes               : pg-node178
+Number of Nodes     : 1
+Cores               : 24
+Number of Tasks     : 1
+State               : COMPLETED
+Submit              : 2022-02-04T01:51:55
+Start               : 2022-02-04T01:51:55
+End                 : 2022-02-04T09:20:25
+Reserved walltime   :   12:00:00
+Used walltime       :   07:28:30
+Used CPU time       : 1-10:23:46 (efficiency: 19.17%)
+% User (Computation): 89.07%
+% System (I/O)      : 10.93%
+Mem reserved        : 120G
+Max Mem (Node/step) : 20.79G (pg-node178, per node)
+Full Max Mem usage  : 20.79G
+Total Disk Read     : 6.50M
+Total Disk Write    : 10.83K
+Hints and tips      :
+ 1) The program efficiency is low. Your program is not using the assigned cores
+    effectively. Please check if you are using all the cores you requested.
+    You may also need to check the file in- and output pattern of your program.
+ *) For more information on these issues see:
+    https://wiki.hpc.rug.nl/peregrine/additional_information/job_hints
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################
