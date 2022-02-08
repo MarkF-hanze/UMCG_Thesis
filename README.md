@@ -70,8 +70,11 @@ Jupiter notebook, Python and R should be installed and working before the main s
    ```sh
    pip3 install -r requirements_python.txt
    ```
-3. Install the R enviorement
-    requirements_R.yml
+3. Install the R enviorement. Download requirements_R.yml and run in parent directory
+   ```sh
+      conda env create
+   ```
+  
 
 
 <!-- USAGE EXAMPLES -->
