@@ -66,11 +66,12 @@ Jupiter notebook, Python and R should be installed and working before the main s
    ```sh
    git clone https://github.com/MarkF-hanze/UMCG_Thesis
    ```
-2. Install the required packages
+2. Install the required python packages
    ```sh
-   pip3 install -r requirements.txt
+   pip3 install -r requirements_python.txt
    ```
-3. Get acces to the requered files
+3. Install the R enviorement
+    requirements_R.yml
 
 
 <!-- USAGE EXAMPLES -->
