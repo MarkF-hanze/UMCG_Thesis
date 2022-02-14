@@ -9,8 +9,15 @@ from Gridsearch.Main import Gridsearch
 
 # This file has some functions that are used in multiple scripts
 
-# Load the scores with the help of the gridsearch class
 def get_score(X, labels):
+    """
+     Load the scores with the help of the gridsearch class
+    input variables:
+         X: Dataframe with gene expression data
+         labels: Set labels
+     return:
+         silhouette score of X and the labels
+     """
     # Start a fake search
     search = Gridsearch('kmeans', X)
     # Get the scores
@@ -22,8 +29,11 @@ def get_score(X, labels):
 def get_score_df(cluster_df, X):
     """
     Loop over a dataframe with cluster labels
-    cluster_df: A dataframe with different assignment of samples in each column
-    X: The X data the columns are based of
+    input variables:
+        cluster_df: A dataframe with different assignment of samples in each column
+        X: The X data the columns are based of
+    return:
+        silhouette score of X and the labels in a dataframe
     """
     # Start the loop over every cluster
     scores_df = {}
@@ -38,8 +48,17 @@ def get_score_df(cluster_df, X):
 
 
 def merge_Results(directory, alg, norm_df):
-    # Merge and calculate scores of a single set. This is mainly to put the hddc and hierachical clustering in
-    # a silhouette score.
+    """
+    Merge and calculate scores of a single set. This is mainly to put the hddc and hierachical clustering in
+    a silhouette score.
+    input variables:
+        directory: str Directory to load the gridsearch results from
+        alg: str name of the current algorithm
+        norm_df: DataFrame Normalized gene expression data
+    return:
+        Gridsearch results containing the silhouette score of different parameters and cluster labels
+    """
+
     grid_df = pd.DataFrame()
     cluster_df = pd.DataFrame()
     # Loop over the csv files in the directory
@@ -73,8 +92,14 @@ def merge_Results(directory, alg, norm_df):
         return cluster_df, scores_df
 
 
-# Function to load the different datassets
 def load_sets(loaded_set):
+    """
+    Function to load the different datasets
+    input variables:
+        loaded_set: int Dataset to load
+    return:
+        The Gene expression data, Normalized gene expresion data, cancer labels
+    """
     # Load the mapping of entrez ID to cancer type
     Entrez_Map = pd.read_csv('/data/g0017139/Set1/Entrezid_mapping_using_org_Hs_eg_db_03052021.txt',
                              sep=None, engine='python', header=0)
