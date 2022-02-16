@@ -36,7 +36,7 @@
 Cancer has a huge impact on our society, with 608.570 cancer deaths estimated to occur in the USA in 2021. Currently to understand the complex mixture of signals present in cancer an independent component analysis (ICA) is used. However, in large datasets, ICA needs to drop a percentage of variance in the data to make it computationally feasible. Our results indicate that this dropped information contains critical information about rare cancer types. In this paper, we show that a divide and conquer approach to ICA is capable of finding transcriptomic footprints that were otherwise missed. Specifically, we highlight a transcriptomic footprint related to mantle cell lymphoma that was only discovered using a divide and conquer strategy.  Our divide and conquer algorithm depends on using high dimensional clustering (HDDC) to make separate subsets of the data to which ICA is performed individually. We used high dimensional data clustering because it showed a good silhouette score combined with easy-to-understand cluster decisions. Furthermore, results show that dividing the data with HDDC outperforms dividing randomly. We anticipate our paper to be the starting point in developing a sophisticated divide and conquer approach capable of finding every possible biological pathway present among cancer samples.
 
 
-This Github page is about the first part of the project, the clustering. High dimensional data clustering (HDDC), mini batch K-means, Hiearchical clustering and UMAP+HDBSCAN are gridsearch and tested on three different datasets. The datasets are the GPL570, CCLE, and TCGA datasets. 
+This Github page is about the first part of the project, the clustering. High dimensional data clustering (HDDC), mini batch K-means, Hiearchical clustering and UMAP+HDBSCAN are gridsearched and tested on three different datasets. The datasets are the GPL570, CCLE, and TCGA datasets. 
 
 
 ### Built With
@@ -83,7 +83,7 @@ Jupiter notebook, Python and R should be installed and working before the main s
   * Jobs: contains the to be run files.
   * Outputs: contains the output results of these runs
 - Scripts/Gridsearch Contains scripts to run the gridsearch
-  * Main: Search the best parameters for K-means and UMAP+HDBSCAn algorithm
+  * Main: Search the best parameters for K-means and UMAP+HDBSCAN algorithm
   * HDDC: give parameters (filepath) (clusternumber) search for the best HDDC parameters for this number of cluster for this dataset
   * TestTimeR: Temporary file to test how long the HDDC algorithm will run on the comple GPL570 dataset to see if it is computationally feasible
   * make_scores: Functions to calculate the silhouette score for a given dataset with labels
